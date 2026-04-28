@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tk_topic1 | Рождественська школа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="icon" type="../image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href ='../index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="../index.html" class="menu-item">Головна</a>
+                <a href="../python.html" class="menu-item">Python</a>
+                <a href="../pygame.html" class="menu-item">Pygame</a>
+                <a href="../tkinter.html" class="menu-item">Tkinter</a>
+                <a href="../turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Тема 1</h1>
+                <h2>Клас Tk().
+                Створення вікна GUI</h2>
+                <a href="../tkinter.html#tasks" class="hero-btn">до цеху tkinter</a>
+            </div>
+            <!--
+            <div class="hero-image">
+                <img src="../images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+            -->
+        </div>
+    </section>
+
+    <section class="lesson" id="tasks">
+        <div class="container">
+
+            <!-- Теорія -->
+            <div class="lesson-block">
+                <h3>Теоретичний матеріал</h3>
+                <p>
+                    Клас <b>Tk()</b> призначений для створення головного вікна програми. Щоб використовувати його методи та
+                    функції, необхідно підключити модуль <b>tkinter</b> до коду. Зазвичай імпорт модуля розміщують у першому
+                    рядку коду програми.
+                </p>
+                <pre><code class="language-python">from tkinter import *  # імпорт бібліотеки tkinter до коду програми
+win = Tk()  # cтворення змінної win в якій зберігатиметься вікно
+win.mainloop() # циклічне оновлення вікна, доки програма не закрита
+</code></pre>
+                <p>Вікно <b>Tk()</b> в python є об'єктом. Зміна властивостей та поведінки будь-якого об'єкта здійснюється через змінну за допомогою методів та функцій. В прикладі ми вказуємо, що всі зміни з вікном будемо здійснювати через змінну win <i>(скорочено від windows)</i>, якій надаємо значення вікна <b>Tk()</b> </p>
+                <p><b>Основні методи налаштування вікна:</b>
+                <ul>
+                    <li><b>.title</b>('Текст заголовка вікна') <i>- додає назву до заголовку вікна;</i></li>
+                    <li><b>.geometry</b>('800x600')<i> - встановлює ширину вікна розміром 800 px і висоту вікна розміром 600 px;</i></li>
+                    <li><b>.resizable</b>(False, True)<i> -  заоброняє змінювати розмір вікна по ширині але дозволяє по висоті. Значення можуть бути 1 та 0;</i></li>
+                    <li><b>.config</b>(bg=’lightblue’,bd=’2’) <i>- bg: світло синій колір фону вікна, bd: товщина рамки вікна;</i></li>
+                    <li><b>.iconbitmap</b>(’name.ico’)<i> - встановлює зображення значка у заголовок вікна.</i></li>
+                </ul> </p>
+            </div>
+            <!-- Приклад -->
+            <div class="lesson-block">
+               <h3>Приклад</h3>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code>from tkinter import *
+win=Tk()
+win.title('Тут заголовка вікна')
+win.geometry('705x319')
+win.resizable(False, True)
+win.config(bg='lightblue',bd='2')
+win.iconbitmap('icon.ico')
+win.mainloop()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example1.png" alt="Приклад Tk">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Завдання -->
+            <div class="lesson-block">
+                <h3>Завдання</h3>
+                <ol>
+                    <li>
+                        Дізнайтеся в інтернет про інші метоид конфігурації вікна, які не розглянуті в цьому матеріалі та запа’ятайте їх;
+                    </li>
+                    <li>
+                        Змініть заголовок вікна на "Моя програма", а колір фону зробіть фіолетовим;
+                    </li>
+                    <li>
+                        Потренуйтеся створювати вікна з різними параметрами (розмір, колір тощо).
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+   
+     <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="../sources.html">Джерела</a></li>
+                    <li><a href="../license.html">Ліцензія</a></li>
+                    <li><a href="../about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+
+</html>

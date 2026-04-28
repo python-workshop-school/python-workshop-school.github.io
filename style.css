@@ -1,0 +1,696 @@
+body {
+    background-color: #ffffff;
+    /* білий фон сторінки */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Geneva, Tahoma, sans-serif, Verdana;
+    color: #333;
+    /* Додаткові налаштування для кращого вигляду, як на Manjaro */
+    -webkit-font-smoothing: antialiased;
+    /* Робить шрифт чіткішим */
+    letter-spacing: -0.01em;
+    /* Трішки звужує відстань між буквами */
+}
+
+/* Шапка з логотипом і меню*/
+.header {
+    background: white;
+    padding: 5px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    /* Робимо шапку липкою (опціонально) */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1100px;
+    /* Ширина всієї шапки */
+    margin: 0 auto;
+    /* Центрування шапки на екрані */
+    display: flex;
+    /* Вмикаємо Flexbox */
+    justify-content: space-between;
+    /* Розносимо лого і меню по краях */
+    align-items: center;
+    /* Вирівнюємо їх по вертикалі по центру */
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo-text {
+    font-size: 18px;
+    /* Трохи менший розмір, щоб влізло в рядок */
+    margin: 0;
+}
+
+.logo-text .accent {
+    color: #FF8C00;
+    /* Оранжевий */
+}
+
+.block-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+/* Головне меню сайту */
+.main-menu {
+    display: flex;
+    gap: 30px;
+    /* Відстань між пунктами */
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    color: #FF8C00;
+    transform: translateY(-2px);
+    /* Масштабування замінили на легкий підйом */
+}
+
+/* Опціонально: маленька лінія, що з'являється під пунктом при наведенні */
+.menu-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #FF8C00;
+    transition: width 0.3s;
+}
+
+.menu-item:hover::after {
+    width: 100%;
+}
+
+/* Блок Hero з закликом */
+.hero {
+    background-color: #333333;
+    /* Графітовий фон як на Manjaro */
+    padding: 60px 0;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    /* Займає 50% ширини */
+}
+
+.hero-text h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 0px;
+    color: #FF8C00;
+    /* Оранжевий акцент на заголовку */
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    /* Налаштовується одинакова ширина сірого блоку */
+    color: #e0e0e0;
+    text-align: left;
+    /* Тут краще ліве вирівнювання */
+}
+
+/* Стильна кнопка */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #FF8C00;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #e67e00;
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    /* Можна додати легке світіння */
+    filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.2));
+}
+
+/* Адаптивність для телефонів */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text p {
+        text-align: center;
+    }
+}
+
+.code-container {
+    background-color: #333333;
+    /* Темний фон редактора #1e1e1e; */
+    /*border-radius: 10px;*/
+    padding: 5px;
+    margin: 20px 0;
+    border: 1px solid #333;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    /* Моноширинний шрифт */
+    overflow-x: auto;
+    /* Прокрутка, якщо код задовгий */
+}
+
+.python-code {
+    margin: 0;
+    line-height: 1.0;
+    font-size: 18px;
+    color: #d4d4d4;
+    /* Основний колір тексту (змінні) */
+}
+
+/* Адаптивність для телефонів */
+@media (max-width: 768px) {
+    .code-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .python-code p {
+        text-align: left;
+    }
+}
+
+/* Кольори для синтаксису */
+.keyword {
+    color: #f3b704;
+    font-weight: bold;
+}
+
+/* import, def */
+.func {
+    color: #8e0f86;
+}
+
+/* time, print, float, назви функцій */
+.string {
+    color: #059624;
+}
+
+/* Текст у лапках */
+.number {
+    color: #b5cea8;
+}
+
+/* Цифри */
+.comment {
+    color: #6a9955;
+}
+
+/* Наступний інформаційний блок під низом сірого*/
+.info-section {
+    background-color: #ffffff;
+    /* Світлий чистий фон */
+    padding: 30px 0;
+    color: #333333;
+    /* Графітовий колір шрифту */
+    font-family: 'Inter', sans-serif;
+}
+
+.info-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 60px;
+    /* Більший простір між текстом і картинкою */
+}
+
+.info-text {
+    flex: 1.2;
+    /* Текст займає трохи більше місця */
+}
+
+.sub-title {
+    color: #FF8C00;
+    /* Оранжевий акцент над заголовком */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.info-text h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.info-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+    /* Трохи м'якший графітовий для абзаців */
+    text-align: left;
+}
+
+/* Список з галочками */
+.info-features {
+    list-style: none;
+    padding: 0;
+}
+
+.info-features li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.info-features li i {
+    color: #FF8C00;
+    /* Оранжеві галочки */
+    font-size: 16px;
+}
+
+.info-image {
+    flex: 1;
+}
+
+.info-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    /* Заокруглені кути для картинки */
+}
+
+/* Адаптивність для мобільних */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column-reverse;
+        /* На мобілках картинка буде під текстом */
+        text-align: center;
+        gap: 30px;
+    }
+}
+
+/* Це правило автоматично розвертає блоки всередині контейнера */
+.info-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Переконайтеся, що для адаптивності у вас є цей блок */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column-reverse;
+        /* На мобілках картинка завжди знизу */
+    }
+
+    .info-reverse {
+        flex-direction: column-reverse;
+        /* Щоб на телефонах текст був зверху */
+    }
+}
+
+/* Основні стилі для фону та шрифту */
+.footer {
+    background-color: #333333;
+    /* Темно-сірий колір як на фото */
+    color: #ffffff;
+    padding: 15px 15px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+
+/* Контейнер для вирівнювання контенту по центру */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* Рівномірний розподіл */
+    flex-wrap: wrap;
+    /* Для адаптивності на мобільних */
+    gap: 20px;
+}
+
+/* Налаштування стовпців */
+.footer-column {
+    flex: 0 1 auto;
+    /* Стовпці займають стільки місця, скільки потрібно тексту */
+}
+
+/* Перший стовпець трохи ширший для тексту */
+.brand-info {
+    max-width: 300px;
+}
+
+/* Стилі заголовків */
+.footer-column h3 {
+    color: #ff8c00;
+    /* Помаранчевий колір заголовків */
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Стилі логотипу */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.logo-icon {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.orange-text {
+    color: #ff8c00;
+}
+
+/* Списки та посилання */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: #ff8c00;
+}
+
+.author {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #777;
+    margin-top: 15px;
+    /* Ширина футера сірох смужки внизу*/
+    padding-top: 0px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #777;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+
+/* Адаптивність для телефонів */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+/* Тут форматування сторінки з завданням*/
+.topics {
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.topic-card {
+    display: block;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Формат сторінки з темою */
+/*
+.lesson {
+    padding: 60px 20px;
+}
+
+.lesson-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.lesson-block {
+    margin-bottom: 40px;
+}
+*/
+
+.lesson {
+    padding: 40px 0;
+}
+/*
+.lesson-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+*/
+
+.lesson-title {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.lesson-block {
+
+    background: #ffffff;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.lesson-block h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    margin-top: 0
+}
+
+.lesson-block p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.lesson-block ol {
+    font-size: 18px;
+    line-height: 1.7;
+    padding-left: 25px;
+}
+
+.lesson-block li {
+    margin-bottom: 10px;
+}
+
+pre {
+    background: #333333;
+    color: #f8f8f2;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: auto;
+    margin-top: 18px;
+    margin-bottom: 0;
+}
+/*
+.example-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.example-code {
+    flex: 1;
+    min-width: 300px;
+}
+
+.example-image {
+    flex: 1;
+    min-width: 250px;
+}
+
+.example-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+    */
+.example-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.example-code {
+    flex: 1;
+    min-width: 320px;
+}
+
+.example-image {
+    flex: 1;
+    min-width: 260px;
+}
+
+.example-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+/*Оранжеві службові слова у роді Python*/
+.hljs-keyword {
+    color: #FF8C00 !important;
+}
+/*Зелені слова для тексту */ 
+.hljs-string {
+    color: #228b22 !important;
+}
+/*
+.hljs-comment {
+    color: #ff4500 !important;
+}*/
+html {
+    scroll-behavior: smooth;
+}
+
+.about-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.about-section h2 {
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #555;
+}
+/* Форматування сторінки source.thml*/
+.sources-list {
+    font-size: 18px;
+    line-height: 1.7;
+    padding-left: 20px;
+}
+
+.source {
+    font-size: 14px;
+    color: #777;
+    margin-top: 8px;
+}
+/*Стиль таблиці з властивостями*/
+table {
+            width: 100%;
+            border-collapse: collapse; /* Прибирає подвійні рамки */
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ccc; /* Колір сітки */
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #D9F2D9; /* Світло-блакитний колір заголовка */
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Легке виділення парних рядків */
+        }
+        .property-name {
+            font-weight: bold;
+            width: 30%;
+        }

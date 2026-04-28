@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модуль Tkinter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/Logo.png">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href='index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="index.html" class="menu-item">Головна</a>
+                <a href="python.html" class="menu-item">Python</a>
+                <a href="pygame.html" class="menu-item">Pygame</a>
+                <a href="tkinter.html" class="menu-item">Tkinter</a>
+                <a href="turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Tkinter</h1>
+                <p><strong>Tkinter</strong> — це стандартний модуль мови <strong>Python</strong>, призначений для
+                    створення графічних інтерфейсів користувача <strong>(GUI)</strong>.</p>
+                <p> На цій сторінці зібрані практичні вправи: від створення першого вікна до розробки повноцінних
+                    десктопних додатків із кнопками, меню та подіями.</p>
+                <a href="#tasks" class="hero-btn">До цеху tkinter</a>
+            </div>
+            <div class="hero-image">
+                <!-- Тематичне зображення віконного інтерфейсу -->
+                <img src="images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+        </div>
+    </section>
+
+    <section class="topics" id="tasks">
+        <div class="container">
+            <h2 class="section-title">
+                Теми для вивчення Tkinter
+            </h2>
+            <div class="topics-grid">
+                <!-- Тема 1 -->
+                <a href="topics/tk_topic1.html" class="topic-card">
+                    <h3>Тема 1</h3>
+                    <p>
+                        Клас Tk().
+                        Створення вікна GUI
+                    </p>
+                </a>
+                <!-- Тема 2 -->
+                <a href="topics/tk_topic2.html" class="topic-card">
+                    <h3>Тема 2</h3>
+                    <p>
+                        Клас Label
+                    </p>
+                </a>
+                <!-- Тема 3 -->
+                <a href="topics/tk_topic3.html" class="topic-card">
+                    <h3>Тема 3</h3>
+                    <p>
+                        Пакувальники:
+                        pack(), grid(), place()
+                    </p>
+                </a>
+                <!-- Тема 4 -->
+                <a href="topics/tk_topic4.html" class="topic-card">
+                    <h3>Тема 4</h3>
+                    <p>
+                        Клас Frame
+                    </p>
+                </a>
+                <!-- Тема 5 -->
+                <a href="topics/tk_topic5.html" class="topic-card">
+                    <h3>Тема 5</h3>
+                    <p>
+                        Клас Button
+                    </p>
+                </a>
+                <!-- Тема 6 -->
+                <a href="topics/tk_topic6.html" class="topic-card">
+                    <h3>Тема 6</h3>
+                    <p>
+                        Клас Entry
+                    </p>
+                </a>
+                <!-- Тема 7 -->
+                <a href="topics/tk_topic7.html" class="topic-card">
+                    <h3>Тема 7</h3>
+                    <p>
+                        Text та ScrollBar
+                    </p>
+                </a>
+                <!-- Тема 8 -->
+                <a href="topics/tk_topic8.html" class="topic-card">
+                    <h3>Тема 8</h3>
+                    <p>
+                        Radiobutton
+                    </p>
+                </a>
+                <!-- Тема 9 -->
+                <a href="topics/tk_topic9.html" class="topic-card">
+                    <h3>Тема 9</h3>
+                    <p>
+                        Checkbutton
+                    </p>
+                </a>
+                <!-- Тема 10 -->
+                <a href="topics/tk_topic10.html" class="topic-card">
+                    <h3>Тема 10</h3>
+                    <p>
+                        Scale
+                    </p>
+                </a>
+                <!-- Тема 11 -->
+                <a href="topics/tk_topic11.html" class="topic-card">
+                    <h3>Тема 11</h3>
+                    <p>
+                        Listbox
+                    </p>
+                </a>
+                <!-- Тема 12 -->
+                <a href="topics/tk_topic12.html" class="topic-card">
+                    <h3>Тема 12</h3>
+                    <p>
+                        Canvas та Menu
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="sources.html">Джерела</a></li>
+                    <li><a href="license.html">Ліцензія</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+    </script>
+
+</body>
+
+</html>

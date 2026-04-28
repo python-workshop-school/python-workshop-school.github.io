@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYTHON майстерня | Рождественська школа</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!--<link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> -->
+    <link rel="icon" type="image/png" href="images/Logo.png">
+</head>
+
+<body>
+
+    <div id="header_index"></div>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href='index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <!-- <a href="index.html" class="menu-item">Головна</a>-->
+                <a href="python.html" class="menu-item">Python</a>
+                <a href="pygame.html" class="menu-item">Pygame</a>
+                <a href="tkinter.html" class="menu-item">Tkinter</a>
+                <a href="turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>PYTHON майстерня</h1>
+                <p>Ласкаво просимо у світ програмування! Тут ти навчишся створювати власні програми мовою
+                    <strong>Python</strong>. <!--, малювати за допомогою <strong>turtle</strong>, створювати віконні програми
+                    з <strong>tkinter</strong> та розробляти ігри у <strong>pygame</strong>.-->
+                </p>
+                <p>Почни з простого і крок за кроком створи свій перший проєкт. Бажаю вам успіху!</p>
+                <!-- <a href="#python" class="hero-btn">Обрати курс</a> -->
+            </div>
+            <div class="code-container">
+                <pre class="python-code">
+                <code><span class="keyword">import</span> time
+
+                start_time = time.<span class="func">time</span>()
+                
+                z = 20 ** 26
+
+                end_time = time.<span class="func">time</span>()
+
+                timetaken = end_time - start_time
+
+                <span class="func">print</span>(<span class="string">f"Час виконання: {timetaken}"</span>)</code>
+             </pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Текст ліворуч, картинка праворуч -->
+    <section class="info-section">
+        <div class="info-container">
+            <!-- Текстова частина зліва -->
+            <div class="info-text">
+                <span class="sub-title">Освітній процес</span>
+                <h2>Сучасний підхід до навчання</h2>
+                <p>Навчання програмуванню може бути зрозумілим, цікавим і доступним кожному. Сучасний підхід передбачає
+                    поєднання теорії з практикою, коли нові знання одразу застосовуються у власних проєктах. У процесі
+                    навчання використовуються реальні приклади, зрозумілі пояснення та поступове ускладнення завдань. Це
+                    дозволяє впевнено опановувати мову <strong>Python</strong>, працювати з графікою, створювати віконні
+                    програми та власні ігрові проєкти. Такий підхід формує не лише знання, а й уміння мислити логічно,
+                    знаходити рішення та створювати власні цифрові продукти.</p>
+                <!-- <ul class="info-features">
+                <li><i class="fa-solid fa-check"></i> Проєктне навчання</li>
+                <li><i class="fa-solid fa-check"></i> Актуальні технології</li>
+                <li><i class="fa-solid fa-check"></i> Підтримка менторів</li>
+            </ul>-->
+            </div>
+            <!-- Зображення справа -->
+            <div class="info-image">
+                <img src="images/001a.png" alt="Фото учнів школи">
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <!-- Додаємо клас info-reverse -->
+        <div class="info-container info-reverse">
+            <!-- Текстова частина (справа) -->
+            <div class="info-text">
+                <span class="sub-title">Наші ресурси</span>
+                <h2>Твій простір для розвитку</h2>
+                <p>Цей сайт створений як зручний простір для самостійного навчання, творчості та розвитку власних ідей.
+                    Тут ти можеш рухатися у власному темпі, повертатися до складних тем і відкривати нові можливості
+                    програмування. Кожен урок — це крок до нових умінь і впевненості у своїх знаннях. Поступово ти
+                    навчишся створювати власні програми, вдосконалювати їх і бачити результат своєї роботи. Це простір,
+                    де навчання перетворюється на досвід, а досвід — на справжні навички.</p>
+            </div>
+            <!-- Зображення (тепер воно перше в коді, але зліва) -->
+            <div class="info-image">
+                <img src="images/002a.png" alt="Друге зображення">
+            </div>
+
+        </div>
+    </section>
+
+
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="sources.html">Джерела</a></li>
+                    <li><a href="license.html">Ліцензія</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+    </script>
+</body>
+
+</html>
