@@ -18,6 +18,11 @@ body {
     padding: 5px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
+    /*position: relative;*/
+     /* Залишаємо шапку на місці, але вона не буде липкою при прокрутці */
+     /* Якщо потрібно, щоб шапка була липкою, замініть на position: sticky;
+}
+
     /* Робимо шапку липкою (опціонально) */
     top: 0;
     z-index: 1000;
@@ -170,18 +175,6 @@ body {
     filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.2));
 }
 
-/* Адаптивність для телефонів */
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text p {
-        text-align: center;
-    }
-}
-
 .code-container {
     background-color: #333333;
     /* Темний фон редактора #1e1e1e; */
@@ -193,6 +186,7 @@ body {
     /* Моноширинний шрифт */
     overflow-x: auto;
     /* Прокрутка, якщо код задовгий */
+    
 }
 
 .python-code {
@@ -201,18 +195,6 @@ body {
     font-size: 18px;
     color: #d4d4d4;
     /* Основний колір тексту (змінні) */
-}
-
-/* Адаптивність для телефонів */
-@media (max-width: 768px) {
-    .code-container {
-        flex-direction: column;
-        text-align: left;
-    }
-
-    .python-code p {
-        text-align: left;
-    }
 }
 
 /* Кольори для синтаксису */
@@ -327,32 +309,10 @@ body {
     /* Заокруглені кути для картинки */
 }
 
-/* Адаптивність для мобільних */
-@media (max-width: 768px) {
-    .info-container {
-        flex-direction: column-reverse;
-        /* На мобілках картинка буде під текстом */
-        text-align: center;
-        gap: 30px;
-    }
-}
 
 /* Це правило автоматично розвертає блоки всередині контейнера */
 .info-reverse {
     flex-direction: row-reverse;
-}
-
-/* Переконайтеся, що для адаптивності у вас є цей блок */
-@media (max-width: 768px) {
-    .info-container {
-        flex-direction: column-reverse;
-        /* На мобілках картинка завжди знизу */
-    }
-
-    .info-reverse {
-        flex-direction: column-reverse;
-        /* Щоб на телефонах текст був зверху */
-    }
 }
 
 /* Основні стилі для фону та шрифту */
@@ -364,8 +324,6 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
-
-
 
 /* Контейнер для вирівнювання контенту по центру */
 .footer-container {
@@ -458,12 +416,84 @@ body {
     margin-bottom: 2px;
 }
 
-
 /* Адаптивність для телефонів */
 @media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text p {
+        text-align: center;
+    }
+
+    .code-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .python-code p {
+        text-align: left;
+    }
+
+    .info-container {
+        flex-direction: column-reverse;
+        /* На мобілках картинка буде під текстом */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .info-reverse {
+        flex-direction: column-reverse;
+        /* Щоб на телефонах текст був зверху */
+    }
+
     .footer-container {
         flex-direction: column;
     }
+
+    .footer-column {
+        width: 100%;
+        text-align: left;
+    }
+
+    .menu-toggle {
+        display: block;
+        /*Нижче внесені зміни для відоб раження меню на мобільних пристроях 20260429*/
+        font-size: 26px;
+        cursor: pointer;
+        color: #333333; /* 20260429 Колір іконки меню замінив з білого на сірий*/
+       }
+
+    .main-menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #fff;
+        width: 200px;
+        flex-direction: column;
+        display: none; /* спочатку приховане */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        padding: 10px 0;
+        /* 20260429*/
+        /*z-index: 999; /* ← дуже важливо */
+    }
+
+    .main-menu.active {
+        display: flex;
+    }
+
+    .menu-item {
+        padding: 10px 20px;
+        display: block;
+    }
+}
+
+/* Стиль для мобільного меню (якщо потрібно) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
 }
 
 /* Тут форматування сторінки з завданням*/
@@ -499,44 +529,23 @@ body {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* Формат сторінки з темою */
-/*
-.lesson {
-    padding: 60px 20px;
-}
-
-.lesson-title {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.lesson-block {
-    margin-bottom: 40px;
-}
-*/
-
 .lesson {
     padding: 40px 0;
 }
-/*
-.lesson-title {
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-*/
 
 .lesson-title {
     font-size: 34px;
     font-weight: 700;
     margin-bottom: 40px;
 }
+
 .lesson-block {
 
     background: #ffffff;
     padding: 18px 22px;
     border-radius: 12px;
     margin-bottom: 22px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .lesson-block h3 {
@@ -572,29 +581,7 @@ pre {
     margin-top: 18px;
     margin-bottom: 0;
 }
-/*
-.example-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
 
-.example-code {
-    flex: 1;
-    min-width: 300px;
-}
-
-.example-image {
-    flex: 1;
-    min-width: 250px;
-}
-
-.example-image img {
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-    */
 .example-container {
     display: flex;
     gap: 30px;
@@ -617,20 +604,24 @@ pre {
     border-radius: 10px;
     border: 1px solid #ccc;
 }
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding-left: 30px;
     padding-right: 30px;
 }
+
 /*Оранжеві службові слова у роді Python*/
 .hljs-keyword {
     color: #FF8C00 !important;
 }
-/*Зелені слова для тексту */ 
+
+/*Зелені слова для тексту */
 .hljs-string {
     color: #228b22 !important;
 }
+
 /*
 .hljs-comment {
     color: #ff4500 !important;
@@ -645,7 +636,7 @@ html {
     padding: 25px;
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .about-section h2 {
@@ -659,6 +650,7 @@ html {
     margin-bottom: 10px;
     color: #555;
 }
+
 /* Форматування сторінки source.thml*/
 .sources-list {
     font-size: 18px;
@@ -671,26 +663,36 @@ html {
     color: #777;
     margin-top: 8px;
 }
+
 /*Стиль таблиці з властивостями*/
 table {
-            width: 100%;
-            border-collapse: collapse; /* Прибирає подвійні рамки */
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
-        th, td {
-            border: 1px solid #ccc; /* Колір сітки */
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #D9F2D9; /* Світло-блакитний колір заголовка */
-            font-weight: bold;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9; /* Легке виділення парних рядків */
-        }
-        .property-name {
-            font-weight: bold;
-            width: 30%;
-        }
+    width: 100%;
+    border-collapse: collapse;
+    /* Прибирає подвійні рамки */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    /* Колір сітки */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #D9F2D9;
+    /* Світло-блакитний колір заголовка */
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Легке виділення парних рядків */
+}
+
+.property-name {
+    font-weight: bold;
+    width: 30%;
+}
