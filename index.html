@@ -6,13 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PYTHON майстерня | Рождественська школа</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <link href="https://googleapis.com" rel="stylesheet">
-    <!--<link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> -->
     <link rel="icon" type="image/png" href="images/Logo.png">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -30,7 +25,7 @@
             </div>
 
             <div class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
+                <i class="fas fa-bars"></i> 
             </div>
 
             <nav class="main-menu" id="nav-list">
@@ -48,8 +43,7 @@
             <div class="hero-text">
                 <h1>PYTHON майстерня</h1>
                 <p>Ласкаво просимо у світ програмування! Тут ти навчишся створювати власні програми мовою
-                    <strong>Python</strong>. <!--, малювати за допомогою <strong>turtle</strong>, створювати віконні програми
-                    з <strong>tkinter</strong> та розробляти ігри у <strong>pygame</strong>.-->
+                    <strong>Python</strong>.<!-- Це потужна і водночас проста мова, яка відкриває безліч можливостей для творчості та розвитку. У нашій майстерні ти зможеш крок за кроком опановувати основи програмування, створювати графіку, віконні програми та навіть власні ігри. Не бійся помилок — вони є невід'ємною частиною навчання. Кожна помилка — це крок до розуміння і вдосконалення своїх навичок-->
                 </p>
                 <p>Почни з простого і крок за кроком створи свій перший проєкт. Бажаю вам успіху!</p>
                 <!-- <a href="#python" class="hero-btn">Обрати курс</a> -->
@@ -85,16 +79,12 @@
                     дозволяє впевнено опановувати мову <strong>Python</strong>, працювати з графікою, створювати віконні
                     програми та власні ігрові проєкти. Такий підхід формує не лише знання, а й уміння мислити логічно,
                     знаходити рішення та створювати власні цифрові продукти.</p>
-                <!-- <ul class="info-features">
-                <li><i class="fa-solid fa-check"></i> Проєктне навчання</li>
-                <li><i class="fa-solid fa-check"></i> Актуальні технології</li>
-                <li><i class="fa-solid fa-check"></i> Підтримка менторів</li>
-            </ul>-->
             </div>
-            <!-- Зображення справа -->
+
             <div class="info-image">
                 <img src="images/001a.png" alt="Фото учнів школи">
             </div>
+
         </div>
     </section>
 
@@ -176,7 +166,8 @@
         </div>
     </footer>
 
-    <script>
+    <!--
+   <script>
         const menuToggle = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
 
@@ -184,6 +175,7 @@
             navList.classList.toggle('active');
         });
     </script>
+    -->
     <!-- Підключаємо JS для мобільного меню (такий же як на головній)
     <script>
         const menuToggle = document.getElementById('mobile-menu');
@@ -196,6 +188,41 @@
         });
     </script>
 -->
+    <!--
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Закривати меню при кліку на посилання
+        document.querySelectorAll('.menu-item').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+    </script>-->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
 
 </body>
 

@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tk_topic1 | Рождественська школа</title>
+    <title>тема 1 Tkinter | Рождественська школа</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="icon" type="../image/png" href="../images/Logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link rel="icon" type="image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -47,7 +45,7 @@
                 <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
                 <h1>Тема 1</h1>
                 <h2>Клас Tk().
-                Створення вікна GUI</h2>
+                    Створення вікна GUI</h2>
                 <a href="../tkinter.html#tasks" class="hero-btn">до цеху tkinter</a>
             </div>
             <!--
@@ -65,27 +63,36 @@
             <div class="lesson-block">
                 <h3>Теоретичний матеріал</h3>
                 <p>
-                    Клас <b>Tk()</b> призначений для створення головного вікна програми. Щоб використовувати його методи та
-                    функції, необхідно підключити модуль <b>tkinter</b> до коду. Зазвичай імпорт модуля розміщують у першому
+                    Клас <b>Tk()</b> призначений для створення головного вікна програми. Щоб використовувати його методи
+                    та
+                    функції, необхідно підключити модуль <b>tkinter</b> до коду. Зазвичай імпорт модуля розміщують у
+                    першому
                     рядку коду програми.
                 </p>
                 <pre><code class="language-python">from tkinter import *  # імпорт бібліотеки tkinter до коду програми
 win = Tk()  # cтворення змінної win в якій зберігатиметься вікно
 win.mainloop() # циклічне оновлення вікна, доки програма не закрита
 </code></pre>
-                <p>Вікно <b>Tk()</b> в python є об'єктом. Зміна властивостей та поведінки будь-якого об'єкта здійснюється через змінну за допомогою методів та функцій. В прикладі ми вказуємо, що всі зміни з вікном будемо здійснювати через змінну win <i>(скорочено від windows)</i>, якій надаємо значення вікна <b>Tk()</b> </p>
+                <p>Вікно <b>Tk()</b> в python є об'єктом. Зміна властивостей та поведінки будь-якого об'єкта
+                    здійснюється через змінну за допомогою методів та функцій. В прикладі ми вказуємо, що всі зміни з
+                    вікном будемо здійснювати через змінну win <i>(скорочено від windows)</i>, якій надаємо значення
+                    вікна <b>Tk()</b> </p>
                 <p><b>Основні методи налаштування вікна:</b>
                 <ul>
                     <li><b>.title</b>('Текст заголовка вікна') <i>- додає назву до заголовку вікна;</i></li>
-                    <li><b>.geometry</b>('800x600')<i> - встановлює ширину вікна розміром 800 px і висоту вікна розміром 600 px;</i></li>
-                    <li><b>.resizable</b>(False, True)<i> -  заоброняє змінювати розмір вікна по ширині але дозволяє по висоті. Значення можуть бути 1 та 0;</i></li>
-                    <li><b>.config</b>(bg=’lightblue’,bd=’2’) <i>- bg: світло синій колір фону вікна, bd: товщина рамки вікна;</i></li>
+                    <li><b>.geometry</b>('800x600')<i> - встановлює ширину вікна розміром 800 px і висоту вікна розміром
+                            600 px;</i></li>
+                    <li><b>.resizable</b>(False, True)<i> - заоброняє змінювати розмір вікна по ширині але дозволяє по
+                            висоті. Значення можуть бути 1 та 0;</i></li>
+                    <li><b>.config</b>(bg=’lightblue’,bd=’2’) <i>- bg: світло синій колір фону вікна, bd: товщина рамки
+                            вікна;</i></li>
                     <li><b>.iconbitmap</b>(’name.ico’)<i> - встановлює зображення значка у заголовок вікна.</i></li>
-                </ul> </p>
+                </ul>
+                </p>
             </div>
             <!-- Приклад -->
             <div class="lesson-block">
-               <h3>Приклад</h3>
+                <h3>Приклад</h3>
                 <div class="example-container">
                     <div class="example-code">
                         <h4 class="example-title">Код програми </h4>
@@ -111,7 +118,8 @@ win.mainloop()
                 <h3>Завдання</h3>
                 <ol>
                     <li>
-                        Дізнайтеся в інтернет про інші метоид конфігурації вікна, які не розглянуті в цьому матеріалі та запа’ятайте їх;
+                        Дізнайтеся в інтернет про інші метоид конфігурації вікна, які не розглянуті в цьому матеріалі та
+                        запа’ятайте їх;
                     </li>
                     <li>
                         Змініть заголовок вікна на "Моя програма", а колір фону зробіть фіолетовим;
@@ -123,8 +131,8 @@ win.mainloop()
             </div>
         </div>
     </section>
-   
-     <div id="footer"></div>
+
+    <div id="footer"></div>
     <footer class="footer">
         <div class="footer-container">
             <!-- Блок з логотипом -->
@@ -182,21 +190,29 @@ win.mainloop()
 
     <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
     <script>
-        const menuToggle = document.getElementById('mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
-        menuToggle.addEventListener('click', () => {
+
+        mobileMenu.addEventListener('click', () => {
             navList.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-xmark');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
     </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-<script>
-    hljs.highlightAll();
-</script>
+    <script>
+        hljs.highlightAll();
+    </script>
 </body>
 
 </html>
