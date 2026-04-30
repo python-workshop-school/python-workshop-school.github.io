@@ -508,18 +508,6 @@ body {
     margin-bottom: 10px;
 }
 
-pre {
-    background: #333333;
-    color: #f8f8f2;
-    padding: 16px;
-    border-radius: 10px;
-    font-size: 16px;
-    line-height: 1.5;
-    overflow-x: auto;
-    margin-top: 18px;
-    margin-bottom: 0;
-}
-
 .example-container {
     display: flex;
     gap: 30px;
@@ -757,15 +745,30 @@ tr:nth-child(even) {
     }
 
     pre {
+        display: block;
+        overflow-x: auto;
+        box-sizing: border-box;
         font-size: 14px;
         /* Трохи зменшимо шрифт на телефонах */
         padding: 12px;
         /* І відступи, щоб було більше місця для самого коду */
         width: 100%;
         /* Гарантуємо, що блок не вийде за межі */
-        display: block;
-        overflow-x: auto;
-        box-sizing: border-box;
+        
+        /* Важливо для коректної роботи прокрутки додали 20260430_2234 для виправлення виходу блоку коду за межі у смартфоні*/
+        
+        
     }
+}
 
+pre {
+    background: #333333;
+    color: #f8f8f2;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: auto;
+    margin-top: 18px;
+    margin-bottom: 0;
 }
