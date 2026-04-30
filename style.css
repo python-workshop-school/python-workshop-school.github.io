@@ -623,6 +623,18 @@ tr:nth-child(even) {
     width: 30%;
 }
 
+pre {
+    background: #333333;
+    color: #f8f8f2;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: auto;
+    margin-top: 18px;
+    margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
     .header-container {
         display: flex;
@@ -759,16 +771,4 @@ tr:nth-child(even) {
         
         
     }
-}
-
-pre {
-    background: #333333;
-    color: #f8f8f2;
-    padding: 16px;
-    border-radius: 10px;
-    font-size: 16px;
-    line-height: 1.5;
-    overflow-x: auto;
-    margin-top: 18px;
-    margin-bottom: 0;
 }
