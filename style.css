@@ -655,13 +655,47 @@ pre {
         text-align: center;
     }
 
+    /* 1. Змушуємо контейнер приладу ставати вертикальним */
+    .example-container {
+        display: flex;
+        flex-direction: column;
+        /* Код над картинкою */
+        width: 100%;
+        overflow: hidden;
+        /* Гарантуємо, що нічого не вилізе */
+    }
+
+    /* 2. Даємо блоку з кодом та блоку з картинкою повну ширину */
+    .example-code,
+    .example-image {
+        width: 100% !important;
+        min-width: 0;
+        /* Важливо: дозволяє внутрішнім елементам стискатися */
+        margin-bottom: 20px;
+    }
+
+    /* 3. Масштабуємо картинку, щоб вона не тиснула на блок */
+    .example-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+
     .code-container {
         flex-direction: column;
         text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+        /* Дозволяє блокам не "штовхати" один одного */
     }
 
     .python-code p {
-        text-align: left;
+        /*text-align: left;*/
+        width: 100%;
+        min-width: 0;
+        /* Це дозволяє контейнеру стиснутися до ширини екрана */
+        flex-shrink: 1;
     }
 
     .info-container {
@@ -757,18 +791,22 @@ pre {
     }
 
     pre {
+        /*
         display: block;
         overflow-x: auto;
         box-sizing: border-box;
         font-size: 14px;
-        /* Трохи зменшимо шрифт на телефонах */
         padding: 12px;
-        /* І відступи, щоб було більше місця для самого коду */
         width: 100%;
-        /* Гарантуємо, що блок не вийде за межі */
-        
-        /* Важливо для коректної роботи прокрутки додали 20260430_2234 для виправлення виходу блоку коду за межі у смартфоні*/
-        
-        
+        max-width: 100%;*/
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        /* Вмикає прокрутку коду */
+        white-space: pre;
+        /* Забороняє примусовий перенос рядків коду */
+        box-sizing: border-box;
+
     }
 }
