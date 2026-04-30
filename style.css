@@ -634,6 +634,7 @@ tr:nth-child(even) {
     font-weight: bold;
     width: 30%;
 }
+
 @media (max-width: 768px) {
     .header-container {
         display: flex;
@@ -754,11 +755,17 @@ tr:nth-child(even) {
         /* Легкий помаранчевий відблиск при кліку */
         color: #FF8C00;
     }
-     pre {
-        font-size: 14px; /* Трохи зменшимо шрифт на телефонах */
-        padding: 12px;   /* І відступи, щоб було більше місця для самого коду */
-        width: 100%;     /* Гарантуємо, що блок не вийде за межі */
-        box-sizing: border-box; 
+
+    pre {
+        font-size: 14px;
+        /* Трохи зменшимо шрифт на телефонах */
+        padding: 12px;
+        /* І відступи, щоб було більше місця для самого коду */
+        width: 100%;
+        /* Гарантуємо, що блок не вийде за межі */
+        display: block;
+        overflow-x: auto;
+        box-sizing: border-box;
     }
 
 }
