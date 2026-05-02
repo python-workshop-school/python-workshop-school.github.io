@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тема 2 Tkinter| Рождественська школа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href ='../index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="../index.html" class="menu-item">Головна</a>
+                <a href="../python.html" class="menu-item">Python</a>
+                <a href="../pygame.html" class="menu-item">Pygame</a>
+                <a href="../tkinter.html" class="menu-item">Tkinter</a>
+                <a href="../turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Тема 3</h1>
+                <h2>Пакувальники</h2>
+                <a href="../tkinter.html#tasks" class="hero-btn">до цеху tkinter</a>
+            </div>
+            <!--
+            <div class="hero-image">
+                <img src="../images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+            -->
+        </div>
+    </section>
+
+    <section class="lesson" id="tasks">
+        <div class="container">
+
+            <!-- Теорія -->
+            <div class="lesson-block">
+                <h3>Теоретичний матеріал</h3>
+                <p>
+                    Настав час більш детально з’ясуємо питання про розташування віджетів графічної оболонки
+                    ,Tkinter у вікні або фреймі. Це важливе питання, тому що від інтуїтивності інтерфейсу багато
+                    в чому залежить зручність використання програми.
+                </p>
+                <p>У Tkinter існує три методи пакування:</p>
+                <ul>
+                    <li>.<b>pack()</b></li>
+                    <li>.<b>grid()</b></li>
+                    <li>.<b>place()</b> </li>
+                </ul>
+                <p>
+                    <span style="color: #E64A19;"><b>!Зверніть увагу</b>, що в одному вікні або фреймі можна
+                        використовувати тільки один тип пакувальника. При змішуванні різних пакувальників програма,
+                        швидше за все, працювати не буде!</span>
+                </p>
+                <!-- Метод .pack() -->
+                <h3>Метод .pack()</h3>
+                <p>Як правило цей пакувальник використовують для розміщення віджетів один за одним (зліва направо або
+                    зверху вниз). При використанні цього пакувальника за допомогою властивості <i>side</i> можна вказати
+                    до якої сторони батьківського віджета він повинен примикати, за допомогою властивості <i>fill</i>
+                    можна заповнити віджетом весь простір по горизонталі або вертикалі, властивість <i>anchor</i> –
+                    допоможе припасувати віджет до відповідної сторони горизонту. </p>
+                <p><b>Властивості .pack():</b></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Властивість</th>
+                            <th>Значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">side</td>
+                            <td>
+                                <div style="line-height: 1.6; padding: 5px 0;"> &bull;
+                                    TOP (<i>за замовчуванням</i>) — розміщує віджет зверху<br> &bull;
+                                    BOTTOM — розміщує віджет знизу<br> &bull;
+                                    LEFT — розміщує віджет ліворуч<br> &bull;
+                                    RIGHT — розміщує віджет праворуч
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">fill</td>
+                            <td>
+                                <div style="line-height: 1.6; padding: 5px 0;">
+                                    Змушує віджет заповнити весь доступний простіру вказаному напрямку по одній із
+                                    осей:<br> &bull;
+                                    X - заповнює простір по горизонталі<br> &bull;
+                                    Y - Заповнює прострі по вертикалі>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">anchor</td>
+                            <td>
+                                <div style="line-height: 1.6; padding: 5px 0;">
+                                    Змушує віджет припасуватися до однієї із сторін в якому цей віджет розміщений:<br>
+                                    &bull;
+                                    N - (<i>nord</i>) до північнох сторони<br> &bull;
+                                    S - (<i>south</i>) до південної сторони<br> &bull;
+                                    W - (<i>west</i>) до західної сторони<br> &bull;
+                                    E - (<i>east</i>) до східної сторони<br>
+                                    Значення властивостей можна комбінувати: NW, SE, NSWE, тощо.
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                <!-- Метод .grid() -->
+
+                <h3>Метод .grid()</h3>
+                <p>Слово <i>grid</i> перекладається з англійської як <i>сітка</i>. Тому віджети цей пакувальник
+                    розміщує у сітці, а точніше, у таблиці. Вікно розділяється на рядки та стовпці і кожна комірка в
+                    отриманій таблиці може містити віджет. Адреса кожної комірки складається з номера рядка і номера
+                    стовпчика. Нумерація починається з нуля. Комірки можна об'єднувати як по вертикалі, так і по
+                    горизонталі.</p>
+                <p>Метод <i>.grid()</i> є найбільш гнучким менеджером геометрії в tkinter.</p>
+                <p>Розміщення віджета в тій чи іншій клітинці задається через аргументи <i>row</i> і <i>column</i>, яким
+                    присвоюються відповідно номер рядка і стовпчика. Щоб об'єднати комірки по горизонталі,
+                    використовується атрибут <i>columnspan</i>, якому присвоюється кількість поєднуваних комірок. А
+                    опція <i>rowspan</i> об'єднує комірки по вертикалі.</p>
+                <p><b>Властивості .grid():</b></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Властивість</th>
+                            <th>Значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">row</td>
+                            <td>
+                                Номер рядка в який поміщаємо віджет
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">column</td>
+                            <td>
+                                Номер стовпця в який поміщаємо віджет
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">columnspan</td>
+                            <td>
+                                Кількість стовпців які займає віджет
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">rowspan</td>
+                            <td>
+                                Кількість рядків які займає віджет
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">padx / pady</td>
+                            <td>
+                                Розмір зовнішньої межі по вертикалі або горизонталі (<i>розширюється вільний
+                                    простір</i>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">ipadx / ipady</td>
+                            <td>
+                                Розмір внутрішньої межі по вертикалі або горизонталі (<i>розширюється сам віджет</i>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">sticky</td>
+                            <td>
+                                <div style="line-height: 1.6; padding: 5px 0;">
+                                    Вказує до якої сторони припасуватися віджет:<br> &bull;
+                                    n - (<i>nord</i>) до північнох сторони<br> &bull;
+                                    s - (<i>south</i>) до південної сторони<br> &bull;
+                                    w - (<i>west</i>) до західної сторони<br> &bull;
+                                    e - (<i>east</i>) до східної сторони<br>
+                                    Значення властивостей можна комбінувати: nw, se, nwse, тощо.
+                                </div>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td class="property-name">in_</td>
+                            <td>
+                                Розміщує віджет всередині іншого батьківського вікна або контейнера.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+
+                <!-- Метод .place() -->
+                <h3>Метод .place()</h3>
+                <p>.<i>place()</i> є простим пакувальником, що дозволяє розміщувати віджет в фіксованому місці з фіксованим розміром. При використанні цього пакувальника необхідно вказувати координати кожного віджета. Цей пакувальник, хоч і здається незручним, надає повну свободу в розміщенні віджетів на вікні.</p>
+                <p>Методом <i>.place()</i> віджету вказується його положення або в абсолютних значеннях (<i>в пікселях</i>), або відносних (<i>в частках батьківського вікна</i>).</p>
+                
+                <p><b>Властивості .place():</b></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Властивість</th>
+                            <th>Значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">row</td>
+                            <td>
+                                Номер рядка в який поміщаємо віджет
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">column</td>
+                            <td>
+                                Номер стовпця в який поміщаємо віджет
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">columnspan</td>
+                            <td>
+                                Кількість стовпців які займає віджет
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">rowspan</td>
+                            <td>
+                                Кількість рядків які займає віджет
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">padx / pady</td>
+                            <td>
+                                Розмір зовнішньої межі по вертикалі або горизонталі (<i>розширюється вільний
+                                    простір</i>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">ipadx / ipady</td>
+                            <td>
+                                Розмір внутрішньої межі по вертикалі або горизонталі (<i>розширюється сам віджет</i>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">sticky</td>
+                            <td>
+                                <div style="line-height: 1.6; padding: 5px 0;">
+                                    Вказує до якої сторони припасуватися віджет:<br> &bull;
+                                    n - (<i>nord</i>) до північнох сторони<br> &bull;
+                                    s - (<i>south</i>) до південної сторони<br> &bull;
+                                    w - (<i>west</i>) до західної сторони<br> &bull;
+                                    e - (<i>east</i>) до східної сторони<br>
+                                    Значення властивостей можна комбінувати: nw, se, nwse, тощо.
+                                </div>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td class="property-name">in_</td>
+                            <td>
+                                Розміщує віджет всередині іншого батьківського вікна або контейнера.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- Приклад -->
+            <div class="lesson-block">
+                <h3>Приклад .pack()</h3>
+                <p>Створимо у вікні чотири різнокольорові мітки та упакуємо методом <i>.pack()</i>.</p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *
+win=Tk()
+win.title(".pack()")
+win.geometry("641x330")
+label1 = Label(text="1", width=20, height=4, font="Arial 13", bg="coral").pack()
+label2 = Label(text="2", width=20, height=4, font="Arial 13", bg="green2").pack()
+label3 = Label(text="3", width=20, height=4, font="Arial 13", bg="light blue").pack()
+label4 = Label(text="4", width=20, height=4, font="Arial 13", bg="gold").pack()
+win.mainloop()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example3_1.png" alt="Приклад Tk">
+                    </div>
+                </div>
+
+                <p>А зараз ці ж мітки впорядкуємо горизонтально з права на ліво та заповнимо весь простір по
+                    вертикалі опція (<i>RIGHT</i>) та опція (<i>Y</i>).</p>
+
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *
+win=Tk()
+win.title(".pack()")
+win.geometry("641x330")
+label1 = Label(text="1", width=17, height=4, font="Arial 13", bg="coral").pack(side=RIGHT, fill=Y)
+label2 = Label(text="2", width=17, height=4, font="Arial 13", bg="green2").pack(side=RIGHT, fill=Y)
+label3 = Label(text="3", width=17, height=4, font="Arial 13", bg="light blue").pack(side=RIGHT, fill=Y)               
+label4 = Label(text="4", width=17, height=4, font="Arial 13", bg="gold").pack(side=RIGHT, fill=Y)
+win.mainloop()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example3_2.png" alt="Приклад Tk">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Завдання -->
+            <div class="lesson-block">
+                <h3>Завдання</h3>
+                <ol>
+                    <li>
+                        Напишіть код програми, в якому створіть мітки за зразком.
+                        <p><img src="../images/tkinter/topic1/task2_1.png" width=98% alt="Приклад Tk"></p>
+
+                    </li>
+                    <li>
+                        Файл з кодом програми збережіть у власну папку з іменем tk_2_01.py;
+                    </li>
+                    <li>
+                        Назви кольорів для для міток: red, orange, yellow, green, cyan, bleu, purple;
+                    </li>
+                    <li>Назви кольорів для для напису міток: pink, indianred4, yellow4, green2, steelblue, steelblue1,
+                        mediumpurple1;</li>
+                </ol>
+
+                <p><i>* для горизонтального відображення віджетів у вікні програми ми використали метод
+                        <b>.pack(side=LEFT, fill=Y)</b> з його властивостями, про них більш детально дізнаємося в
+                        наступній темі.</i></p>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="../sources.html">Джерела</a></li>
+                    <li><a href="../license.html">Ліцензія</a></li>
+                    <li><a href="../about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

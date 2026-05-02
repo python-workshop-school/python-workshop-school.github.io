@@ -361,17 +361,15 @@ body {
     gap: 20px;
 }
 
+/* Перший стовпець трохи ширший для тексту */
+.brand-info {
+    max-width: 300px;
+}
 /* Налаштування стовпців */
 .footer-column {
     flex: 0 1 auto;
     /* Стовпці займають стільки місця, скільки потрібно тексту */
 }
-
-/* Перший стовпець трохи ширший для тексту */
-.brand-info {
-    max-width: 300px;
-}
-
 /* Стилі заголовків */
 .footer-column h3 {
     color: #ff8c00;
@@ -379,11 +377,6 @@ body {
     margin-bottom: 15px;
     font-size: 1.1rem;
 }
-
-.orange-text {
-    color: #ff8c00;
-}
-
 /* Списки та посилання */
 .footer-column ul {
     list-style: none;
@@ -401,6 +394,10 @@ body {
 }
 
 .footer-column a:hover {
+    color: #ff8c00;
+}
+
+.orange-text {
     color: #ff8c00;
 }
 
@@ -731,16 +728,6 @@ pre {
     }
 
     .main-menu {
-        /*display: none;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #fff;
-        width: 200px;
-        flex-direction: column;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        padding: 10px 0;
-        z-index: 1000; */
         display: flex;
         /* Змінюємо з none на flex */
         flex-direction: column;
@@ -791,14 +778,6 @@ pre {
     }
 
     pre {
-        /*
-        display: block;
-        overflow-x: auto;
-        box-sizing: border-box;
-        font-size: 14px;
-        padding: 12px;
-        width: 100%;
-        max-width: 100%;*/
         display: block;
         width: 100%;
         max-width: 100%;
@@ -807,6 +786,5 @@ pre {
         white-space: pre;
         /* Забороняє примусовий перенос рядків коду */
         box-sizing: border-box;
-
     }
 }
