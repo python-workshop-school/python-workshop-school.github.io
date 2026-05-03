@@ -365,11 +365,13 @@ body {
 .brand-info {
     max-width: 300px;
 }
+
 /* Налаштування стовпців */
 .footer-column {
     flex: 0 1 auto;
     /* Стовпці займають стільки місця, скільки потрібно тексту */
 }
+
 /* Стилі заголовків */
 .footer-column h3 {
     color: #ff8c00;
@@ -377,6 +379,7 @@ body {
     margin-bottom: 15px;
     font-size: 1.1rem;
 }
+
 /* Списки та посилання */
 .footer-column ul {
     list-style: none;
@@ -428,8 +431,6 @@ body {
     font-size: 28px;
     cursor: pointer;
 }
-
-
 
 /* Тут форматування сторінки з завданням*/
 .topics {
@@ -589,8 +590,12 @@ html {
 
 /*Стиль таблиці з властивостями*/
 table {
-    width: 100%;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    /* Або просто margin: 0 auto; */
     border-collapse: collapse;
+    ;
     /* Прибирає подвійні рамки */
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -599,14 +604,13 @@ table {
 th,
 td {
     border: 1px solid #ccc;
-    /* Колір сітки */
+    line-height: 1.6;
     padding: 8px;
     text-align: left;
 }
 
 th {
     background-color: #D9F2D9;
-    /* Світло-блакитний колір заголовка */
     font-weight: bold;
 }
 
@@ -786,5 +790,17 @@ pre {
         white-space: pre;
         /* Забороняє примусовий перенос рядків коду */
         box-sizing: border-box;
+    }
+
+    table {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /* Або просто margin: 0 auto; */
+        border-collapse: collapse;
+        ;
+        /* Прибирає подвійні рамки */
+        font-family: Arial, sans-serif;
+        font-size: 14px;
     }
 }
