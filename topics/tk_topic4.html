@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тема 4 Tkinter| Рождественська школа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href ='../index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="../index.html" class="menu-item">Головна</a>
+                <a href="../python.html" class="menu-item">Python</a>
+                <a href="../pygame.html" class="menu-item">Pygame</a>
+                <a href="../tkinter.html" class="menu-item">Tkinter</a>
+                <a href="../turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Тема 4</h1>
+                <h2>Клас Frame()</h2>
+                <a href="../tkinter.html#tasks" class="hero-btn">до цеху tkinter</a>
+            </div>
+            <!--
+            <div class="hero-image">
+                <img src="../images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+            -->
+        </div>
+    </section>
+
+    <section class="lesson" id="tasks">
+        <div class="container">
+
+            <!-- Теорія -->
+            <div class="lesson-block">
+                <h3>Теоретичний матеріал</h3>
+                <p>
+                    Віджет Frame – клас фрейму (рамки). Він є контейнером для інших віджетів, що дозволяє групувати їх
+                    разом. Фрейм не має власного візуального представлення, але може мати фон, межі та інші властивості,
+                    які допомагають візуально відокремити його від інших частин інтерфейсу. Фрейми часто
+                    використовуються для створення складних макетів, де потрібно розділити вікно на кілька секцій або
+                    групувати віджети за певною логікою.
+                </p>
+                <p><b>Загальний синтаксис:</b></p>
+                <pre><code class="language-python">name = Frame(window)
+</code></pre>
+                <p>де, name – ім'я фрейму, а window – ім'я вікна, на якому він розташовується</p>
+                <p>
+                    <b>Властивості Frame:</b>
+                </p><br>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Властивість</th>
+                            <th>Значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">width</td>
+                            <td>
+                                Ширина фрейму в пікселях. Якщо не вказано, фрейм буде розтягуватися по ширині, щоб
+                                помістити всі свої віджети.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">height</td>
+                            <td>
+                                Висота фрейму в пікселях. Якщо не вказано, фрейм буде розтягуватися по висоті, щоб
+                                помістити всі свої віджети.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">background (bg)</td>
+                            <td>
+                                Колір фону фрейму. Може бути заданий як назва кольору (наприклад, "red", "blue",
+                                "green") або як шестнадцятковий код (наприклад, "#FF0000" для червоного).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">borderwidth (bd)</td>
+                            <td>
+                                Ширина рамки фрейму в пікселях. За замовчуванням 0, що означає відсутність рамки.
+                            </td>
+                        </tr>
+                        <tr></tr>
+                        <td class="property-name">relief</td>
+                        <td>
+                            Стиль рамки фрейму. Може бути "flat", "raised", "sunken", "groove", "ridge".
+                        </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">padx / pady</td>
+                            <td>
+                                Відступи всередині фрейму по горизонталі (padx) та вертикалі (pady) в пікселях. Вони
+                                створюють внутрішній простір між краями фрейму та його вмістом.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">ipadx / ipady</td>
+                            <td>
+                                Відступи всередині фрейму по горизонталі (ipadx) та вертикалі (ipady) в пікселях. Вони
+                                створюють внутрішній простір між краями віджетів, розташованих всередині фрейму, та їх
+                                вмістом.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">state</td>
+                            <td>
+                                Стан фрейму. Може бути "normal", "disabled".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">highlightbackground</td>
+                            <td>
+                                Колір фону фрейму при наведенні на нього. Може бути заданий як назва кольору або як
+                                шестнадцятковий код.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">highlightcolor</td>
+                            <td>
+                                Колір рамки фрейму при наведенні на нього. Може бути заданий як назва кольору або как
+                                шестнадцятковий код.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">highlightthickness</td>
+                            <td>
+                                Ширина рамки фрейму при наведенні на нього в пікселях. За замовчуванням 0, що означает
+                                отсутствие рамки.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">takefocus</td>
+                            <td>
+                                Вказує, чи може фрейм отримувати фокус клавіатури. Може бути True або False.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">cursor</td>
+                            <td>
+                                Вказує тип курсора, який буде відображатися при наведенні на фрейм. Може бути "arrow",
+                                "hand2", "cross", "circle" та інші.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Приклад -->
+            <div class="lesson-block">
+                <h3>Приклади</h3>
+                <p>1. Розмістимо у вікні дві мітки з нписами "Один" та "Двата" і фрейм для розділення міток.</p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *                 
+root = Tk()
+root.title(".frame()")
+root.geometry('300x120')                            
+lab1 = Label(root, height=2, text="Один", font="Arial 13").pack()
+separator = Frame(root, height=2, bd=1, relief=SUNKEN).pack(fill=X, padx=5, pady=5)
+lab2 = Label(root, text="Два", font="Arial 13").pack()
+root.mainloop()   
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example4_1.png" alt="Приклад Tk">
+                    </div>
+                </div>
+
+
+
+
+
+
+                <p>2. Створимо мітки, які описують усі можливі стилів фреймів та застосуємо ці стилі до відповідних
+                    міток.</p>
+
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *
+root = Tk()
+mainFrame = Frame(root).pack()
+f1 = Frame(mainFrame, borderwidth=2, relief=RAISED)  
+Label(f1, text='RAISED', width=10).pack(side=LEFT)
+f1.pack(pady=8)
+f2 = Frame(mainFrame, borderwidth=2, relief=SUNKEN)
+Label(f2, text='SUNKEN', width=10).pack(side=LEFT)
+f2.pack(pady=8)
+f3 = Frame(mainFrame, borderwidth=2, relief=FLAT)
+Label(f3, text='FLAT', width=10).pack(side=LEFT)
+f3.pack(pady=8)
+f4 = Frame(mainFrame, borderwidth=3, relief=RIDGE)
+Label(f4, text='RIDGE', width=10).pack(side=LEFT)
+f4.pack(pady=8)
+f5 = Frame(mainFrame, borderwidth=2, relief=GROOVE)
+Label(f5, text='GROOVE', width=10).pack(side=LEFT)
+f5.pack(pady=8)
+f6 = Frame(mainFrame, borderwidth=2, relief=SOLID)
+Label(f6, text='SOLID', width=10).pack(side=LEFT)
+f6.pack(pady=8)
+root.mainloop() 
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example4_2.png" alt="Приклад Tk">
+                    </div>
+                </div><br>
+            </div>
+
+
+                <!-- Завдання -->
+                <div class="lesson-block">
+                    <h3>Завдання</h3>
+                    <p>Створіть з віджетів Frame шахову дошку за зразком поданим нижче.</p>
+                    <ul>
+                        <li>
+                            Заголовок вікна програми: «ChessBoard»;
+                        </li>
+                        <li>
+                            Ширина та висота кожного фрейму: 50 px;
+                        </li>
+                        <li>
+                            Подумайте, який пакувальник найкраще застосувати до даного завдання та використайте його;
+                        </li>
+                        <li>
+                            Файл з кодом програми збережіть у власну папку з іменем tk_4_01.py;
+                        </li>
+                    </ul>
+                    
+                    <p><b>Зразок:</b></p>
+
+                    <div class="example-image">
+                        <img src="../images/tkinter/topic1/example4_3.png" alt="Завдання Tk">
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="../sources.html">Джерела</a></li>
+                    <li><a href="../license.html">Ліцензія</a></li>
+                    <li><a href="../about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
