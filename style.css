@@ -521,12 +521,18 @@ body {
 .example-image {
     flex: 1;
     min-width: 260px;
+    /*Додамо вирівнювання по центру для картинки*/
+    text-align: center;
 }
 
 .example-image img {
     width: 100%;
     border-radius: 10px;
     border: 1px solid #ccc;
+}
+
+.example-title {
+   text-align: center;
 }
 
 .container {
