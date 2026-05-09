@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тема 9 Tkinter| Рождественська школа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href ='../index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="../index.html" class="menu-item">Головна</a>
+                <a href="../python.html" class="menu-item">Python</a>
+                <a href="../pygame.html" class="menu-item">Pygame</a>
+                <a href="../tkinter.html" class="menu-item">Tkinter</a>
+                <a href="../turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Тема 9</h1>
+                <h2>Клас Checkbutton()</h2>
+                <a href="../tkinter.html#tasks" class="hero-btn">до цеху tkinter</a>
+            </div>
+            <!--
+            <div class="hero-image">
+                <img src="../images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+            -->
+        </div>
+    </section>
+
+    <section class="lesson" id="tasks">
+        <div class="container">
+
+            <!-- Теорія -->
+            <div class="lesson-block">
+                <h3>Теоретичний матеріал</h3>
+                <p>
+                    Віджет Checkbutton – клас прапорців (чекбоксів). Цей віджет GUI дозволяє користувачеві вибрати
+                    один або кілька елементів з набору.  Коли користувач вибирає чекбокс, він не скидається автоматично.
+                    Чекбокси зазвичай використовуються для вибору декількох варіантів з усіх можливих. Наприклад, вибір
+                    характеристик для обраного товару, вибір товарів для порівняння, або вибір інгрідієнтів для
+                    приготування піци.
+                </p>
+                <p><b>Загальний синтаксис:</b></p>
+                <pre><code class="language-python">name = Checkbutton(window, options)
+</code></pre>
+                <p>
+                    де, name – ім'я прапорця, window – ім'я вікна, на якому розташовується прапорець, options –
+                    параметри
+                    прапорця.
+                </p>
+                <p>
+                    <b>Властивості Checkbutton:</b>
+                </p><br>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Властивість</th>
+                            <th>Значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">width</td>
+                            <td>
+                                Ширина прапорця в пікселях.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">height</td>
+                            <td>
+                                Висота прапорця в пікселях.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">text</td>
+                            <td>
+                                Текст, що відображається на прапорці.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">background (bg)</td>
+                            <td>
+                                Колір фону прапорця.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">foreground (fg)</td>
+                            <td>
+                                Колір тексту на прапорці.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">borderwidth (bd)</td>
+                            <td>
+                                Ширина рамки навколо прапорця в пікселях.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">state</td>
+                            <td>
+                                Стан прапорця. Може мати значення: "normal" або "disabled".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">compound</td>
+                            <td>
+                                Спосіб розміщення зображення та тексту на прапорці. Може мати значення: "left",
+                                "right", "top", "bottom", "center".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">justify</td>
+                            <td>
+                                Вирівнювання тексту на прапорці. Може мати значення: "left", "right", "center".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">relief</td>
+                            <td>
+                                Стиль рамки навколо прапорця. Може мати значення: "flat", "raised", "sunken",
+                                "groove", "ridge".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">overrelief</td>
+                            <td>
+                                Стиль рамки прапорця при наведенні на неї. Може бути: "flat", "raised", "sunken",
+                                "groove", "ridge".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">font</td>
+                            <td>
+                                Шрифт тексту на прапорці. Може бути заданий у вигляді рядка, наприклад: "Arial 12", або
+                                у вигляді кортежу, наприклад: ("Arial", 12).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">image</td>
+                            <td>
+                                Зображення, що відображається на прапорці.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">onvalue</td>
+                            <td>
+                                Значення, яке приймається змінною при виборі прапорця.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">offvalue</td>
+                            <td>
+                                Значення, яке приймається змінною при невиборі прапорця.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">variable</td>
+                            <td>
+                                Змінна, яка зберігає значення прапорця.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                <p>
+                    Властивості Checkbutton дозволяють налаштовувати зовнішній вигляд та поведінку прапорця. Ви можете
+                    використовувати ці властивості для створення інтуїтивно зрозумілих та привабливих інтерфейсів
+                    користувача у своїх програмах на Python з використанням Tkinter.
+                </p>
+
+
+                <p><b>Функції Checkbutton:</b></p>
+                <p>
+                    Функції Checkbutton дозволяють виконувати різні операції з прапорцями, такі як отримання значення,
+                    встановлення значення та інші.
+                </p><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Функція</th>
+                            <th>Значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">select( )</td>
+                            <td>
+                                Вибирає прапорець. Після виклику цієї функції прапорець стає вибраним, і змінна,
+                                пов'язана з ним через властивість variable, набуває значення, яке відповідає властивості
+                                onvalue цього прапорця.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">deselect( )</td>
+                            <td>
+                                Скидає вибір прапорця. Після виклику цієї функції прапорець стає не вибраним, і
+                                змінна, пов'язана з ним через властивість variable, набуває значення None або іншого
+                                значення, яке відповідає не вибраному прапорцю.
+                            </td>
+                        <tr>
+                            <td class="property-name">toggle( )</td>
+                            <td>
+                                Перемикає стан прапорця. Якщо прапорець був вибраним, він стає не вибраним, і навпаки.
+                                Змінна, пов'язана з прапорцем через властивість variable, відповідно набуває значення,
+                                яке відповідає новому стану прапорця.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                <p>
+                    Прапорці не вимагають установки між собою зв'язку, тому може виникнути питання, а чи потрібні тут
+                    змінні Tkinter? Так вони потрібні, щоб отримувати відомості про стан прапорців. За значенням
+                    пов'язаної з Checkbutton змінної можна визначити, чи обрано прапорець чи ні, що в свою чергу вплине
+                    на хід виконання програми.
+                </p>
+                <p>
+                    У кожного прапорця повинна бути своя окрема змінна Tkinter!
+                </p>
+                <p>
+                    За допомогою опції onvalue встановлюється значення, яке приймає пов'язана змінна при включеному прапорці. За допомогою властивості offvalue — при вимкненому.
+                </p>
+            </div>
+
+            <!-- Приклад -->
+            <div class="lesson-block">
+                <h3>Приклад</h3>
+                <p>
+                    1. Створимо програму, яка у вікні містить десять перемикачів, розміщених горизонтально.
+                </p>
+
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *            
+root = Tk()
+for i in range(10):
+	ch_button = Checkbutton(root, text=str(i+1), font="Arial 13", bg="#FF8C00")
+	ch_button.pack(side=LEFT)                       
+root.mainloop()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example9_1.png" alt="Приклад Tk" , style="width: 330px;">
+                    </div>
+                </div><br>
+                <p>
+                    2. Створимо програму в якій у вікні розташувати мітку, два прапорці та дві кнопки. Перша кнопка друкує значення змінних var1 та var2, які визначають стан прапорців, а друга – закриває вікно програми. Стан прапорців визначаємо так: 1 – прапорець увімкнений, 0 – прапорець вимкнений.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *                   
+root = Tk()
+def var_states():
+    lab2['text']=f"жінка: {var1.get()}, чоловік: {var2.get()}"
+    lab2.config(font="Arial 13")
+lab1 = Label(root, width=35, text="Оберіть стать:", font="Arial 13").pack()
+var1 = IntVar()                          
+check_b1 = Checkbutton(root, text="Жінка", font="Arial 13", variable=var1, onvalue=1, offvalue=0).pack()
+var2 = IntVar()
+check_b2 = Checkbutton(root, text="Чоловік", font="Arial 13", variable=var2, onvalue=1, offvalue=0).pack()
+lab2 = Label(root)
+lab2.pack()
+b1 = Button(root, text='Показати', font="Arial 13", bg="#333333", fg="white", command=var_states).pack(side=LEFT)
+b2 = Button(root, text='Закрити', font="Arial 13", bg="#ff8c00", fg="#333333", command=root.destroy).pack(side=RIGHT)
+root.mainloop()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example9_2.png" alt="Приклад Tk" , style="width: 280px;">
+                    </div>
+                </div><br>
+                
+            </div>
+
+            <!-- Завдання -->
+            <div class="lesson-block">
+                <h3>Завдання</h3>
+                <p>
+                    1. Створіть прапорці за зразком 1: один прапорець із шести повинен бути недоступним для взаємодії. Розташуйте прапорці за допомогою пакувальника grid. Файл з кодом
+                    програми збережіть у власну папку з іменем tk_9_01.py.
+                </p>
+                <p><i>Зразок 1</i></p>
+                <div class="example-image">
+                    <img src="../images/tkinter/topic1/task_9_1.png" alt="Приклад Tk" , style="width: 300px;">
+                </div> 
+                <p style="font-size: 12pt;">
+                    <i>Підказка</i>: Щоб прапорець став недоступним, задай властивості state значення DISABLED.
+                </p>
+                <p>
+                    2. Створіть прапорці та кнопку "Вибрати все" за зразком. При натисканні на кнопку усі прапорці стають увімкненими. Файл з кодом програми збережіть у власну папку з іменем tk_9_02.py.
+                </p>
+                <p><i>Зразок 2</i></p>
+                <div class="example-image">
+                    <img src="../images/tkinter/topic1/task_9_2.png" alt="Приклад Tk" , style="width: 300px;">
+                </div><br>
+                 <p style="font-size: 12pt;">
+                    <i>Підказка</i>: При додавання події до кнопки використовуйте функцію select().
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="../sources.html">Джерела</a></li>
+                    <li><a href="../license.html">Ліцензія</a></li>
+                    <li><a href="../about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
