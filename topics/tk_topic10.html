@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тема 10 Tkinter| Рождественська школа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href ='../index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="../index.html" class="menu-item">Головна</a>
+                <a href="../python.html" class="menu-item">Python</a>
+                <a href="../pygame.html" class="menu-item">Pygame</a>
+                <a href="../tkinter.html" class="menu-item">Tkinter</a>
+                <a href="../turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Тема 10</h1>
+                <h2>Клас Scale()</h2>
+                <a href="../tkinter.html#tasks" class="hero-btn">до цеху tkinter</a>
+            </div>
+            <!--
+            <div class="hero-image">
+                <img src="../images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+            -->
+        </div>
+    </section>
+
+    <section class="lesson" id="tasks">
+        <div class="container">
+
+            <!-- Теорія -->
+            <div class="lesson-block">
+                <h3>Теоретичний матеріал</h3>
+                <p>
+                    Віджет Scale – клас повзунка (шкала). Цей віджет дозволяє користувачеві вибирати числове значення,
+                    переміщаючи повзунок вздовж горизонтальної або вертикальної шкали. Віджет Scale може бути
+                    використаний для вибору значень у певному діапазоні, наприклад, для налаштування гучності звуку,
+                    вибору кольору або встановлення розміру шрифту.
+                </p>
+                <p><b>Загальний синтаксис:</b></p>
+                <pre><code class="language-python">name = Scale(window, options)
+</code></pre>
+                <p>
+                    де, name – ім'я шкали, window – ім'я вікна, на якому розташовується шкала, options – параметри
+                    шкали.
+                </p>
+                <p>
+                    <b>Властивості Scale:</b>
+                </p><br>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Властивість</th>
+                            <th>Значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">width</td>
+                            <td>
+                                Ширина шкали в пікселях.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">background (bg)</td>
+                            <td>
+                                Колір фону шкали.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">foreground (fg)</td>
+                            <td>
+                                Колір тексту на шкалі.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">borderwidth (bd)</td>
+                            <td>
+                                Ширина рамки навколо шкали в пікселях.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">state</td>
+                            <td>
+                                Стан шкали. Може мати значення: "normal" або "disabled".
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td class="property-name">justify</td>
+                            <td>
+                                Вирівнювання тексту на шкалі. Може мати значення: "left", "right", "center".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">relief</td>
+                            <td>
+                                Стиль рамки навколо шкали. Може мати значення: "flat", "raised", "sunken",
+                                "groove", "ridge".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">overrelief</td>
+                            <td>
+                                Стиль рамки шкали при наведенні на неї. Може бути: "flat", "raised", "sunken",
+                                "groove", "ridge".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">font</td>
+                            <td>
+                                Шрифт тексту на шкалі. Може бути заданий у вигляді рядка, наприклад: "Arial 12", або
+                                у вигляді кортежу, наприклад: ("Arial", 12).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">from_</td>
+                            <td>
+                                Початкове значення шкали.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">to</td>
+                            <td>
+                                Кільцеве значення шкали.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">tickinterval</td>
+                            <td>
+                                Інтервал між мітками на шкалі.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">resolution</td>
+                            <td>
+                                Роздільна здатність шкали. Вказує, на які кроки буде розбитий діапазон значень шкали.
+                                Наприклад, якщо from_=0, to=10 і resolution=1, то шкала буде мати значення 0, 1, 2, ...,
+                                10. Якщо resolution=0.5, то шкала буде мати значення 0, 0.5, 1, 1.5, ..., 10.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">orient</td>
+                            <td>
+                                Орієнтація шкали. Може мати значення: "horizontal" (горизонтальна) або "vertical"
+                                (вертикальна).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">length</td>
+                            <td>
+                                Довжина шкали в пікселях.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">label</td>
+                            <td>
+                                Текст, який відображається над шкалою.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">variable</td>
+                            <td>
+                                Змінна Tkinter, яка пов'язана зі шкалою. Значення цієї змінної буде оновлюватися при
+                                переміщенні повзунка на шкалі.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                <p>
+                    Властивість variable дозволяє зв'язати шкалу з певною змінною Tkinter, такою як IntVar або
+                    DoubleVar. Це дозволяє отримувати поточне значення шкали та використовувати його в програмі.
+                </p>
+
+                <p><b>Функції Scale:</b></p>
+                <p>
+                    Функції Scale дозволяють виконувати різні операції з шкалою, такі як отримання значення, встановлення значення та інші.
+                </p><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Функція</th>
+                            <th>Значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">get()</td>
+                            <td>
+                                Повертає поточне значення шкали. Це значення буде відповідати позиції повзунка на шкалі та може бути використано для виконання певних дій у програмі.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">set()</td>
+                            <td>
+                                Встановлює значення шкали. Ця функція дозволяє програмно змінити позицію повзунка на шкалі.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+
+                <p>
+                    Важливо пам'ятати, що при використанні властивості variable для зв'язування шкали з певною змінною Tkinter, необхідно створити цю змінну перед створенням шкали. Зазвичай використовуються типи змінних IntVar або DoubleVar, залежно від того, чи потрібні цілі числа або числа з плаваючою комою.
+                </p>
+            </div>
+
+            <!-- Приклад -->
+            <div class="lesson-block">
+                <h3>Приклад</h3>
+                <p>
+                    1. Розмістіть у вікні шкалу від 0 до 10 з інтервалом 2 та кнопку, після натиснення на яку обране значення відображається на кнопці.
+                </p>
+
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *                         
+root = Tk()
+def get_value():
+	button['text']=scale.get()
+scale = Scale(root, orient=HORIZONTAL, bg="#FF8c00", fg="#333333", font="Arial 11", length=300, from_=0, to=10, tickinterval=2, resolution=2)
+scale.pack()
+button = Button(root, bg="white", fg="#333333", font="Arial 11", width=20, text="Виберіть значення", command=get_value)   
+button.pack()
+root.mainloop()  
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example10_1.png" alt="Приклад Tk" , style="width: 300px;">
+                    </div>
+                </div><br>
+                <p>
+                    2. Розмістимо у вікні горизонтальну шкалу від 10 до 18 з інтервалом 1 та мітку з текстом "Font size". Вибране значення на шкалі має змінювати розмір тексту мітки: якщо обрано 14, то розмір тексту теж 14 і т.д.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *                      
+root = Tk()
+root.geometry('227x110')
+# ФУНКЦІЯ ОБОВ'ЯЗКОВО ПОВИННА ПРИЙМАТИ АРГУМЕНТ ДЛЯ ВЗАЄМОДІЇ З ПОВЗУНКОМ!!!)
+def size(val):
+	label.config(font=("Arial", val))
+scale = Scale(root, orient=HORIZONTAL, length=220, bg="#ff8c00", fg="#333333", from_=10, to=18, tickinterval=1, resolution=1,command=size)          
+scale.grid(row=0, column=0)
+label = Label(root, text='GUI', fg="#333333", font=("Arial", 10)) 
+label.grid(row=1, column=0)
+root.mainloop()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example10_2.png" alt="Приклад Tk" , style="width: 300px;">
+                    </div>
+                </div><br>
+
+            </div>
+
+            <!-- Завдання -->
+            <div class="lesson-block">
+                <h3>Завдання</h3>
+                <p>
+                    1. Створіть повзунки за зразком 1. Файл з кодом
+                    програми збережіть у власну папку з іменем tk_10_01.py.
+                </p>
+                <p><i>Зразок 1</i></p>
+                <div class="example-image">
+                    <img src="../images/tkinter/topic1/task_10_2.png" alt="Приклад Tk" , style="width: 300px;">
+                </div>
+                <p>
+                    2. Створіть пусту мітку та повзунок, який змінює текст у мітці на обране значення на шкалі - зразок 2. Якщо на повзунку обрано значення 89, то у мітці має з'явитися число "89". Файл з кодом програми збережіть у власну папку з іменем tk_10_02.py.
+                </p>
+                <p><i>Зразок 2</i></p>
+                <div class="example-image">
+                    <img src="../images/tkinter/topic1/task_10_1.png" alt="Приклад Tk" , style="width: 300px;">
+                </div>
+                <p style="font-size: 12pt;">
+                    <i>Підказка</i>: для виконання завдання 2 необхідно використати властивість command віджета Scale та функцію, яка буде приймати аргумент (значення шкали) та змінювати текст мітки на це значення.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="../sources.html">Джерела</a></li>
+                    <li><a href="../license.html">Ліцензія</a></li>
+                    <li><a href="../about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
