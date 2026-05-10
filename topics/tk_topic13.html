@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тема 13 Tkinter | Рождественська школа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href ='../index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="../index.html" class="menu-item">Головна</a>
+                <a href="../python.html" class="menu-item">Python</a>
+                <a href="../pygame.html" class="menu-item">Pygame</a>
+                <a href="../tkinter.html" class="menu-item">Tkinter</a>
+                <a href="../turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Тема 13</h1>
+                <h2>Клас Menu()</h2>
+                <a href="../tkinter.html#tasks" class="hero-btn">до цеху tkinter</a>
+            </div>
+            <!--
+            <div class="hero-image">
+                <img src="../images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+            -->
+        </div>
+    </section>
+
+    <section class="lesson" id="tasks">
+        <div class="container">
+
+            <!-- Теорія -->
+            <div class="lesson-block">
+                <h3>Теоретичний матеріал</h3>
+                <p>
+                    Віджет Menu – клас для створення меню в Tkinter. Меню присутнє у багатьох додатках. Ви можете створювати різні типи меню, такі як спадні меню, контекстні меню та панелі інструментів, а також додавати до них різноманітні елементи, такі як команди, перемикачі та підменю.
+                </p>
+                <p><b>Загальний синтаксис:</b></p>
+                <pre><code class="language-python">name = Menu(window, options)
+windows.config(menu=name)
+</code></pre>
+                <p>
+                    де, name – ім'я меню, window – ім'я вікна, на якому розташовується меню, options – параметри меню.
+                </p>
+                <p>
+                    <b>Властивості Menu:</b>
+                </p><br>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Властивість</th>
+                            <th>Значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">tearoff</td>
+                            <td>
+                                Визначає, чи може меню бути від'єднаним від вікна. Якщо встановлено в 1 (за замовчуванням), меню може бути від'єднаним, якщо встановлено в 0, меню не може бути від'єднаним.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">bg</td>
+                            <td>
+                                Визначає колір фону меню.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">fg</td>
+                            <td>
+                                Визначає колір тексту в меню.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">activebackground</td>
+                            <td>
+                                Визначає колір фону для активного пункту меню.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">activeforeground</td>
+                            <td>
+                                Визначає колір тексту для активного пункту меню.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">font</td>
+                            <td>
+                                Визначає шрифт для тексту в меню.
+                            </td>
+                        </tr>
+                         <tr>
+                            <td class="property-name">borderwidth</td>
+                            <td>
+                                Визначає товщину рамки навколо меню.
+                            </td>
+                        </tr>
+                         <tr>
+                            <td class="property-name">relief</td>
+                            <td>
+                                Визначає стиль рамки навколо меню (наприклад, FLAT, RAISED, SUNKEN, GROOVE, RIDGE).
+                            </td>
+                        </tr>
+                         <tr>
+                            <td class="property-name">postcommand</td>
+                            <td>
+                                Визначає функцію, яка буде викликана перед відображенням меню. Це дозволяє вам динамічно оновлювати вміст меню перед його показом.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                <p>
+                    Підменю створюються подібним чином. Основна відмінність полягає в тому, що вони прикріплені до батьківського меню (за допомогою add_cascade) замість вікна верхнього рівня. Параметри підменю такі ж, як і для основного меню, але вони застосовуються до підменю замість основного меню.
+                </p>
+
+                <p><b>Методи Menu:</b></p>
+                <p>
+                    Віджет Menu має багато методів, які дозволяють вам додавати різні типи пунктів меню, такі як команди, перемикачі та підменю. Ось деякі з основних методів, які ви можете використовувати для створення та керування меню в Tkinter:
+                    
+                </p><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Метод</th>
+                            <th>Опис</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">add_command()</td>
+                            <td>
+                                Додає пункт меню, який виконує певну команду при виборі.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">add_separator()</td>
+                            <td>
+                                Додає роздільник між пунктами меню.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">add_cascade()</td>
+                            <td>
+                                Додає підменю до основного меню.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">add_checkbutton()</td>
+                            <td>
+                                Додає пункт меню з прапорцем, який можна встановити або зняти.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">add_radiobutton()</td>
+                            <td>
+                                Додає пункт меню з радіокнопкою, який можна вибрати серед інших пунктів.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">delete()</td>
+                            <td>
+                                Видаляє пункт меню за його індексом або діапазоном індексів.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">entryconfig()</td>
+                            <td>
+                                Налаштовує параметри пункту меню за його індексом.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">index()</td>
+                            <td>
+                                Повертає індекс пункту меню за його назвою або типом.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">invoke()</td>
+                            <td>
+                                Виконує команду, пов'язану з пунктом меню за його індексом.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+
+                <p>
+                    Ці методи дозволяють вам створювати складні та функціональні меню в ваших додатках Tkinter, надаючи користувачам зручний спосіб взаємодії з вашим інтерфейсом.
+                </p>
+                <p>
+                    <b>
+                        Приклад як створити підменю в головному меню:
+                    </b>
+                        <pre><code class="language-python">name = Menu(my_menu)
+my_menu.add_cascade(label="Name", menu=name)
+</code></pre>
+                <p style="font-size: 12pt;">
+                    де, name – ім'я підменю, my_menu – ім'я головного меню, "Name" – мітка підменю.
+                </p>
+                <p>
+                    Додамо команди до підменю:
+                </p>
+                <pre><code class="language-python">name.add_command(label="Option 1", command=option1_function)
+name.add_command(label="Option 2", command=option2_function)
+my_menu.add_cascade(label="Name", menu=name)
+</code></pre>
+                <p style="font-size: 12pt;">
+                    де, Option 1 та Option 2 – назви команд, option1_function та option2_function – функції, які виконуються при виборі відповідної команди.
+                </p>
+            </div>
+
+            <!-- Приклад -->
+            <div class="lesson-block">
+                <h3>Приклад</h3>
+                <p>
+                    1. Створимо меню з двома пунктами: "Файл" та "Редагувати". Пункт "Файл" міститиме підменю з командами "Новий", "Відкрити" та "Зберегти", а пункт "Редагувати" міститиме підменю з командами "Копіювати", "Вставити" та "Вирізати". Кожна команда буде пов'язана з відповідною функцією, яка виконується при виборі команди. Крім того, ми налаштуємо кольори та шрифт для меню, щоб зробити його більш привабливим.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *
+root = Tk()
+root.title("Menu")
+my_menu = Menu(root, tearoff=0, bg="#f0f0f0", fg="#333333")
+file_menu = Menu(my_menu, tearoff=0, fg="#333333", font="Arial 11")
+file_menu.add_command(label="Новий")
+file_menu.add_command(label="Відкрити")
+file_menu.add_command(label="Зберегти")
+edit_menu = Menu(my_menu, tearoff=0, fg="#333333", font="Arial 11")
+edit_menu.add_command(label="Копіювати")
+edit_menu.add_command(label="Вставити")
+edit_menu.add_command(label="Вирізати")
+my_menu.add_cascade(label="Файл", menu=file_menu)
+my_menu.add_cascade(label="Редагувати", menu=edit_menu)
+root.config(menu=my_menu)
+root.mainloop()
+</code></pre>
+                    </div>
+
+
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example13_1.png" alt="Приклад Tk" , style="width: 210px;">
+                    </div>
+                </div>
+                <p>
+                    2. Створимо вікно з пунктами меню "Малювати" (має підпункти "Еліпс" і "Прямокутник") та "Вихід" (має підпункт "Вийти з програми"). Команди "Еліпс" і "Прямокутник" малюють на полотні Canvas відповідні фігури, а команда "Вийти з програми" закриває вікно.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import * 
+root = Tk()
+root.title("Menu")
+def oval():
+	c.delete("all")
+	c.create_oval(10, 10, 190, 280, fill="#ff8c00", outline="#ff8c00")
+def rectangle():
+    c.delete("all")
+    c.create_rectangle(10, 10, 190, 280, fill="light green", outline="light green")
+mainmenu = Menu(root)
+root.config(menu=mainmenu)
+drawmenu = Menu(mainmenu, tearoff=0, fg="#333333", font="Arial 11") 
+drawmenu.add_command(label="Еліпс", command=oval)
+drawmenu.add_command(label="Прямокутник", command=rectangle)
+exitmenu = Menu(mainmenu, tearoff=0, fg="#333333", font="Arial 11")
+exitmenu.add_command(label="Вийти з програми", command=root.destroy)
+mainmenu.add_cascade(label="Малювати", menu=drawmenu)
+mainmenu.add_cascade(label="Вихід", menu=exitmenu)
+c = Canvas(root, width=200, height=300)
+c.pack()
+root.mainloop()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example13_2.png" alt="Приклад Tk" , style="width: 210px;">
+                    </div>
+                </div><br>
+            </div>
+
+            <!-- Практична робота -->
+            <div class="lesson-block">
+                <h3>Завдання</h3>
+                <p>
+                    1. Створіть вікно програми з меню за зразком. Меню має містити наступні пункти: "Колір" та "Вийти". Пункт меню "Колір" повинен змінювати колір вікна на блакитний. Пункт "Вийти" повинен закривати вікно. Обидва пункти мають бути пов'язані з відповідними функціями, які виконуються при виборі команд. Налаштуйте кольори та шрифт для меню, щоб зробити його більш привабливим. Файл з кодом програми збережіть у власну папку з іменем tk_13_01.py.
+                </p>
+                <p><i>Зразок</i></p>
+                <div class="example-image">
+                    <img src="../images/tkinter/topic1/task_13_01.png" alt="Приклад Tk" , style="width: 250px;">
+                </div>
+                <p>
+                    2. Створіть вікно програми та додайте у нього віджет Canvas (полотно) розміром 400x400. Додайте до вікна меню з двома пунктами: "Фігури" та "Вихід". Пункт меню "Фігури" повинен містити підпункти "Коло", "Квадрат" та "Трикутник". При виборі пункту "Коло" на полотні має з'являтися коло, при виборі пункту "Квадрат" – квадрат, а при виборі пункту "Трикутник" – трикутник. Пункт меню "Вихід" повинен закривати вікно. Форму геометричних вігур та кольори підберіть за власним вподобанням. Файл з кодом програми збережіть у власну папку з іменем tk_13_02.py.
+                </p>
+            </div>
+    </section>
+
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="../sources.html">Джерела</a></li>
+                    <li><a href="../license.html">Ліцензія</a></li>
+                    <li><a href="../about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
