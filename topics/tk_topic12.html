@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тема 12 Tkinter | Рождественська школа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href ='../index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="../index.html" class="menu-item">Головна</a>
+                <a href="../python.html" class="menu-item">Python</a>
+                <a href="../pygame.html" class="menu-item">Pygame</a>
+                <a href="../tkinter.html" class="menu-item">Tkinter</a>
+                <a href="../turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Тема 12</h1>
+                <h2>Клас Canvas()</h2>
+                <a href="../tkinter.html#tasks" class="hero-btn">до цеху tkinter</a>
+            </div>
+            <!--
+            <div class="hero-image">
+                <img src="../images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+            -->
+        </div>
+    </section>
+
+    <section class="lesson" id="tasks">
+        <div class="container">
+
+            <!-- Теорія -->
+            <div class="lesson-block">
+                <h3>Теоретичний матеріал</h3>
+                <p>
+                    Віджет Canvas – клас полотна для малювання. Клас Canvas створює полотна, на яких можна розміщувати
+                    різні фігури. Це робиться за допомогою виклику відповідних методів. Під час розміщення геометричних
+                    примітивів вказуються їхні координати на холсті. Точкою відліку є лівий верхній кут. Координати
+                    задаються у вигляді кортежу (x, y), де x – це відстань від лівого краю полотна, а y – це відстань
+                    від верхнього краю полотна. Віджет Canvas також підтримує розміщення зображень та тексту, що робить
+                    його дуже гнучким для створення різноманітних графічних інтерфейсів та візуалізацій.
+                </p>
+                <p><b>Загальний синтаксис:</b></p>
+                <pre><code class="language-python">name = Canvas(window, options)
+</code></pre>
+                <p>
+                    де, name – ім'я полотна, window – ім'я вікна, на якому розташовується полотно, options – параметри
+                    полотна.
+                </p>
+                <p>
+                    <b>Властивості Canvas:</b>
+                </p><br>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Властивість</th>
+                            <th>Значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">width</td>
+                            <td>
+                                Ширина полотна для малювання в пікселях.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">height</td>
+                            <td>
+                                Висота полотна для малювання.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">background (bg)</td>
+                            <td>
+                                Колір фону полотна для малювання.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">borderwidth (bd)</td>
+                            <td>
+                                Ширина рамки навколо полотна в пікселях.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">state</td>
+                            <td>
+                                Стан полотна для малювання. Може мати значення: "normal" або "disabled".
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="property-name">highlightcolor</td>
+                            <td>
+                                Колір межі полотна, коли на ній малюють.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">highlightthickness</td>
+                            <td>
+                                Ширина межі полотна, коли на ній малюють, в пікселях.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">scrollregion</td>
+                            <td>
+                                Визначає область прокрутки для полотна, задаючи координати у вигляді кортежу (x1, y1,
+                                x2, y2).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">xscrollcommand</td>
+                            <td>
+                                Вказує функцію, яка буде викликатися при прокручуванні полотна по горизонталі.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">yscrollcommand</td>
+                            <td>
+                                Вказує функцію, яка буде викликатися при прокручуванні полотна по вертикалі.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                <p>
+                    Ці властивості дозволяють вам налаштовувати зовнішній вигляд та поведінку полотна для малювання.
+                    Наприклад, ви можете встановити ширину та висоту полотна, змінити колір фону, додати рамку навколо
+                    полотна або визначити область прокрутки для великого полотна.
+                </p>
+
+                <p><b>Методи Canvas:</b></p>
+                <p>
+                    Методи класу Canvas дозволяють вам створювати різні графічні примітиви, такі як лінії, прямокутники,
+                    кола, текст та зображення. Ви можете використовувати ці методи для малювання на полотні та створення
+                    складних графічних інтерфейсів.
+                </p><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Метод</th>
+                            <th>Опис</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">create_line(x1, y1, x2, y2, **options)</td>
+                            <td>
+                                Створює лінію на полотні.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">create_rectangle(x1, y1, x2, y2, **options)</td>
+                            <td>
+                                Створює прямокутник на полотні.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">create_oval(x1, y1, x2, y2, **options)</td>
+                            <td>
+                                Створює коло на полотні.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">create_polygon(points, **options)</td>
+                            <td>
+                                Створює багатокутник на полотні.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">create_arc(x1, y1, x2, y2, start, extent, **options)</td>
+                            <td>
+                                Створює дугу на полотні.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">create_text(x, y, text, **options)</td>
+                            <td>
+                                Створює текст на полотні.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">create_image(x, y, image, **options)</td>
+                            <td>
+                                Створює зображення на полотні.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">delete(item)</td>
+                            <td>
+                                Видаляє елемент з полотна за його ідентифікатором.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">move(item, dx, dy)</td>
+                            <td>
+                                Переміщує елемент на полотні на задану кількість пікселів по горизонталі (dx) та
+                                вертикалі (dy).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">coords(item, x1, y1, x2, y2)</td>
+                            <td>
+                                Змінює координати елемента на полотні.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">itemconfig(item, **options)</td>
+                            <td>
+                                Змінює параметри елемента на полотні.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+
+                <p>
+                    Ці методи дозволяють вам створювати різноманітні графічні елементи на полотні та керувати їхньою
+                    поведінкою. Ви можете малювати лінії, прямокутники, кола, текст та зображення, а також видаляти або
+                    переміщувати ці елементи за потребою.
+                </p>
+                <p>
+                    <b>
+                        Система координат Canvas:
+                    </b>
+                </p>
+                <p>
+                    Система координат в Canvas є двовимірною, де точка (0, 0) знаходиться у верхньому лівому куті
+                    полотна. Координата x збільшується вправо, а координата y збільшується вниз. Це означає, що якщо ви
+                    хочете намалювати елемент у центрі полотна, вам потрібно буде використовувати координати, які
+                    відповідають половині ширини та висоти полотна.
+                </p>
+                <p>
+                <div class="example-image">
+                    <img src="../images/tkinter/topic1/example12_1.png" alt="Приклад Tk" , style="width: 350px;">
+                </div>
+                </p>
+                <p>
+                    Наприклад, якщо ваше полотно має ширину 400 пікселів і висоту 300 пікселів, то центр полотна буде
+                    знаходитися в точці (200, 150). Якщо ви хочете намалювати лінію від верхнього лівого кута до центру
+                    полотна, ви можете використовувати метод create_line(0, 0, 200, 150).
+                </p>
+
+            </div>
+
+            <!-- Приклад -->
+            <div class="lesson-block">
+                <h3>Приклад</h3>
+                <p>
+                    1. Створимо дві лінії, одну чорну суцільну, другу оранжеву пунктирну на кінці із стрілкою. Для
+                    виконання даного завдання використовуємо метод create_line() класу Canvas. Параметри методу
+                    дозволяють нам налаштувати колір, товщину, тип лінії та додати стрілки на кінцях.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *
+                            root = Tk()
+c = Canvas(root, width=200, height=200)
+c.pack()
+c.create_line(15, 10, 180, 100, fill='gray24')
+c.create_line(50, 180, 170, 120, fill='coral', width=5, dash=(10, 2),activefill='yellow', arrow=LAST, arrowshape="10 30 10")
+root.mainloop()
+</code></pre>
+                    </div>
+
+
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example12_2.png" alt="Приклад Tk" , style="width: 190px;">
+                    </div>
+                </div>
+                <p>
+                    2. Створимо прямокутник та квадрат. Для цього використаємо метод create_rectangle() класу Canvas.
+                    При наведенні курсора на квадрат рамка навколо нього змінюватиме свій тип на пунктирну, а колір
+                    квадрата змінюватиметься на жовтий. Це досягається за допомогою параметрів activedash який визначає
+                    тип рамки, та activefill, який визначає колір заливки елемента, коли він активний (наприклад, при
+                    наведенні курсора).
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *
+root = Tk()
+c = Canvas(root, width=200, height=200).pack()
+c.create_rectangle(10, 10, 100, 190, fill="#ff8c00") 
+c.create_rectangle(120, 50, 190, 120, fill='light green', outline='cadet blue', width=4, activedash=(5, 4), activefill="gold") 
+root.mainloop()  
+
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example12_3.png" alt="Приклад Tk" , style="width: 200px;">
+                    </div>
+                </div>
+                <p>
+                    3. Створимо овал та коло. Для цього використаємо метод create_oval() класу Canvas. Параметри методу
+                    дозволяють нам налаштувати колір заливки та колір контуру для створених фігур. У першому випадку ми
+                    створимо овал з блакитною заливкою, а у другому випадку створимо коло з жовтою заливкою та
+                    помаранчевим контуром.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *
+root = Tk()
+root.title("oval")
+c = Canvas(root, width=200, height=220)  
+c.pack()
+c.create_oval(10, 10, 190, 100, fill="light green")  
+c.create_oval(50, 110, 150, 210,  width=10,  fill='khaki',  outline='#ff8c00')  
+root.mainloop()  
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example12_4.png" alt="Приклад Tk" , style="width: 200px;">
+                    </div>
+                </div>
+                <p>
+                    4. Створимо трикутник. Для цього використаємо метод create_polygon() класу Canvas. У цьому випадку
+                    ми створимо трикутник з оранжевою заливкою та графітовим контуром.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import * 
+root = Tk()
+root.title("triangle")
+c = Canvas(root, width=220, height=220)
+c.pack()
+c.create_polygon(160, 10, 20, 180, 180, 90,  fill='#ff8c00',  outline='#333333', width=1)
+root.mainloop()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example12_5.png" alt="Приклад Tk" , style="width: 200px;">
+                    </div>
+                </div>
+                <p>
+                    5. Створимо зірку. Для цього використаємо метод create_polygon() класу Canvas. У цьому випадку ми
+                    створимо восьмикутну зірку, задаючи координати її вершин у вигляді кортежу. Колір заливки буде
+                    салатовим, а колір контуру – оранжевим.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *
+root = Tk()
+root.title("star")
+c = Canvas(root, width=210,height=210)
+c.pack()
+points = [5,105, 43,80, 30, 30, 80, 43, 105, 5, 130, 43, 180, 30, 162, 80, 205, 105, 162, 130, 180, 180, 130, 162, 105, 205, 80, 162, 30, 180, 43, 130]
+c.create_polygon(points, outline='tan1', fill='lawn green', width=3)
+root.mainloop()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example12_6.png" alt="Приклад Tk" , style="width: 200px;">
+                    </div>
+                </div>
+                 <p>
+                    6. Створимо елементи круга. Для цього використаємо метод create_arc() класу Canvas. У цьому випадку ми створимо різнокольорові дуги, сектори та сегменти, задаючи координати їхньої обмежувальної рамки та кути початку та кінця дуги. Колір заливки та контурів буде різним, встановлювано за власним вподобанням.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *
+root = Tk()
+root.title("arc")
+c = Canvas(root, width=200, height=200)      
+c.pack()
+c.create_arc(10, 10, 190, 190, start=190, extent=40, fill='light blue') 
+c.create_arc(10, 10, 190, 190, start=80, extent=60, fill='coral')  
+c.create_arc(10, 10, 190, 190, start=0, extent=60, style=ARC, outline='green', width=5) 
+c.create_arc(10, 10, 190, 190, start=240, extent=100, style=CHORD, fill='darkgoldenrod1')          
+root.mainloop() 
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example12_7.png" alt="Приклад Tk" , style="width: 200px;">
+                    </div>
+                </div>
+                 <p>
+                    7. Створимо текстовий напис. Для цього використаємо метод create_text() класу Canvas. У цьому випадку ми створимо текст "Мені подобається Tkinter", задаючи координати його позиції та встановлюючи різні параметри форматування.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">from tkinter import *
+root = Tk()
+root.title("text")
+c = Canvas(root, width=250, height=160)
+c.pack()
+c.create_text(130, 70, text=f"Мені подобається\nTkinter!", justify=CENTER, font="Verdana 18",  fill='#168A16')
+root.mainloop()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/tkinter/topic1/example12_8.png" alt="Приклад Tk" , style="width: 260px;">
+                    </div>
+                </div><br>
+            </div>
+
+            <!-- Практична робота -->
+            <div class="lesson-block">
+                <h3>Завдання</h3>
+                <p>
+                    1. Створіть зображення за зразком використавши властивості та методи клаcу Canvas.
+                </p>
+                <p><i>Зразок</i></p>
+                <div class="example-image">
+                    <img src="../images/tkinter/topic1/task_12_1.png" alt="Приклад Tk" , style="width: 200px;">
+                    <img src="../images/tkinter/topic1/task_12_2.png" alt="Приклад Tk" , style="width: 200px;">
+                    <img src="../images/tkinter/topic1/task_12_3.png" alt="Приклад Tk" , style="width: 196px;">
+                    <img src="../images/tkinter/topic1/task_12_4.png" alt="Приклад Tk" , style="width: 210px;">
+                </div>
+
+
+
+
+
+
+                <p>
+                    2. Створіть полотно, на яке додайте зображення використоуючи різні методи класу Canvas. На зображенні має бути представлено принаймні 5 різних графічних примітивів (лінія, прямокутник, коло, текст, зірка тощо) з різними параметрами форматування (колір, товщина, тип лінії тощо). Розмістіть кожен примітив на полотні так, щоб вони не перекривалися і були чітко видимими. Додайте підписи до кожного примітива, вказуючи його тип та основні параметри. Файл з кодом програми збережіть у власну папку з іменем tk_12_02.py.
+                </p>
+                
+            </div>
+    </section>
+
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="../sources.html">Джерела</a></li>
+                    <li><a href="../license.html">Ліцензія</a></li>
+                    <li><a href="../about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
