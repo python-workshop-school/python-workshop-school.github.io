@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тема 1 Turtle | Рождественська школа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href ='../index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="../index.html" class="menu-item">Головна</a>
+                <a href="../python.html" class="menu-item">Python</a>
+                <a href="../pygame.html" class="menu-item">Pygame</a>
+                <a href="../tkinter.html" class="menu-item">Tkinter</a>
+                <a href="../turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Тема 1</h1>
+                <h2>Клас Turtle().
+                    Створення черепашки та екрану</h2>
+                <a href="../turtle.html#tasks" class="hero-btn">до цеху turtle</a>
+            </div>
+            <!--
+            <div class="hero-image">
+                <img src="../images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+            -->
+        </div>
+    </section>
+
+    <section class="lesson" id="tasks">
+        <div class="container">
+
+            <!-- Теорія -->
+            <div class="lesson-block">
+                <h3>Теоретичний матеріал</h3>
+                <p>
+                    Модуль Turtle — це вбудований модуль Python для створення графіки за допомогою “черепашки”.
+                    Черепашка рухається по екрану та малює лінії. Це один із найпростіших способів вивчення
+                    програмування та основ комп’ютерної графіки.
+                </p>
+                <p>
+                    <b>Підключення модуля Turtle</b>
+                </p>
+                <pre><code class="language-python">import turtle  
+</code></pre>
+                <p>
+                    <b>Створення черепашки</b>
+                </p>
+                <pre><code class="language-python">name = turtle.Turtle()
+</code></pre>
+                <p style="font-size: 12pt;">
+                    де, name – ім'я черепашки (наприклад: ben, soloha, тощо).
+                </p>
+                <p>
+                    Черепашка може - змінювати колір та товщину лінії, змінювати власний вигляд, колір та розмір,
+                    рухатися
+                    ,малювати, керувати анімацією та багато іншого.
+                </p>
+
+                <p>
+                    <b>Створення екрану</b>
+                </p>
+                <pre><code class="language-python">screen = turtle.Screen()
+</code></pre>
+                <p style="font-size: 12pt;">
+                    де, screen – ім'я екрану.
+                </p>
+                <p>Які дії можна виконувати з екраном? Та багато чого, наприклад: налаштовувати заголовок екрану,
+                    змінювати колір фону, розмір та позицію на екрані, очищувати, керувати анімацією та закривати екран
+                    при натисканні.</p>
+                </p>
+                <p><b>Основні методи налаштування екрану:</b></p><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Метод</th>
+                            <th>Опис</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">title()</td>
+                            <td>
+                                Встановлює заголовок екрану. Наприклад: screen.title("Моя програма")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">bgcolor()</td>
+                            <td>
+                                Встановлює колір фону екрану. Наприклад: screen.bgcolor("light blue")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">setup()</td>
+                            <td>
+                                Встановлює розмір та позицію екрану. Наприклад: screen.setup(width=600, height=400)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">clear()</td>
+                            <td>
+                                Очищає екран від усіх малюнків та повертає черепашку до початкового положення.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">reset()</td>
+                            <td>
+                                Очищає екран та повертає всі налаштування до початкових значень.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">exitonclick()</td>
+                            <td>
+                                Закриває екран при натисканні на нього.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                <p><b>Основні команди черепашки:</b></p><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Команда</th>
+                            <th>Опис</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">forward() або fd()</td>
+                            <td>
+                                Рухає черепашку вперед на вказану кількість пікселів. Наприклад: turtle.forward(100) або
+                                turtle.fd(100)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">backward() або bk()</td>
+                            <td>
+                                Рухає черепашку назад на вказану кількість пікселів. Наприклад: turtle.backward(50) або
+                                turtle.bk(50)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">right() або rt()</td>
+                            <td>
+                                Повертає черепашку праворуч на вказану кількість градусів. Наприклад: turtle.right(90)
+                                або turtle.rt(90)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">left() або lt()</td>
+                            <td>
+                                Повертає черепашку ліворуч на вказану кількість градусів. Наприклад: turtle.left(45) або
+                                turtle.lt(45)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">penup() або pu()</td>
+                            <td>
+                                Піднімає перо, черепашка перестає малювати при русі. Наприклад: turtle.penup() або
+                                turtle.pu()
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">pendown() або pd()</td>
+                            <td>
+                                Опускає перо, черепашка починає малювати при русі. Наприклад: turtle.pendown() або
+                                turtle.pd()
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">color()</td>
+                            <td>
+                                Встановлює колір пера та заливки. Наприклад: turtle.color("red") або turtle.color("red",
+                                "yellow")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">pensize() або width()</td>
+                            <td>
+                                Встановлює товщину пера. Наприклад: turtle.pensize(5) або turtle.width(5)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">shape()</td>
+                            <td>
+                                Встановлює форму черепашки. Наприклад: turtle.shape("turtle"). Можливі значення:
+                                "arrow", "turtle", "circle", "square", "triangle", "classic". За замовчуванням черепашка
+                                має форму "classic".
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><b>Завершення роботи програми.</b></p>
+                <p>
+                    Щоб програма не закривалася відразу після виконання, можна використовувати команду turtle.done() або
+                    screen.exitonclick(). Вони дозволяють зберегти вікно відкритим, поки користувач не закриє його
+                    вручну.
+                </p><br>
+            </div>
+
+            <!-- Приклад -->
+            <div class="lesson-block">
+                <h3>Приклади</h3>
+                <p>
+                    1. Налаштуємо екран світло-зеленим кольором, встановимо заголовок та розмір вікна "Моя програма", а
+                    також встановимо його розмір 550x320.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+
+screen = turtle.Screen()
+screen.title("Моя програма")
+screen.bgcolor("lightgreen")
+screen.setup(width=550, height=320)
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_1_01.png" alt="Приклад turtle" , style="width: 350px;">
+                    </div>
+                </div><br>
+                <p>
+                    2. Додамо черепашку на створене вікно у попередньому прикладі та змінимо її вигляд.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Моя програма")
+screen.bgcolor("lightgreen")
+screen.setup(width=550, height=450)
+soloha = turtle.Turtle()
+soloha.shape('turtle')
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_1_02.png" alt="Приклад turtle" , style="width: 350px;">
+                    </div>
+                </div><br>
+                <p>
+                    3. Намалюємо квадрат за допомогою черепашки розміром 100х100.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Моя програма")
+screen.bgcolor("lightgreen")
+screen.setup(width=550, height=450)
+soloha = turtle.Turtle()
+soloha.shape('turtle')
+for i in range(4):
+    soloha.forward(100)
+    soloha.left(90)
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_1_03.png" alt="Приклад turtle" , style="width: 350px;">
+                    </div>
+                </div><br>
+
+                <p>
+                    4. Змінимо колір черепашки на оранжевий.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Моя програма")
+screen.bgcolor("lightgreen")
+screen.setup(width=550, height=450)
+soloha = turtle.Turtle()
+soloha.shape('turtle')
+soloha.color("#FF8C00")
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_1_04.png" alt="Приклад turtle" , style="width: 350px;">
+                    </div>
+                </div><br>
+            </div>
+
+            <!-- Практична робота -->
+            <div class="lesson-block">
+                <h3>Практична робота</h3>
+                <p>
+                    Результатом виконання є відповідність створеної вами програми зразку.
+                </p>
+                <p><i>Зразок</i></p>
+                <div class="example-image">
+                    <img src="../images/turtle/turtle_pw_1_01.png" alt="Приклад Turtle" , style="width: 350px;">
+                </div>
+                <p style="font-size: 12pt;">
+                    1. Імпортуйте модуль turtle.
+                </p>
+                <p style="font-size: 12pt;">
+                    2. Встановіть заголовок екрану "Бібліотека Turtle".
+                </p>
+                <p style="font-size: 12pt;">
+                    3. Встановіть розмір екрану 450х350.
+                </p>
+                <p style="font-size: 12pt;">
+                    4. Встановіть колір екрану світло-блакитний ("lightblue").
+                </p>
+                <p style="font-size: 12pt;">
+                    5. Змініть форму черепашки на "turtle".
+                </p>
+                <p style="font-size: 12pt;">
+                    6. Встановіть білий колір черепашки та пера ("white")
+                </p>
+                <p style="font-size: 12pt;">
+                    7. Намалюйте квадрат розмір сторони якого становить 150 пікселів.
+                </p>
+            </div>
+
+
+            <!-- Завдання -->
+            <div class="lesson-block">
+                <h3>Завдання</h3>
+                <p>
+                    <b>Початковий рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. Створіть вікно з рожевим фоном. <br>
+                    2. Намалюйте лінію довжиною 250 пікселів.
+                </p>
+                <p>
+                    <b>Середній рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. Створіть черепашку у формі кола. <br>
+                    2. Намалюйте намалюйте прямокутник розміром 300х100 пікселів.
+                </p>
+                <p>
+                    <b>Достатній рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. Намалюйте шестикутник з довжиною сторони 100 пікселів. <br>
+                    2. Використайте різні кольори для кожної сторони.
+                </p>
+                <p>
+                    <b>Високий рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. Створіть черепашку у формі стрілки. <br>
+                    2. Намалюйте два рівносторонні трикутники з довжиною сторони відповідно 150 та 250 пікселів.
+                </p>
+            </div>
+
+            <!-- Помилки -->
+            <div class="lesson-block">
+                <h3>Типові помилки</h3>
+                <p>
+                    Python розрізняє великі та малі літери ("s" та "S" - це різні літери для Python)
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Правильно </h4>
+                        <pre><code class="language-python">name = turtle.Turtle()
+screen = turtle.Screen()
+</code></pre>
+                    </div>
+                    <div class="example-code">
+                        <h4 class="example-title">Не правильно </h4>
+                        <pre><code class="language-python">name = turtle.turtle()
+screen = turtle.screen()
+</code></pre>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Footer -->
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="../sources.html">Джерела</a></li>
+                    <li><a href="../license.html">Ліцензія</a></li>
+                    <li><a href="../about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
