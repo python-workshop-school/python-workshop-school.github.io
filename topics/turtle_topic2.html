@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>тема 1 Turtle | Рождественська школа</title>
+    <title>тема 2 Turtle | Рождественська школа</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../images/Logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -43,9 +43,9 @@
         <div class="hero-container">
             <div class="hero-text">
                 <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
-                <h1>Тема 1</h1>
-                <h2>Клас Turtle().
-                    Створення черепашки та екрану</h2>
+                <h1>Тема 2</h1>
+                <h2>Координати в Turtle().
+                </h2>
                 <a href="../turtle.html#tasks" class="hero-btn">до цеху turtle</a>
             </div>
             <!--
@@ -63,28 +63,24 @@
             <div class="lesson-block">
                 <h3>Теоретичний матеріал</h3>
                 <p>
-                    У цьому розділі ти дізнаєшся, як створювати екран - площину де буде жити наша "Черепашка", як створювати самого виконавця та давати йому ім'я, як використовувати основні функції черепашки для зміни зовнішнього вигляду, кольору, тощо.
+                    В цьому розділі ти дізнаєшся як рухається черепашка по координатній площині. Не знаєш що таке
+                    координатна площина? Тоді переглянь відеоматеріал з математики за 6 клас, де все чудово пояснено: <a
+                        href="https://youtu.be/5Gt-nJjqqGk">Координатна площина та координати точки.</a> Положення кожної черепашки на екрані описується двома координатами (x та y):<br>
+                <p>
+                    <b>x</b> - кордината на осі абсцис (положення черепашки на горизонталі)<br>
+                    <b>y</b> - кордина на осі ординат (положення черепашки по вертикалі)
+                </p>
                 </p>
                 <p>
-                    <b>Підключення модуля Turtle</b>
+                    <b>Координатна площина на екрані</b>
                 </p>
-                 <p>
-                    Клас Turtle — це вбудований модуль Python для створення 2D графіки за допомогою виконавця “черепашка” і являється одним з найпростіших способів вивчення комп’ютерної графіки засобами написанням коду.
-                </p>
-                <pre><code class="language-python">import turtle  
-</code></pre>
-                <p>
-                    <b>Створення екрану</b>
-                </p>
-                <pre><code class="language-python">screen = turtle.Screen()
-</code></pre>
-                <p style="font-size: 12pt;">
-                    де, screen – ім'я екрану.
-                </p>
-                <p>Які дії можна виконувати з екраном? Та багато чого, наприклад: налаштовувати заголовок екрану,
-                    змінювати колір фону та його розмір. Встановлювати початкову позицію черепашки, очищувати екран, керувати анімацією та закривати екран при натисканні.</p>
-                </p>
-                <p><b>Основні методи налаштування екрану:</b></p><br>
+                <div class="example-image">
+                        <img src="../images/turtle/turtle_2_01.png" alt="Приклад turtle" , style="width: 350px;">
+                    </div><br>
+                    <i>Примітка:</i> пам'ятайте, першим завжди вказують значення координати Х, а другим - значення Y. 
+                
+                
+                <p><b>Основні методи положення черепашки:</b></p><br>
                 <table>
                     <thead>
                         <tr>
@@ -94,57 +90,52 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="property-name">title()</td>
+                            <td class="property-name">goto(X, Y)</td>
                             <td>
-                                Встановлює заголовок екрану. Наприклад: screen.title("Моя програма")
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">bgcolor()</td>
-                            <td>
-                                Встановлює колір фону екрану. Наприклад: screen.bgcolor("light blue")
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">setup()</td>
-                            <td>
-                                Встановлює розмір та позицію екрану. Наприклад: screen.setup(width=600, height=400)
+                                Переміcтить черепашку в позицію з координатами (X, Y). Наприклад: name.turtle(140, 100). Зверіть увагу, якщо перо опушене, буде намальована лінія.
                             </td>
                         </tr>
                          <tr>
-                            <td class="property-name">reset()</td>
+                            <td class="property-name">teleport(X, Y)</td>
                             <td>
-                                Очищає екран від усіх зображень, черепашка повертається в початкове положення з координатами (0, 0).
+                                Перемістить черепашку в позицію з координатами (X, Y). На відміну від goto(X, Y) - лінія не буде намальована.
                             </td>
                         </tr>
                         <tr>
-                            <td class="property-name">clear()</td>
+                            <td class="property-name">setx(X)</td>
                             <td>
-                                Очищає екран від усіх зображеннь, черепашка залишається в кінцевому положенні.
+                                Встановлює першу координату черепахи на X , другу координату залишає незмінною.
                             </td>
                         </tr>
-                       
+                         <tr>
+                            <td class="property-name">sety(Y)</td>
+                            <td>
+                                Встановлює другу координату черепахи на Y , першу координату залишає незмінною.
+                            </td>
+                        </tr>
                         <tr>
-                            <td class="property-name">exitonclick()</td>
+                            <td class="property-name">home()</td>
                             <td>
-                                Закриває екран при натисканні на нього.
+                                Перемістить черепаху в початкове положення (в точку з координатими (0, 0))
                             </td>
                         </tr>
+                        <tr>
+                            <td class="property-name">setheading(<i>кут</i>) або seth(<i>кут</i>)</td>
+                            <td>
+                                Встановлює орієнтацію черепахи на кут від 0 до 360. Наприклад: name.seth(0) - орієнтація на схід, (90 - північ, 180 - захід, 270 - південь). 
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="property-name">position() або pos()</td>
+                            <td>
+                                Отримує поточні координати точки в якій знаходиться черепашка.
+                            </td>
+                        </tr>
+                        
+
                     </tbody>
                 </table><br>
-
-                 <p>
-                    <b>Створення черепашки</b>
-                </p>
-                <pre><code class="language-python">name = turtle.Turtle()
-</code></pre>
-                <p style="font-size: 12pt;">
-                    де, name – ім'я черепашки (наприклад: ben, soloha, тощо).
-                </p>
-                <p>
-                    Черепашка може - змінювати власний вигляд, змінювати колір та розмр ліній, рухатися, малювати, керувати анімацією та багато іншого.
-                </p>
-
                 <p><b>Основні команди черепашки:</b></p><br>
                 <table>
                     <thead>
@@ -155,6 +146,61 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <td class="property-name">forward() або fd()</td>
+                            <td>
+                                Рухає черепашку вперед на вказану кількість пікселів. Наприклад: turtle.forward(100) або
+                                turtle.fd(100)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">backward() або bk()</td>
+                            <td>
+                                Рухає черепашку назад на вказану кількість пікселів. Наприклад: turtle.backward(50) або
+                                turtle.bk(50)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">right() або rt()</td>
+                            <td>
+                                Повертає черепашку праворуч на вказану кількість градусів. Наприклад: turtle.right(90)
+                                або turtle.rt(90)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">left() або lt()</td>
+                            <td>
+                                Повертає черепашку ліворуч на вказану кількість градусів. Наприклад: turtle.left(45) або
+                                turtle.lt(45)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">penup() або pu()</td>
+                            <td>
+                                Піднімає перо, черепашка перестає малювати при русі. Наприклад: turtle.penup() або
+                                turtle.pu()
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">pendown() або pd()</td>
+                            <td>
+                                Опускає перо, черепашка починає малювати при русі. Наприклад: turtle.pendown() або
+                                turtle.pd()
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">color()</td>
+                            <td>
+                                Встановлює колір пера та заливки. Наприклад: turtle.color("red") або turtle.color("red",
+                                "yellow")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">pensize() або width()</td>
+                            <td>
+                                Встановлює товщину пера. Наприклад: turtle.pensize(5) або turtle.width(5)
+                            </td>
+                        </tr>
+                        <tr>
                             <td class="property-name">shape()</td>
                             <td>
                                 Встановлює форму черепашки. Наприклад: turtle.shape("turtle"). Можливі значення:
@@ -162,56 +208,11 @@
                                 має форму "classic".
                             </td>
                         </tr>
-                        <tr>
-                            <td class="property-name">shapesize()</td>
-                            <td>
-                                Встановлює розмір черепашки. Наприклад: turtle.shapesize(2, 2) - збільшує розмір черепашки у два рази як по ширині так і по висоті.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">pensize()</td>
-                            <td>
-                                Встановлює товщину лінію (в пікселях). Наприклад: turtle.pensize(7) - черепашка буде залишати на екрані лінію товщиною 7 пікселів.
-                            </td>
-                        </tr>
-                       
-                        <tr>
-                            <td class="property-name">color()</td>
-                            <td>
-                                Встановлює колір черепашки та колір лінії, яку залишає черепашка при русі. Наприклад: name.color("red") або name.color("#333333")
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">pencolor()</td>
-                            <td>
-                                Встановлює лише колір лінії, яку залишає черепашка при русі. Колір черепашки не змінюється. Наприклад: name.pencolor("red") або name.pencolor("#333333")
-                            </td>
-                        </tr>
-                         <tr>
-                            <td class="property-name">fillcolor()</td>
-                            <td>
-                                Встановлює лише колір черепашки, колір лінії не змінюється. Наприклад: name.fillcolor("red") або name.fillcolor("#333333")
-                            </td>
-                        </tr>
-                         </tr>
-                         <tr>
-                            <td class="property-name">hideturtle()</td>
-                            <td>
-                                Приховує черепашку (черепашка не відображається на екрані). Наприклад: name.hideturtle(). Зверніть увагу, що прихована черепашка прискорює малювання складних фігур.
-                            </td>
-                        </tr>
-                         <tr>
-                            <td class="property-name">showturtle()</td>
-                            <td>
-                                Робить черепашку знову видимою. Наприклад: name.showturtle().
-                            </td>
-                        </tr>
-                      
                     </tbody>
-                </table><br>
+                </table>
                 <p><b>Завершення роботи програми.</b></p>
                 <p>
-                    Щоб програма не закривалася відразу після виконання, можна використати команду turtle.done() або
+                    Щоб програма не закривалася відразу після виконання, можна використовувати команду turtle.done() або
                     screen.exitonclick(). Вони дозволяють зберегти вікно відкритим, поки користувач не закриє його
                     вручну.
                 </p><br>
@@ -221,7 +222,8 @@
             <div class="lesson-block">
                 <h3>Приклади</h3>
                 <p>
-                    1. Створимо екран світло-зеленого кольору, додамо заголовок "Моя програма", та встановимо його розмір 550x320.
+                    1. Створимо екран світло-зеленого кольору, додамо заголовок "Моя програма", та встановимо його
+                    розмір 550x320.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
@@ -262,7 +264,7 @@ turtle.done()
                     </div>
                 </div><br>
                 <p>
-                    3. Змінимо колір черепашки на оранжевий.
+                    3. Намалюємо квадрат за допомогою черепашки розміром 100х100.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
@@ -274,7 +276,9 @@ screen.bgcolor("lightgreen")
 screen.setup(width=550, height=450)
 soloha = turtle.Turtle()
 soloha.shape('turtle')
-soloha.fillcolor("#FF8C00")
+for i in range(4):
+    soloha.forward(100)
+    soloha.left(90)
 turtle.done()
 </code></pre>
                     </div>
@@ -283,13 +287,36 @@ turtle.done()
                         <img src="../images/turtle/turtle_1_03.png" alt="Приклад turtle" , style="width: 350px;">
                     </div>
                 </div><br>
+
+                <p>
+                    4. Змінимо колір черепашки на оранжевий.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Моя програма")
+screen.bgcolor("lightgreen")
+screen.setup(width=550, height=450)
+soloha = turtle.Turtle()
+soloha.shape('turtle')
+soloha.color("#FF8C00")
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_1_04.png" alt="Приклад turtle" , style="width: 350px;">
+                    </div>
+                </div><br>
             </div>
 
             <!-- Практична робота -->
             <div class="lesson-block">
                 <h3>Практична робота</h3>
                 <p>
-                    Вірним результатом виконання є відповідність створеної вами програми зразку.
+                    Результатом виконання є відповідність створеної вами програми зразку.
                 </p>
                 <p><i>Зразок</i></p>
                 <div class="example-image">
@@ -314,12 +341,10 @@ turtle.done()
                     6. Встановіть білий колір черепашки та пера ("white")
                 </p>
                 <p style="font-size: 12pt;">
-                    7. Збільшіть роззмір черепашки у 2 рази.
-                </p>
-                <p style="font-size: 12pt;">
-                    8. Збережіть файл з кодом програми у власну папку з іменем turtle_pw_1_01.py.
+                    7. Намалюйте квадрат розмір сторони якого становить 150 пікселів.
                 </p>
             </div>
+
 
             <!-- Завдання -->
             <div class="lesson-block">
@@ -328,29 +353,29 @@ turtle.done()
                     <b>Початковий рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Створіть екран з рожевим фоном. <br>
-                    2. Створіть виконавця черепашку.
+                    1. Створіть вікно з рожевим фоном. <br>
+                    2. Намалюйте лінію довжиною 250 пікселів.
                 </p>
                 <p>
                     <b>Середній рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Створіть екран темно сірого кольору розміром 800х600.<br>
-                    2. Створіть черепашку у формі кола оранжевого кольору.
+                    1. Створіть черепашку у формі кола. <br>
+                    2. Намалюйте намалюйте прямокутник розміром 300х100 пікселів.
                 </p>
                 <p>
                     <b>Достатній рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Створіть екран світло-зеленого кольору розміром 800х600. <br>
-                    2. Створіть двох виконавців черепашка з іменами: ben та Soloha? відповідно червоного та синього кольорів.
+                    1. Намалюйте шестикутник з довжиною сторони 100 пікселів. <br>
+                    2. Використайте різні кольори для кожної сторони.
                 </p>
                 <p>
                     <b>Високий рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Своріть екран власного розміру та кольору, з заголовком "Turtle".<br>
-                    2. Ствріть у вікні декілька виконавців (не менше трьох) різного кольору та розміру.
+                    1. Створіть черепашку у формі стрілки. <br>
+                    2. Намалюйте два рівносторонні трикутники з довжиною сторони відповідно 150 та 250 пікселів.
                 </p>
             </div>
 
@@ -379,7 +404,7 @@ screen = turtle.screen()
     </section>
 
 
-<!-- Footer -->
+    <!-- Footer -->
     <div id="footer"></div>
     <footer class="footer">
         <div class="footer-container">
