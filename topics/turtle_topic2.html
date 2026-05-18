@@ -44,7 +44,7 @@
             <div class="hero-text">
                 <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
                 <h1>Тема 2</h1>
-                <h2>Координати в Turtle().
+                <h2>Координати в Turtle(). Рух черепашки на площині.
                 </h2>
                 <a href="../turtle.html#tasks" class="hero-btn">до цеху turtle</a>
             </div>
@@ -65,7 +65,8 @@
                 <p>
                     В цьому розділі ти дізнаєшся як рухається черепашка по координатній площині. Не знаєш що таке
                     координатна площина? Тоді переглянь відеоматеріал з математики за 6 клас, де все чудово пояснено: <a
-                        href="https://youtu.be/5Gt-nJjqqGk">Координатна площина та координати точки.</a> Положення кожної черепашки на екрані описується двома координатами (x та y):<br>
+                        href="https://youtu.be/5Gt-nJjqqGk">"Координатна площина та координати точки".</a> Положення
+                    кожної черепашки на екрані описується двома координатами (x та y):<br>
                 <p>
                     <b>x</b> - кордината на осі абсцис (положення черепашки на горизонталі)<br>
                     <b>y</b> - кордина на осі ординат (положення черепашки по вертикалі)
@@ -75,11 +76,11 @@
                     <b>Координатна площина на екрані</b>
                 </p>
                 <div class="example-image">
-                        <img src="../images/turtle/turtle_2_01.png" alt="Приклад turtle" , style="width: 350px;">
-                    </div><br>
-                    <i>Примітка:</i> пам'ятайте, першим завжди вказують значення координати Х, а другим - значення Y. 
-                
-                
+                    <img src="../images/turtle/turtle_2_01.png" alt="Приклад turtle" , style="width: 350px;">
+                </div><br>
+                <i>Примітка:</i> пам'ятайте, першим завжди вказують значення координати Х, а другим - значення Y.
+
+
                 <p><b>Основні методи положення черепашки:</b></p><br>
                 <table>
                     <thead>
@@ -92,13 +93,15 @@
                         <tr>
                             <td class="property-name">goto(X, Y)</td>
                             <td>
-                                Переміcтить черепашку в позицію з координатами (X, Y). Наприклад: name.turtle(140, 100). Зверіть увагу, якщо перо опушене, буде намальована лінія.
+                                Переміcтить черепашку в позицію з координатами (X, Y). Наприклад: name.turtle(140, 100).
+                                Зверіть увагу, якщо перо опушене, буде намальована лінія.
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td class="property-name">teleport(X, Y)</td>
                             <td>
-                                Перемістить черепашку в позицію з координатами (X, Y). На відміну від goto(X, Y) - лінія не буде намальована.
+                                Перемістить черепашку в позицію з координатами (X, Y). На відміну від goto(X, Y) - лінія
+                                не буде намальована.
                             </td>
                         </tr>
                         <tr>
@@ -107,7 +110,7 @@
                                 Встановлює першу координату черепахи на X , другу координату залишає незмінною.
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td class="property-name">sety(Y)</td>
                             <td>
                                 Встановлює другу координату черепахи на Y , першу координату залишає незмінною.
@@ -122,17 +125,18 @@
                         <tr>
                             <td class="property-name">setheading(<i>кут</i>) або seth(<i>кут</i>)</td>
                             <td>
-                                Встановлює орієнтацію черепахи на кут від 0 до 360. Наприклад: name.seth(0) - орієнтація на схід, (90 - північ, 180 - захід, 270 - південь). 
+                                Встановлює орієнтацію черепахи на кут від 0 до 360. Наприклад: name.seth(0) - орієнтація
+                                на схід, (90 - північ, 180 - захід, 270 - південь).
                             </td>
                         </tr>
-                        
+
                         <tr>
                             <td class="property-name">position() або pos()</td>
                             <td>
                                 Отримує поточні координати точки в якій знаходиться черепашка.
                             </td>
                         </tr>
-                        
+
 
                     </tbody>
                 </table><br>
@@ -187,162 +191,138 @@
                                 turtle.pd()
                             </td>
                         </tr>
-                        <tr>
-                            <td class="property-name">color()</td>
-                            <td>
-                                Встановлює колір пера та заливки. Наприклад: turtle.color("red") або turtle.color("red",
-                                "yellow")
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">pensize() або width()</td>
-                            <td>
-                                Встановлює товщину пера. Наприклад: turtle.pensize(5) або turtle.width(5)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">shape()</td>
-                            <td>
-                                Встановлює форму черепашки. Наприклад: turtle.shape("turtle"). Можливі значення:
-                                "arrow", "turtle", "circle", "square", "triangle", "classic". За замовчуванням черепашка
-                                має форму "classic".
-                            </td>
-                        </tr>
+
                     </tbody>
-                </table>
-                <p><b>Завершення роботи програми.</b></p>
-                <p>
-                    Щоб програма не закривалася відразу після виконання, можна використовувати команду turtle.done() або
-                    screen.exitonclick(). Вони дозволяють зберегти вікно відкритим, поки користувач не закриє його
-                    вручну.
-                </p><br>
+                </table><br>
+
+
+
+
             </div>
 
             <!-- Приклад -->
             <div class="lesson-block">
                 <h3>Приклади</h3>
                 <p>
-                    1. Створимо екран світло-зеленого кольору, додамо заголовок "Моя програма", та встановимо його
-                    розмір 550x320.
+                    1. Намалюємо прямокутник салатового кольору з довжиною сторін 305х205 пікселів та товщиною лінії 5
+                    пікселів.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
                         <h4 class="example-title">Код програми </h4>
                         <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Прямокутник")
+screen.bgcolor("#333333")
+screen.setup(width=450, height=350)
+ben=turtle.Turtle()
+ben.penup()
+ben.goto(-150, 100)
+ben.fillcolor("#ff8c00")
+ben.pencolor("lightgreen")
+ben.pensize(5)
+ben.pendown()
+for i in range(2):
+    ben.fd(305)
+    ben.rt(90)
+    ben.fd(205)
+    ben.rt(90)
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_ex_2_01.png" alt="Приклад turtle" , style="width: 350px;">
+                    </div>
+                </div><br>
+                <p>
+                    2. Намалюємо рівносторонній трикутник кожна сторона якого буде різного кольору.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Трикутник")
+screen.bgcolor("#333333")
+screen.setup(width=450, height=350)
+ben=turtle.Turtle()
+ben.penup()
+colors=["coral","gold","lightblue"]
+ben.goto(-150, 120)
+ben.fillcolor("#ff8c00")
+ben.pensize(5)
+ben.pendown()
+for i in range(3):
+    ben.pencolor(colors[i])
+    ben.fd(305)
+    ben.rt(120)
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_ex_2_02.png" alt="Приклад turtle" , style="width: 350px;">
+                    </div>
+                </div><br>
+                <p>
+                    3. Намалюємо коло.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Коло")
+screen.bgcolor("#333333")
+screen.setup(width=450, height=350)
+ben=turtle.Turtle()
+ben.penup()
+ben.goto(0, 120)
+ben.fillcolor("#ff8c00")
+ben.pencolor("gold")
+ben.hideturtle()
+ben.pensize(5)
+ben.pendown()
+for i in range(360):
+    ben.fd(2)
+    ben.rt(1)
+turtle.done()
 
-screen = turtle.Screen()
-screen.title("Моя програма")
-screen.bgcolor("lightgreen")
-screen.setup(width=550, height=320)
-turtle.done()
 </code></pre>
                     </div>
                     <div class="example-image">
                         <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_1_01.png" alt="Приклад turtle" , style="width: 350px;">
+                        <img src="../images/turtle/turtle_ex_2_03.png" alt="Приклад turtle" , style="width: 350px;">
                     </div>
                 </div><br>
                 <p>
-                    2. Додамо черепашку на створене вікно у попередньому прикладі та змінимо її вигляд.
+                    <i>Підказка: Щоб розрахувати кут повороту черепашки при малюванні багатокутників, потрібно число 360° розділити на кількість кутів багатокутника. Наприклад, при малюванні п'ятикутника потрібно 360° розділити на 5, отримаємо 72°. Виключенням є трикутник - тому що сума його кутів становить 180°, а не 360°</i>
                 </p>
-                <div class="example-container">
-                    <div class="example-code">
-                        <h4 class="example-title">Код програми </h4>
-                        <pre><code class="language-python">import turtle
-screen = turtle.Screen()
-screen.title("Моя програма")
-screen.bgcolor("lightgreen")
-screen.setup(width=550, height=450)
-soloha = turtle.Turtle()
-soloha.shape('turtle')
-turtle.done()
-</code></pre>
-                    </div>
-                    <div class="example-image">
-                        <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_1_02.png" alt="Приклад turtle" , style="width: 350px;">
-                    </div>
-                </div><br>
-                <p>
-                    3. Намалюємо квадрат за допомогою черепашки розміром 100х100.
-                </p>
-                <div class="example-container">
-                    <div class="example-code">
-                        <h4 class="example-title">Код програми </h4>
-                        <pre><code class="language-python">import turtle
-screen = turtle.Screen()
-screen.title("Моя програма")
-screen.bgcolor("lightgreen")
-screen.setup(width=550, height=450)
-soloha = turtle.Turtle()
-soloha.shape('turtle')
-for i in range(4):
-    soloha.forward(100)
-    soloha.left(90)
-turtle.done()
-</code></pre>
-                    </div>
-                    <div class="example-image">
-                        <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_1_03.png" alt="Приклад turtle" , style="width: 350px;">
-                    </div>
-                </div><br>
-
-                <p>
-                    4. Змінимо колір черепашки на оранжевий.
-                </p>
-                <div class="example-container">
-                    <div class="example-code">
-                        <h4 class="example-title">Код програми </h4>
-                        <pre><code class="language-python">import turtle
-screen = turtle.Screen()
-screen.title("Моя програма")
-screen.bgcolor("lightgreen")
-screen.setup(width=550, height=450)
-soloha = turtle.Turtle()
-soloha.shape('turtle')
-soloha.color("#FF8C00")
-turtle.done()
-</code></pre>
-                    </div>
-                    <div class="example-image">
-                        <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_1_04.png" alt="Приклад turtle" , style="width: 350px;">
-                    </div>
-                </div><br>
             </div>
 
             <!-- Практична робота -->
             <div class="lesson-block">
                 <h3>Практична робота</h3>
-                <p>
-                    Результатом виконання є відповідність створеної вами програми зразку.
-                </p>
-                <p><i>Зразок</i></p>
-                <div class="example-image">
-                    <img src="../images/turtle/turtle_pw_1_01.png" alt="Приклад Turtle" , style="width: 350px;">
-                </div>
                 <p style="font-size: 12pt;">
-                    1. Імпортуйте модуль turtle.
+                    1. Створіть черепашку та перемістіть її без малювання у точку з координатами (-150, -50).
                 </p>
                 <p style="font-size: 12pt;">
-                    2. Встановіть заголовок екрану "Бібліотека Turtle".
+                    2. Намалюйте квадрат за допомогою координат з товщиною лінії 7 пікселів.
                 </p>
                 <p style="font-size: 12pt;">
-                    3. Встановіть розмір екрану 450х350.
+                    3. Намалюйте коло оранжевого кольору з товщиною лінії 3 пікселі.
                 </p>
                 <p style="font-size: 12pt;">
-                    4. Встановіть колір екрану світло-блакитний ("lightblue").
+                    4. Поверніть черепашку у центр екрана.
                 </p>
                 <p style="font-size: 12pt;">
-                    5. Змініть форму черепашки на "turtle".
+                    5. Змініть форму черепашки на "square".
                 </p>
                 <p style="font-size: 12pt;">
-                    6. Встановіть білий колір черепашки та пера ("white")
+                    6. Проаналізуйте отриманий результат і внесіть зміни до коду програми щоб зображення мало естетичний вигляд.
                 </p>
-                <p style="font-size: 12pt;">
-                    7. Намалюйте квадрат розмір сторони якого становить 150 пікселів.
-                </p>
+                
             </div>
 
 
@@ -361,43 +341,21 @@ turtle.done()
                 </p>
                 <p style="font-size: 12pt;">
                     1. Створіть черепашку у формі кола. <br>
-                    2. Намалюйте намалюйте прямокутник розміром 300х100 пікселів.
+                    2. Намалюйте намалюйте рівносторонній шестикутник.
                 </p>
                 <p>
                     <b>Достатній рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Намалюйте шестикутник з довжиною сторони 100 пікселів. <br>
-                    2. Використайте різні кольори для кожної сторони.
+                    1. Намалюйте будинок із двох геометричних фігур - трикутника та прямокутника. <br>
+                    2. Використайте різні кольори для кожної фігури.
                 </p>
                 <p>
                     <b>Високий рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Створіть черепашку у формі стрілки. <br>
-                    2. Намалюйте два рівносторонні трикутники з довжиною сторони відповідно 150 та 250 пікселів.
-                </p>
-            </div>
-
-            <!-- Помилки -->
-            <div class="lesson-block">
-                <h3>Типові помилки</h3>
-                <p>
-                    Python розрізняє великі та малі літери ("s" та "S" - це різні літери для Python)
-                <div class="example-container">
-                    <div class="example-code">
-                        <h4 class="example-title">Правильно </h4>
-                        <pre><code class="language-python">name = turtle.Turtle()
-screen = turtle.Screen()
-</code></pre>
-                    </div>
-                    <div class="example-code">
-                        <h4 class="example-title">Не правильно </h4>
-                        <pre><code class="language-python">name = turtle.turtle()
-screen = turtle.screen()
-</code></pre>
-                    </div>
-                </div>
+                    1. Дізнайтесь в інтернет, що являє собою зірка Давида (<i>Маген Давид</i>). <br>
+                    2. Намалюйте її за допомогою виконавця "Черепашка" з товщиною ліній 10 пікселів і відповідного кольору.
                 </p>
             </div>
         </div>
