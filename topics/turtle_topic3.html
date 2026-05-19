@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>тема 2 Turtle | Рождественська школа</title>
+    <title>тема 3 Turtle | Рождественська школа</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../images/Logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -43,8 +43,8 @@
         <div class="hero-container">
             <div class="hero-text">
                 <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
-                <h1>Тема 2</h1>
-                <h2>Координати в Turtle(). Рух черепашки на площині.
+                <h1>Тема 3</h1>
+                <h2>Малюємо кодом.
                 </h2>
                 <a href="../turtle.html#tasks" class="hero-btn">до цеху turtle</a>
             </div>
@@ -63,25 +63,16 @@
             <div class="lesson-block">
                 <h3>Теоретичний матеріал</h3>
                 <p>
-                    В цьому розділі ти дізнаєшся як рухається черепашка по координатній площині. Не знаєш що таке
-                    координатна площина? Тоді переглянь відеоматеріал з математики за 6 клас, де все чудово пояснено: <a
-                        href="https://youtu.be/5Gt-nJjqqGk">"Координатна площина та координати точки".</a> Положення
-                    кожної черепашки на екрані описується двома координатами (x та y):<br>
+                    В цьому розділі ти дізнаєшся як створювати малюнки з простих геометричних фігур, складні візерунки
+                    та навчишся зафарбовувати замкнені області.</p>
                 <p>
-                    <b>x</b> - кордината на осі абсцис (положення черепашки на горизонталі)<br>
-                    <b>y</b> - кордина на осі ординат (положення черепашки по вертикалі)
+                    В попердній темі ми розглянули дві команди для роботи з олівцем - penup() та pendown() і в коді
+                    використовували деякі інші команди, які більш детально розглянемо в цій темі.
                 </p>
-                </p>
-                <p>
-                    <b>Координатна площина на екрані</b>
-                </p>
-                <div class="example-image">
-                    <img src="../images/turtle/turtle_2_01.png" alt="Приклад turtle" , style="width: 350px;">
-                </div><br>
-                <i>Примітка:</i> пам'ятайте, першим завжди вказують значення координати Х, а другим - значення Y.
 
 
-                <p><b>Основні методи положення черепашки:</b></p><br>
+
+                <p><b>Методи керування олівцем:</b></p><br>
                 <table>
                     <thead>
                         <tr>
@@ -91,219 +82,154 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="property-name">speed()</td>
+                            <td class="property-name">pencolor()</td>
                             <td>
-                                Встановлює швидкість рузу черепашки. Значення може бути в межах від (1 до 10), де один повільно, а 10 - найшвидше. Наприклад: turtle.speed(10) - черепашка рухатиметься з максимально можливою швидкістю.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">goto(X, Y)</td>
-                            <td>
-                                Переміcтить черепашку в позицію з координатами (X, Y). Наприклад: turtle.goto(140, 100).
-                                Зверіть увагу, якщо перо опушене, буде намальована лінія.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">teleport(X, Y)</td>
-                            <td>
-                                Перемістить черепашку в позицію з координатами (X, Y). На відміну від goto(X, Y) - лінія
-                                не буде намальована.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">setx(X)</td>
-                            <td>
-                                Встановлює першу координату черепахи на X , другу координату залишає незмінною.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">sety(Y)</td>
-                            <td>
-                                Встановлює другу координату черепахи на Y , першу координату залишає незмінною.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">home()</td>
-                            <td>
-                                Перемістить черепаху в початкове положення (в точку з координатими (0, 0))
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">setheading(<i>кут</i>) або seth(<i>кут</i>)</td>
-                            <td>
-                                Встановлює орієнтацію черепахи на кут від 0 до 360. Наприклад: turtle.seth(0) - орієнтація
-                                на схід, (90 - північ, 180 - захід, 270 - південь).
-                            </td>
-                        </tr>
+                                Змінює колір олівця, при цьому колір черепашки не змінюєжться. Наприклад:
+                                turtle.pencolor("purple") - задає фіолетовий колір олівця.
 
-                        <tr>
-                            <td class="property-name">position() або pos()</td>
-                            <td>
-                                Отримує поточні координати точки в якій знаходиться черепашка.
                             </td>
                         </tr>
-
-
+                        <tr>
+                            <td class="property-name">pensize()</td>
+                            <td>
+                                Змінює товщину олівця тобто товщину лінії, яка буде намальована. За замовчуванням,
+                                товщина лінії рівна 1 пікселю. Наприклад: turtle.pensize(5) - встановить товщину лінії 5
+                                пікселів.
+                            </td>
+                        </tr>
                     </tbody>
-                </table><br>
-                <p><b>Основні команди черепашки:</b></p><br>
+                </table>
+
+                <p><b>Методи зафарбовування фігур:</b></p><br>
                 <table>
                     <thead>
                         <tr>
-                            <th>Команда</th>
+                            <th>Метод</th>
                             <th>Опис</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="property-name">forward() або fd()</td>
+                            <td class="property-name">fillcolor()</td>
                             <td>
-                                Рухає черепашку вперед на вказану кількість пікселів. Наприклад: turtle.forward(100) або
-                                turtle.fd(100)
+                                Встановлює колір заповнення. Наприклад: turtle.fillcolor("yellow") - встановить колір заливки фігури жовтим кольором.
                             </td>
                         </tr>
                         <tr>
-                            <td class="property-name">backward() або bk()</td>
+                            <td class="property-name">begin_fill()</td>
                             <td>
-                                Рухає черепашку назад на вказану кількість пікселів. Наприклад: turtle.backward(50) або
-                                turtle.bk(50)
+                                Команда повідомляє Python, коли саме потрібно почати зафарбовування фігури. Наприклад: turtle.begin_fill().
                             </td>
                         </tr>
                         <tr>
-                            <td class="property-name">right() або rt()</td>
+                            <td class="property-name">end_fill()</td>
                             <td>
-                                Повертає черепашку праворуч на вказану кількість градусів. Наприклад: turtle.right(90)
-                                або turtle.rt(90)
+                                Після виконання цієї команди фігура буде повністю зафарбована. Наприклад: turtle.end_fill().
                             </td>
                         </tr>
-                        <tr>
-                            <td class="property-name">left() або lt()</td>
+                         <tr>
+                            <td class="property-name">circle()</td>
                             <td>
-                                Повертає черепашку ліворуч на вказану кількість градусів. Наприклад: turtle.left(45) або
-                                turtle.lt(45)
+                                Після виконання цієї команди буде намальоване коло з вказаним радіусом. Наприклад: turtle.circle(radius, extent=None, steps=None), де:<br><br><i>radius</i> - це радіус кола в пікселях (якщо значення додатнє - черепашка малює коло проти годинникової стрілки, ліворуч від себе, а якщо від'ємне - за годинниковою стрілкою праворуч від себе);<br><br><i>extent</i> - значення в градусах для малювання сектора кола, якщо значення не вказано воно рівне 360°;<br><br><i>steps</i> - указує кількість граней, у багатокутника, тобто команда: turtle.circle(50, steps=3)  - намалює рівносторонній трикутник.
                             </td>
                         </tr>
-                        <tr>
-                            <td class="property-name">penup() або pu()</td>
-                            <td>
-                                Піднімає перо, черепашка перестає малювати при русі. Наприклад: turtle.penup() або
-                                turtle.pu()
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">pendown() або pd()</td>
-                            <td>
-                                Опускає перо, черепашка починає малювати при русі. Наприклад: turtle.pendown() або
-                                turtle.pd()
-                            </td>
-                        </tr>
-
                     </tbody>
-                </table><br>
+                </table>
 
-
-
-
+                <p><b>Як правильно зафарбовуватифігури:</b></p>
+                <ol style="font-size: 13pt;">
+                    <li>Встановити колір заповнення - turtle.fillcolor("yellow");</li>
+                    <li>Викликати метод  - turtle.begin_fill();</li>
+                    <li>Намалювати замкнену фігуру;</li>
+                    <li>Викликати метод - turtle.end_fill()</li>
+                </ol>
             </div>
 
             <!-- Приклад -->
             <div class="lesson-block">
                 <h3>Приклади</h3>
                 <p>
-                    1. Намалюємо прямокутник салатового кольору з довжиною сторін 305х205 пікселів та товщиною лінії 5
-                    пікселів.
+                    1. Намалюємо квадрат жовтого кольору.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
                         <h4 class="example-title">Код програми </h4>
                         <pre><code class="language-python">import turtle
-screen = turtle.Screen()
-screen.title("Прямокутник")
-screen.bgcolor("#333333")
-screen.setup(width=450, height=350)
-ben=turtle.Turtle()
-ben.penup()
-ben.goto(-150, 100)
-ben.fillcolor("#ff8c00")
-ben.pencolor("lightgreen")
-ben.pensize(5)
-ben.pendown()
-for i in range(2):
-    ben.fd(305)
-    ben.rt(90)
-    ben.fd(205)
-    ben.rt(90)
+scr=turtle.Screen()
+scr.title("Жовтий квадрат")
+scr.setup(width=450, height=350)
+t = turtle.Turtle()
+t.fillcolor("yellow")
+t.begin_fill()
+for i in range(4):
+    t.forward(100)
+    t.right(90)
+t.end_fill()
 turtle.done()
 </code></pre>
                     </div>
                     <div class="example-image">
                         <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_2_01.png" alt="Приклад turtle" , style="width: 350px;">
+                        <img src="../images/turtle/turtle_ex_3_01.png" alt="Приклад turtle" , style="width: 380px;">
                     </div>
                 </div><br>
                 <p>
-                    2. Намалюємо рівносторонній трикутник кожна сторона якого буде різного кольору.
+                    2. Намалюємо рівносторонній трикутник зеленого кольору
                 </p>
                 <div class="example-container">
                     <div class="example-code">
                         <h4 class="example-title">Код програми </h4>
                         <pre><code class="language-python">import turtle
-screen = turtle.Screen()
-screen.title("Трикутник")
-screen.bgcolor("#333333")
-screen.setup(width=450, height=350)
-ben=turtle.Turtle()
-ben.penup()
-colors=["coral","gold","lightblue"]
-ben.goto(-150, 120)
-ben.fillcolor("#ff8c00")
-ben.pensize(5)
-ben.pendown()
+scr=turtle.Screen()
+scr.title("Зелений трикутник")
+scr.setup(width=450, height=350)
+t = turtle.Turtle()
+t.fillcolor("lightgreen")
+t.begin_fill()
 for i in range(3):
-    ben.pencolor(colors[i])
-    ben.fd(305)
-    ben.rt(120)
+    t.forward(120)
+    t.left(120)
+t.end_fill()
 turtle.done()
 </code></pre>
                     </div>
                     <div class="example-image">
                         <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_2_02.png" alt="Приклад turtle" , style="width: 350px;">
+                        <img src="../images/turtle/turtle_ex_3_02.png" alt="Приклад turtle" , style="width: 380px;">
                     </div>
                 </div><br>
                 <p>
-                    3. Намалюємо коло.
+                    3. Намалюємо прямокутник колубого кольору.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
                         <h4 class="example-title">Код програми </h4>
                         <pre><code class="language-python">import turtle
-screen = turtle.Screen()
-screen.title("Коло")
-screen.bgcolor("#333333")
-screen.setup(width=450, height=350)
-ben=turtle.Turtle()
-ben.penup()
-ben.goto(0, 120)
-ben.fillcolor("#ff8c00")
-ben.pencolor("gold")
-ben.hideturtle()
-ben.pensize(5)
-ben.pendown()
-for i in range(360):
-    ben.fd(2)
-    ben.rt(1)
+scr=turtle.Screen()
+scr.title("Голубий прямокутник")
+scr.setup(width=450, height=350)
+t = turtle.Turtle()
+t.fillcolor("lightblue")
+t.begin_fill()
+for i in range(2):
+    t.forward(180)
+    t.right(90)
+    t.forward(100)
+    t.right(90)
+t.end_fill()
 turtle.done()
-
 </code></pre>
                     </div>
                     <div class="example-image">
                         <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_2_03.png" alt="Приклад turtle" , style="width: 350px;">
+                        <img src="../images/turtle/turtle_ex_3_03.png" alt="Приклад turtle" , style="width: 380px;">
                     </div>
                 </div><br>
                 <p>
-                    <i>Підказка: Щоб розрахувати кут повороту черепашки при малюванні багатокутників, потрібно число 360° розділити на кількість кутів багатокутника. Наприклад, при малюванні п'ятикутника потрібно 360° розділити на 5, отримаємо 72°. Виключенням є трикутник - тому що сума його кутів становить 180°, а не 360°</i>
+                    <i>Підказка: Щоб розрахувати кут повороту черепашки при малюванні багатокутників, потрібно число
+                        360° розділити на кількість кутів багатокутника. Наприклад, при малюванні п'ятикутника потрібно
+                        360° розділити на 5, отримаємо 72°. Виключенням є трикутник - тому що сума його кутів становить
+                        180°, а не 360°</i>
                 </p>
             </div>
 
@@ -326,9 +252,10 @@ turtle.done()
                     5. Змініть форму черепашки на "square".
                 </p>
                 <p style="font-size: 12pt;">
-                    6. Проаналізуйте отриманий результат і внесіть зміни до коду програми щоб зображення мало естетичний вигляд.
+                    6. Проаналізуйте отриманий результат і внесіть зміни до коду програми щоб зображення мало естетичний
+                    вигляд.
                 </p>
-                
+
             </div>
 
 
@@ -361,7 +288,8 @@ turtle.done()
                 </p>
                 <p style="font-size: 12pt;">
                     1. Дізнайтесь в інтернет, що являє собою зірка Давида (<i>Маген Давид</i>). <br>
-                    2. Намалюйте її за допомогою виконавця "Черепашка" з товщиною ліній 10 пікселів і відповідного кольору.
+                    2. Намалюйте її за допомогою виконавця "Черепашка" з товщиною ліній 10 пікселів і відповідного
+                    кольору.
                 </p>
             </div>
         </div>
