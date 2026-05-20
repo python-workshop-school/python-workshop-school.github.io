@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>тема 3 Turtle | Рождественська школа</title>
+    <title>тема 4 Turtle | Рождественська школа</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../images/Logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -43,8 +43,8 @@
         <div class="hero-container">
             <div class="hero-text">
                 <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
-                <h1>Тема 3</h1>
-                <h2>Малюємо кодом.
+                <h1>Тема 4</h1>
+                <h2>Кола та точки у Turtle.
                 </h2>
                 <a href="../turtle.html#tasks" class="hero-btn">до цеху turtle</a>
             </div>
@@ -63,16 +63,13 @@
             <div class="lesson-block">
                 <h3>Теоретичний матеріал</h3>
                 <p>
-                    В цьому розділі ти дізнаєшся як створювати малюнки з простих геометричних фігур, складні візерунки
-                    та навчишся зафарбовувати замкнені області.</p>
-                <p>
-                    В попердній темі ми розглянули дві команди для роботи з олівцем - penup() та pendown() і в коді
-                    використовували деякі інші команди, які більш детально розглянемо в цій темі.
+                    В цьому розділі ти дізнаєшся про те, що крім ліній та багатокутників, які ти вже вмієш малювати,
+                    можна створювати: кола, дуги, кольорові точки, візерунки та орнаменти.
                 </p>
-
-
-
-                <p><b>Методи керування олівцем:</b></p><br>
+                <p>
+                    Для цього в модулі turtle є методи: circle() та dot(), які будемо зараз вивчати.
+                </p>
+                <p><b>Метод circle() :</b></p><br>
                 <table>
                     <thead>
                         <tr>
@@ -82,25 +79,33 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="property-name">pencolor()</td>
+                            <td class="property-name">circle(радіус)</td>
                             <td>
-                                Змінює колір олівця, при цьому колір черепашки не змінюєжться. Наприклад:
-                                turtle.pencolor("purple") - задає фіолетовий колір олівця.
-
+                                Черепашка малює коло вказаного радіусу. Наприклад:
+                                turtle.circle(100) - буде намальоване коло з радіусом 100 пікселів.
                             </td>
                         </tr>
                         <tr>
-                            <td class="property-name">pensize()</td>
+                            <td class="property-name">circle(радіус, кут)</td>
                             <td>
-                                Змінює товщину олівця тобто товщину лінії, яка буде намальована. За замовчуванням,
-                                товщина лінії рівна 1 пікселю. Наприклад: turtle.pensize(5) - встановить товщину лінії 5
-                                пікселів.
+                                Черепашка малює частину кола (дугу). Наприклад: turtle.circle(100, 180) - буде
+                                намальована дуга з радіусом 100 пікселів довжиною 180°, тобто півколо.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">circle(радіус, кут, кроки)</td>
+                            <td>
+                                Черепашка замість кола малює багатокутник. Наприклад: turtle.circle(100, 360, 5) - буде
+                                намальований рівносторонній п'ятикутник, а в цьому прикладі: turtle.circle(100, 360, 5)
+                                - буде намальований рівносторонній восьмикутник, о ось у цьому прикладі:
+                                turtle.circle(100, 180, 3) - буде намальована ламана, яка скдається із троьох ланок, які
+                                утворюють півколо.
                             </td>
                         </tr>
                     </tbody>
                 </table>
 
-                <p><b>Методи зафарбовування фігур:</b></p><br>
+                <p><b>Метод dot():</b></p><br>
                 <table>
                     <thead>
                         <tr>
@@ -110,142 +115,187 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="property-name">fillcolor()</td>
+                            <td class="property-name">dot(розмір)</td>
                             <td>
-                                Встановлює колір заповнення. Наприклад: turtle.fillcolor("yellow") - встановить колір заливки фігури жовтим кольором.
+                                Черепашка намалює круглу точку вказаного розміру. Наприклад: команда turtle.dot() -
+                                намалює точку товщиною в 1 піксель (значення за замовчуванням), а команда turtle.dot(20)
+                                - намалює точку товщиною в 20 пікселів.
                             </td>
                         </tr>
                         <tr>
-                            <td class="property-name">begin_fill()</td>
+                            <td class="property-name">dot(розмір, "колір")</td>
                             <td>
-                                Команда повідомляє Python, коли саме потрібно почати зафарбовування фігури. Наприклад: turtle.begin_fill().
+                                Черепашка намалює круглу точку вказаного розміру та кольору. Наприклад: команда
+                                turtle.dot(60, "red") - намалює червону точку товщиною в 60 пікселів.
                             </td>
                         </tr>
-                        <tr>
-                            <td class="property-name">end_fill()</td>
-                            <td>
-                                Після виконання цієї команди фігура буде повністю зафарбована. Наприклад: turtle.end_fill().
-                            </td>
-                        </tr>
-                        
                     </tbody>
-                </table>
-
-                <p><b>Як правильно зафарбовуватифігури:</b></p>
-                <ol style="font-size: 13pt;">
-                    <li>Встановити колір заповнення - turtle.fillcolor("yellow");</li>
-                    <li>Викликати метод  - turtle.begin_fill();</li>
-                    <li>Намалювати замкнену фігуру;</li>
-                    <li>Викликати метод - turtle.end_fill()</li>
-                </ol>
+                </table><br>
             </div>
 
             <!-- Приклад -->
             <div class="lesson-block">
                 <h3>Приклади</h3>
                 <p>
-                    1. Намалюємо квадрат жовтого кольору.
+                    1. Намалюємо коло оранжевого кольору з радіусом 80.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
                         <h4 class="example-title">Код програми </h4>
                         <pre><code class="language-python">import turtle
 scr=turtle.Screen()
-scr.title("Жовтий квадрат")
+scr.title("Коло з радіусом 80")
 scr.setup(width=450, height=350)
 t = turtle.Turtle()
-t.fillcolor("yellow")
-t.begin_fill()
-for i in range(4):
-    t.forward(100)
-    t.right(90)
-t.end_fill()
+t.pencolor("#ff8c00")
+t.pensize(3)
+t.circle(80)
 turtle.done()
 </code></pre>
                     </div>
                     <div class="example-image">
                         <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_3_01.png" alt="Приклад turtle" , style="width: 380px;">
+                        <img src="../images/turtle/turtle_ex_4_01.png" alt="Приклад turtle" , style="width: 350px;">
                     </div>
                 </div><br>
                 <p>
-                    2. Намалюємо рівносторонній трикутник зеленого кольору
+                    2. Намалюємо круг зеленого кольору з радіусом 80.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
                         <h4 class="example-title">Код програми </h4>
                         <pre><code class="language-python">import turtle
 scr=turtle.Screen()
-scr.title("Зелений трикутник")
+scr.title("Круг з радіусом 80")
 scr.setup(width=450, height=350)
 t = turtle.Turtle()
 t.fillcolor("lightgreen")
 t.begin_fill()
-for i in range(3):
-    t.forward(120)
-    t.left(120)
+t.circle(80)
 t.end_fill()
 turtle.done()
 </code></pre>
                     </div>
                     <div class="example-image">
                         <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_3_02.png" alt="Приклад turtle" , style="width: 380px;">
+                        <img src="../images/turtle/turtle_ex_4_02.png" alt="Приклад turtle" , style="width: 380px;">
                     </div>
                 </div><br>
                 <p>
-                    3. Намалюємо прямокутник голубого кольору.
+                    3. Намалюємо шестикутник золотистого кольору.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
                         <h4 class="example-title">Код програми </h4>
                         <pre><code class="language-python">import turtle
 scr=turtle.Screen()
-scr.title("Голубий прямокутник")
+scr.title("Золотий шестикутник")
 scr.setup(width=450, height=350)
 t = turtle.Turtle()
-t.fillcolor("lightblue")
+t.fillcolor("gold")
 t.begin_fill()
-for i in range(2):
-    t.forward(180)
-    t.right(90)
-    t.forward(100)
-    t.right(90)
+t.circle(80, 360, 6)
 t.end_fill()
 turtle.done()
 </code></pre>
                     </div>
                     <div class="example-image">
                         <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_3_03.png" alt="Приклад turtle" , style="width: 380px;">
+                        <img src="../images/turtle/turtle_ex_4_03.png" alt="Приклад turtle" , style="width: 380px;">
                     </div>
                 </div><br>
+
                 <p>
-                    <i>Підказка: Щоб розрахувати кут повороту черепашки при малюванні багатокутників, потрібно число
-                        360° розділити на кількість кутів багатокутника. Наприклад, при малюванні п'ятикутника потрібно
-                        360° розділити на 5, отримаємо 72°. Виключенням є трикутник - тому що сума його кутів становить
-                        180°, а не 360°</i>
+                    4. Намалюємо фіолетовий сегмент кола.
                 </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+scr=turtle.Screen()
+scr.title("Фіолетовий сегмент")
+scr.setup(width=450, height=350)
+t = turtle.Turtle()
+t.fillcolor("purple")
+t.begin_fill()
+t.circle(80, 120)
+t.end_fill()
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_ex_4_04.png" alt="Приклад turtle" , style="width: 380px;">
+                    </div>
+                </div><br>
+
+                <p>
+                    5. Намалюємо дугу кола коралового кольору з товщиною лінії 40 пікселів.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+scr=turtle.Screen()
+scr.title("Коралова дуга")
+scr.setup(width=450, height=350)
+t = turtle.Turtle()
+t.pencolor("coral")
+t.pensize(40)
+t.circle(70, 210)
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_ex_4_05.png" alt="Приклад turtle" , style="width: 380px;">
+                    </div>
+                </div><br>
+
+                <p>
+                    6. Намалюємо блакитну точку розміром 150 пікселів.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+scr=turtle.Screen()
+scr.title("Блакитна точка")
+scr.setup(width=450, height=350)
+t = turtle.Turtle()
+t.dot(150, "lightblue")
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_ex_4_06.png" alt="Приклад turtle" , style="width: 380px;">
+                    </div>
+                </div><br>
             </div>
 
             <!-- Практична робота -->
             <div class="lesson-block">
                 <h3>Практична робота</h3>
                 <p style="font-size: 12pt;">
-                    1. Намалюйте квадрат зі стороною 150 пікселів;
+                    1. Намалюйте коло радіусом 150 пікселів та зафарбуйте його кориневим кольором.
                 </p>
                 <p style="font-size: 12pt;">
-                    2. Зафарбуйте намальований квадрат червоним кольором;
+                    2. Намалюйте напівколо зеленого кольору.
                 </p>
                 <p style="font-size: 12pt;">
-                    3. Намалюйте поряд з квадратом трикутник фіолетового кольору;
+                    3. Створіть три різнокольорові точки різного розміру.
                 </p>
                 <p style="font-size: 12pt;">
-                    4. Намалюйте прямокутник, товщина контуру ліній якого становить 5 пікселів зеленого кольору, а сам прямокутник зафарбуйте в жовтий колір;
+                    4. Намалюйте три ліхтарі світлофора за допомогою метода dot().
                 </p>
                 <p style="font-size: 12pt;">
-                    5. Створіть власний малюнок з декілької об'єднаних між собою фігур.
+                    5. Намалюйте зелений дев'ятикутник за допомогою методу circle().
                 </p>
+                <p style="font-size: 12pt;">
+                    6. Створіть мішень для стрільби із лука.
+                </p>
+
             </div>
 
 
@@ -256,29 +306,29 @@ turtle.done()
                     <b>Початковий рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Намалюйте зафарбований квадрат. <br>
-                    2. Намалюйте зафарбований трикутник.
+                    1. Створіть 5 простих різнокольорових геометричних фігур. <br>
+                    2. Фігури мають не торкатися і не перетинати одна одну.
                 </p>
                 <p>
                     <b>Середній рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Намалюйте коло оранжевого кольору. <br>
-                    2. Намалюйте прапор України з двох прямокутників.
+                    1. Створіть будинок хоббіта з круглими вікнами та дверима. <br>
+                    2. Створіть біля будинку ялинку.
                 </p>
                 <p>
                     <b>Достатній рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Намалюйте будинок: стіни, дах, двері. <br>
-                    2. Використайте різні кольори для кожного елементу будинку.
+                    1. Створіть квітку. <br>
+                    2. Створіть веселку.
                 </p>
                 <p>
                     <b>Високий рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Створіть власний малюнок - робот, автомобіль, квітка тощо. <br>
-                    2. Використайте різну товщину та колір ліній окреслення фігур
+                    1. Створіть мультиплікаційного персонажа "Капітошка".<br>
+                    2. Створіть велосипедне колесо.
                 </p>
             </div>
         </div>
