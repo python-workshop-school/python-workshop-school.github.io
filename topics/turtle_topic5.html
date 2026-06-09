@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>тема 4 Turtle | Рождественська школа</title>
+    <title>тема 5 Turtle | Рождественська школа</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../images/Logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -43,8 +43,8 @@
         <div class="hero-container">
             <div class="hero-text">
                 <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
-                <h1>Тема 4</h1>
-                <h2>Кола та точки у Turtle.
+                <h1>Тема 5</h1>
+                <h2>Орнаменти та візерунки у Turtle.
                 </h2>
                 <a href="../turtle.html#tasks" class="hero-btn">до цеху turtle</a>
             </div>
@@ -63,220 +63,114 @@
             <div class="lesson-block">
                 <h3>Теоретичний матеріал</h3>
                 <p>
-                    В цьому розділі ти дізнаєшся про те, що крім ліній та багатокутників, які ти вже вмієш малювати,
-                    як можна створювати: кола, дуги та кольорові точки.
+                    В цьому розділі ти дізнаєшся, як створювати орнаменти та візерунки у Turtle.
                 </p>
                 <p>
-                    Для цього в модулі turtle є методи: circle() та dot(), які будемо зараз вивчати.
+                    <i><b>Візерунок</b></i> - це повторювана геометрична форма, яка може бути створена за допомогою turtle.
                 </p>
-                <p><b>Метод circle() :</b></p><br>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Метод</th>
-                            <th>Опис</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="property-name">circle(радіус)</td>
-                            <td>
-                                Черепашка малює коло вказаного радіусу. Наприклад:
-                                turtle.circle(100) - буде намальоване коло з радіусом 100 пікселів.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">circle(радіус, кут)</td>
-                            <td>
-                                Черепашка малює частину кола (дугу). Наприклад: turtle.circle(100, 180) - буде
-                                намальована дуга з радіусом 100 пікселів довжиною 180°, тобто півколо.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">circle(радіус, кут, кроки)</td>
-                            <td>
-                                Черепашка замість кола малює багатокутник. Наприклад: turtle.circle(100, 360, 5) - буде
-                                намальований рівносторонній п'ятикутник, а в цьому прикладі: turtle.circle(100, 360, 5)
-                                - буде намальований рівносторонній восьмикутник, о ось у цьому прикладі:
-                                turtle.circle(100, 180, 3) - буде намальована ламана, яка скдається із троьох ланок, які
-                                утворюють півколо.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p>
+                    <i><b>Орнамент</b></i> - це специфічний вид візерунка, побудований на ритмічному повторенні та чергуванні його елементів.
+                </p>
+                <p>
+                    Приклади орнаментів можна побачити:
+                    <ul>
+                        <li>на вишиванках;</li>
+                        <li>на килимах;</li>
+                        <li>на шпалерах;</li>
+                        <li>на архітектурних спорудах;</li>
+                        <li>на декоративних елементах.</li>
+                    </ul>
+* У програмуванні орнаменти зручно створювати за допомогою циклів, які дозволяють багаторазово повторювати однакові дії.
 
-                <p><b>Метод dot():</b></p><br>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Метод</th>
-                            <th>Опис</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="property-name">dot(розмір)</td>
-                            <td>
-                                Черепашка намалює круглу точку вказаного розміру. Наприклад: команда turtle.dot() -
-                                намалює точку товщиною в 1 піксель (значення за замовчуванням), а команда turtle.dot(20)
-                                - намалює точку товщиною в 20 пікселів.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">dot(розмір, "колір")</td>
-                            <td>
-                                Черепашка намалює круглу точку вказаного розміру та кольору. Наприклад: команда
-                                turtle.dot(60, "red") - намалює червону точку товщиною в 60 пікселів.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table><br>
+                </p>
             </div>
 
             <!-- Приклад -->
             <div class="lesson-block">
                 <h3>Приклади</h3>
                 <p>
-                    1. Намалюємо коло оранжевого кольору з радіусом 80.
+                    1. Намалюємо візерунок "Зірка Turtle" жовтого кольору з червоним контуром.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
                         <h4 class="example-title">Код програми </h4>
                         <pre><code class="language-python">import turtle
-scr=turtle.Screen()
-scr.title("Коло з радіусом 80")
-scr.setup(width=450, height=350)
-t = turtle.Turtle()
-t.pencolor("#ff8c00")
-t.pensize(3)
-t.circle(80)
+screen = turtle.Screen()
+screen.title("Зірка Turtle")
+screen.setup(width=450, height=350)
+soloha=turtle.Turtle()
+soloha.color('red', 'yellow')
+soloha.begin_fill()
+for i in range(36):
+    soloha.forward(200)
+    soloha.left(170)
+soloha.end_fill()
 turtle.done()
 </code></pre>
                     </div>
                     <div class="example-image">
                         <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_4_01.png" alt="Приклад turtle" , style="width: 350px;">
+                        <img src="../images/turtle/turtle_ex_5_01.png" alt="Приклад turtle" , style="width: 380px;">
                     </div>
                 </div><br>
                 <p>
-                    2. Намалюємо круг зеленого кольору з радіусом 80.
+                    2. Намалюємо орнамент з ромбів у жовто блакитних кольорах.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
                         <h4 class="example-title">Код програми </h4>
                         <pre><code class="language-python">import turtle
-scr=turtle.Screen()
-scr.title("Круг з радіусом 80")
-scr.setup(width=450, height=350)
-t = turtle.Turtle()
-t.fillcolor("lightgreen")
-t.begin_fill()
-t.circle(80)
-t.end_fill()
-turtle.done()
-</code></pre>
-                    </div>
-                    <div class="example-image">
-                        <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_4_02.png" alt="Приклад turtle" , style="width: 380px;">
-                    </div>
-                </div><br>
-                <p>
-                    3. Намалюємо шестикутник золотистого кольору.
-                </p>
-                <div class="example-container">
-                    <div class="example-code">
-                        <h4 class="example-title">Код програми </h4>
-                        <pre><code class="language-python">import turtle
-scr=turtle.Screen()
-scr.title("Золотий шестикутник")
-scr.setup(width=450, height=350)
-t = turtle.Turtle()
-t.fillcolor("gold")
-t.begin_fill()
-t.circle(80, 360, 6)
-t.end_fill()
-turtle.done()
-</code></pre>
-                    </div>
-                    <div class="example-image">
-                        <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_4_03.png" alt="Приклад turtle" , style="width: 380px;">
-                    </div>
-                </div><br>
+screen = turtle.Screen()
+screen.title("Орнамент Turtle")
+screen.bgcolor("white")
+screen.setup(width=460, height=350)
+ben = turtle.Turtle() # Створення виконавця на ім'я Ben
+ben.speed(0)  # Максимальна швидкість малювання
+ben.pensize(2) # Встановлення розміру олівця
 
-                <p>
-                    4. Намалюємо фіолетовий сегмент кола.
-                </p>
-                <div class="example-container">
-                    <div class="example-code">
-                        <h4 class="example-title">Код програми </h4>
-                        <pre><code class="language-python">import turtle
-scr=turtle.Screen()
-scr.title("Фіолетовий сегмент")
-scr.setup(width=450, height=350)
-t = turtle.Turtle()
-t.fillcolor("purple")
-t.begin_fill()
-t.circle(80, 120)
-t.end_fill()
-turtle.done()
-</code></pre>
-                    </div>
-                    <div class="example-image">
-                        <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_4_04.png" alt="Приклад turtle" , style="width: 380px;">
-                    </div>
-                </div><br>
+def draw_diamond(side, color_name): '''Малювання одного кольорового ромба'''
+    ben.color(color_name)
+    ben.fillcolor(color_name)
+    ben.begin_fill()
+    for _ in range(2):
+        ben.forward(side)
+        ben.left(45)
+        ben.forward(side)
+        ben.left(135)
+    ben.end_fill()
 
-                <p>
-                    5. Намалюємо дугу кола коралового кольору з товщиною лінії 40 пікселів.
-                </p>
-                <div class="example-container">
-                    <div class="example-code">
-                        <h4 class="example-title">Код програми </h4>
-                        <pre><code class="language-python">import turtle
-scr=turtle.Screen()
-scr.title("Коралова дуга")
-scr.setup(width=450, height=350)
-t = turtle.Turtle()
-t.pencolor("coral")
-t.pensize(40)
-t.circle(70, 210)
-turtle.done()
-</code></pre>
-                    </div>
-                    <div class="example-image">
-                        <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_4_05.png" alt="Приклад turtle" , style="width: 380px;">
-                    </div>
-                </div><br>
+def draw_star_element(x, y): """Малювання одного повного елемента орнаменту"""
+    for i in range(8): # Малюємо 8 пелюсток-ромбів по колу (традиційна українська зірка)
+        ben.penup()
+        ben.goto(x, y)
+        ben.setheading(i * 45)
+        ben.pendown()
+        # Чергуємо кольори пелюсток для вишиваного ефекту
+        current_color = "royalblue2" if i % 2 == 0 else "yellow"
+        draw_diamond(40, current_color)
+    
+start_x = -140
+start_y = 0
+spacing = 140  # Відстань між центрами елементів
 
-                <p>
-                    6. Намалюємо блакитну точку розміром 150 пікселів.
-                </p>
-                <div class="example-container">
-                    <div class="example-code">
-                        <h4 class="example-title">Код програми </h4>
-                        <pre><code class="language-python">import turtle
-scr=turtle.Screen()
-scr.title("Блакитна точка")
-scr.setup(width=450, height=350)
-t = turtle.Turtle()
-t.dot(150, "lightblue")
+for count in range(3): ''' Малювання рівно трьох елементів вишивки в один ряд '''
+    draw_star_element(start_x + (count * spacing), start_y)
 turtle.done()
 </code></pre>
                     </div>
                     <div class="example-image">
                         <h4 class="example-title">Результат</h4>
-                        <img src="../images/turtle/turtle_ex_4_06.png" alt="Приклад turtle" , style="width: 380px;">
+                        <img src="../images/turtle/turtle_ex_5_02.png" alt="Приклад turtle" , style="width: 380px;">
                     </div>
                 </div><br>
+                <p>
+                   
             </div>
 
             <!-- Практична робота -->
             <div class="lesson-block">
                 <h3>Практична робота</h3>
+                <p>Створення орнаментів та візерунків у Turtle.</p>
                 <p style="font-size: 12pt;">
                     1. Намалюйте коло радіусом 150 пікселів та зафарбуйте його кориневим кольором.
                 </p>
