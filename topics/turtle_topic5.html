@@ -66,21 +66,24 @@
                     В цьому розділі ти дізнаєшся, як створювати орнаменти та візерунки у Turtle.
                 </p>
                 <p>
-                    <i><b>Візерунок</b></i> - це повторювана геометрична форма, яка може бути створена за допомогою turtle.
+                    <i><b>Візерунок</b></i> - це повторювана геометрична форма, яка може бути створена за допомогою
+                    turtle.
                 </p>
                 <p>
-                    <i><b>Орнамент</b></i> - це специфічний вид візерунка, побудований на ритмічному повторенні та чергуванні його елементів.
+                    <i><b>Орнамент</b></i> - це специфічний вид візерунка, побудований на ритмічному повторенні та
+                    чергуванні його елементів.
                 </p>
                 <p>
                     Приклади орнаментів можна побачити:
-                    <ul>
-                        <li>на вишиванках;</li>
-                        <li>на килимах;</li>
-                        <li>на шпалерах;</li>
-                        <li>на архітектурних спорудах;</li>
-                        <li>на декоративних елементах.</li>
-                    </ul>
-* У програмуванні орнаменти зручно створювати за допомогою циклів, які дозволяють багаторазово повторювати однакові дії.
+                <ul>
+                    <li>на вишиванках;</li>
+                    <li>на килимах;</li>
+                    <li>на шпалерах;</li>
+                    <li>на архітектурних спорудах;</li>
+                    <li>на декоративних елементах.</li>
+                </ul>
+                * У програмуванні орнаменти зручно створювати за допомогою циклів, які дозволяють багаторазово
+                повторювати однакові дії.
 
                 </p>
             </div>
@@ -88,8 +91,121 @@
             <!-- Приклад -->
             <div class="lesson-block">
                 <h3>Приклади</h3>
+
                 <p>
-                    1. Намалюємо візерунок "Зірка Turtle" жовтого кольору з червоним контуром.
+                    1. Намалюємо візерунок із оранжевих квадратів із довжиною сторони 200 пікселів.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Орнамент із квадратів")
+screen.setup(width=450, height=350)
+tom = turtle.Turtle()
+tom.pencolor('darkorange')
+for i in range(20):
+    for j in range(4):
+        tom.forward(100)
+        tom.right(90)
+    tom.right(18)
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_ex_5_01_a.png" alt="Приклад turtle" , style="width: 380px;">
+                    </div>
+                </div><br>
+
+                <p>
+                    2. Намалюємо візерунок із зелених трикутників із довжиною сторони 120 пікселів.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Орнамент із трикутрників")
+screen.setup(width=450, height=350)
+ben = turtle.Turtle()
+ben.pencolor('#228B22')
+for i in range(24):
+    for j in range(3):
+        ben.forward(120)
+        ben.left(120)
+    ben.left(15)
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_ex_5_01_b.png" alt="Приклад turtle" , style="width: 380px;">
+                    </div>
+                </div><br>
+
+
+                <p>
+                    3. Намалюємо візерунок "Сонце" золотистого кольору з довжиною пременя 150 пікселів.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Сонце")
+screen.setup(width=450, height=350)
+soloha = turtle.Turtle()
+soloha.pensize(3)
+soloha.pencolor('gold')
+for i in range(36):
+    soloha.forward(150)
+    soloha.backward(150)
+    soloha.left(10)
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_ex_5_01_c.png" alt="Приклад turtle" , style="width: 380px;">
+                    </div>
+                </div><br>
+
+
+                <p>
+                    4. Намалюємо візерунок "Квітка" червогого кольору з кіл радіусом 50 пікселів.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">import turtle
+screen = turtle.Screen()
+screen.title("Квітка")
+screen.setup(width=450, height=350)
+ivan = turtle.Turtle()
+ivan.speed(0)
+ivan.pensize(2)
+ivan.pencolor('orangered')
+for i in range(18):
+    ivan.circle(50)
+    ivan.left(20)
+turtle.done()
+</code></pre>
+                    </div>
+                    <div class="example-image">
+                        <h4 class="example-title">Результат</h4>
+                        <img src="../images/turtle/turtle_ex_5_01_d.png" alt="Приклад turtle" , style="width: 380px;">
+                    </div>
+                </div><br>
+
+
+
+
+
+
+
+                <p>
+                    5. Намалюємо візерунок "Зірка Turtle" жовтого кольору з червоним контуром.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
@@ -114,7 +230,7 @@ turtle.done()
                     </div>
                 </div><br>
                 <p>
-                    2. Намалюємо орнамент з ромбів у жовто блакитних кольорах.
+                    6. Намалюємо орнамент з трьох елементів у жовто блакитних кольорах.
                 </p>
                 <div class="example-container">
                     <div class="example-code">
@@ -164,32 +280,29 @@ turtle.done()
                     </div>
                 </div><br>
                 <p>
-                   
+
             </div>
 
             <!-- Практична робота -->
             <div class="lesson-block">
                 <h3>Практична робота</h3>
                 <p>Створення орнаментів та візерунків у Turtle.</p>
+                <p style="font-size: 12pt;"><i><b>Підказка: </b></i>Щоб візерунок вийшов симетричний потрібно визначити правильний кут повороту. Це можна зробити поділивши 360° на кількість елементів з яких він складається.</p>
                 <p style="font-size: 12pt;">
-                    1. Намалюйте коло радіусом 150 пікселів та зафарбуйте його кориневим кольором.
+                    1. Намалюйте орнамент із 12 квадратів оранжевого кольору з товщиною лінії 2 пікселі.
                 </p>
                 <p style="font-size: 12pt;">
-                    2. Намалюйте напівколо зеленого кольору.
+                    2. Створіть квітку синього кольору з 18 кіл радіусом 75 пікселів.
                 </p>
                 <p style="font-size: 12pt;">
-                    3. Створіть три різнокольорові точки різного розміру.
+                    3. Намалюйте сонце з 24 променів.
                 </p>
                 <p style="font-size: 12pt;">
-                    4. Намалюйте три ліхтарі світлофора за допомогою метода dot().
+                    4. Розробіть візерунок із 10 червоних п'ятикутників з довжиною сторони 80 пікселів. 
                 </p>
                 <p style="font-size: 12pt;">
-                    5. Намалюйте зелений дев'ятикутник за допомогою методу circle().
+                    5. Розробіть орнамент із 5 елементів.
                 </p>
-                <p style="font-size: 12pt;">
-                    6. Створіть мішень для стрільби із лука.
-                </p>
-
             </div>
 
 
@@ -200,29 +313,35 @@ turtle.done()
                     <b>Початковий рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Створіть 5 простих різнокольорових геометричних фігур. <br>
-                    2. Фігури мають не торкатися і не перетинати одна одну.
+                    1. Намалюйте шестикутник. <br>
+                    2. Створіть сонце з 12 променів.
                 </p>
                 <p>
                     <b>Середній рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Створіть будинок хоббіта з круглими вікнами та дверима. <br>
-                    2. Створіть біля будинку ялинку.
+                    1. Намалюйте орнамент із трикутників. <br>
+                    2. Створіть квітку з кіл.
                 </p>
                 <p>
                     <b>Достатній рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Створіть квітку. <br>
-                    2. Створіть веселку.
+                    1. Намалюйте кольоровий орнамент із квадратів. <br>
+                    2. Створіть візерунок із використанням двох вкладених циклів.
                 </p>
                 <p>
                     <b>Високий рівень</b>
                 </p>
                 <p style="font-size: 12pt;">
-                    1. Створіть мультиплікаційного персонажа "Капітошка".<br>
-                    2. Створіть велосипедне колесо.
+                    1. Створіть візерунок за вибором:
+                    <ul>
+                        <li>український орнамент;</li>
+                        <li>сніжинка;</li>
+                        <li>мандала;</li>
+                        <li>декоративна розетка.</li>  
+                    </ul><br>
+                    2. Розробіть програму, яка дозволяє користувачу вибирати тип візерунка та його параметри (наприклад, кількість елементів, кольори, розміри) через консольний інтерфейс.
                 </p>
             </div>
         </div>
