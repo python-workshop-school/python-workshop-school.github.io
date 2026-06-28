@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тема 2 Python | Рождественська школа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href ='../index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="../index.html" class="menu-item">Головна</a>
+                <a href="../python.html" class="menu-item">Python</a>
+                <a href="../pygame.html" class="menu-item">Pygame</a>
+                <a href="../tkinter.html" class="menu-item">Tkinter</a>
+                <a href="../turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Тема 2</h1>
+                <h2>Змінні та величини. Типи даних. Конвертація типів.</h2>
+                <a href="../python.html#tasks" class="hero-btn">до цеху python</a>
+            </div>
+            <!--
+            <div class="hero-image">
+                <img src="../images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+            -->
+        </div>
+    </section>
+
+    <section class="lesson" id="tasks">
+        <div class="container">
+
+            <!-- Теорія -->
+            <div class="lesson-block">
+                <h2>Теоретичний матеріал</h2>
+                <p><i>
+                        У цьому розділі ти дізнаєшся як програма на Python обробляє дані; що таке змінна та які вимоги
+                        існують до імен змінних; для чого існують різні типи даних у Python та як їх перетворювати з
+                        одного виду в інший.
+                    </i></p>
+                <p>
+                    Будь-яка комп'ютерна програма обробляє дані. В інформатиці ці дані називають величинами. Величини
+                    можуть бути різних типів: числа, текст, логічні значення (істина або хибність), списки, словники та
+                    інші.
+                </p>
+                <p>
+                    Для зберігання величин у програмі використовують змінні. Змінна - це посилання (адреса) на область
+                    пам'яті, в якій зберігається значення цієї величини. Кожній змінній надають ім'я, яке
+                    використовується для доступу до її значення.
+                </p>
+                <h3>
+                    Правила створення імен змінних (ідентифікаторів) в Python
+                </h3>
+                <ul>
+                    <li>Ім'я змінної повинно починатися з літери або знаку підкреслення (_).</li>
+                    <li>Ім'я змінної може містити лише латинські літери (a-z, A-Z), цифри (0-9) та знак підкреслення
+                        (_).</li>
+                    <li>Ім'я змінної не може починатися з цифри (наприклад, 1step - помилка, а step1 - правильно).</li>
+                    <li>Ім'я змінної не може бути зарезервованим ключовим словом мови Python (наприклад: if, for, while,
+                        def, class).</li>
+                    <li>Імена змінних чутливі до регістру (наприклад, variable і Variable — це різні змінні).</li>
+                    <li>Для покращення читабельності імен змінних можна використовувати стиль camelCase (наприклад,
+                        myVariableName) або стиль snake_case (наприклад, my_variable_name).</li>
+                    <li>Рекомендується використовувати зрозумілі та описові імена змінних, які відображають їх
+                        призначення (наприклад, age, name, total_price).</li>
+                </ul>
+                <p>
+                    Змінні створюються в момент присвоєння їм значення. Значення змінним надається за допомогою
+                    оператора присвоєння (=). Наприклад:
+                </p>
+                <pre><code class="language-python">name = "John Silver"
+age = 25
+</code></pre><br>
+
+                У цьому прикладі створюються дві змінні: name та age. Змінній name присвоюється рядок "John Silver", а
+                змінній age присвоюється число 25. Оскільки мава Python має динамічну типізацію то тип даних автоматично
+                визначається на основі присвоєного значення.
+                <p>
+                <h3>Типи даних</h3>
+                </p>
+                <p>
+                    Python має кілька основних типів даних, які використовуються для зберігання і обробки інформації.
+                    Ось найпоширеніші типи:
+                </p>
+                <ul>
+                    <li><b>int</b> - цілі числа (наприклад, 5, -10, 0)</li>
+                    <li><b>float</b> - числа з плаваючою точкою (наприклад, 3.14, -2.5, 0.0)</li>
+                    <li><b>str</b> - рядки (наприклад, "Привіт, світ!", 'John')</li>
+                    <li><b>bool</b> - логічні значення (True або False)</li>
+                </ul>
+                <p>
+                    Для визначення типу даних змінної можна використовувати функцію <b>type()</b>. Наприклад:
+                </p>
+                <pre><code class="language-python">print(type(name))  # <'class 'str''>
+print(type(age))   # <'class 'int''>
+</code></pre>
+                <p>
+                    У мові Python існує два способи перетворення типів даних: явне та неявне. Неявне перетворення
+                    відбувається автоматично, коли Python намагається виконати операції між різними типами даних.
+                    Наприклад:
+                </p>
+                <pre><code class="language-python">print(5 + 3.14)  # Виведе: 8.14 (неявне перетворення int у float)
+</code></pre>
+                <p>
+                    Явне перетворення типів здійснюється за допомогою вбудованих функцій: int(), float(), str(), bool().
+                    Наприклад:
+                </p>
+                <pre><code class="language-python"># Конвертація рядка у число (часто потрібна при введенні даних через input())
+age_str = "18"
+age_num = int(age_str)  # Тепер це число 18
+
+# Конвертація float у int
+pi = 3.99
+print(int(pi))  # Виведе: 3 (дробова частина просто зрізається!)
+
+# Конвертація числа в рядок
+status_code = 200
+message = "Код відповіді: " + str(status_code)
+print(message)  # Виведе: Код відповіді: 200
+
+# Особливості bool()
+print(bool(0))   # Виведе: False
+print(bool(5))   # Виведе: True
+print(bool(""))  # Виведе: False
+print(bool(" ")) # Виведе: True (всередині є пробіл, рядок не порожній)
+</code></pre>
+                <p>
+                    <b>Важливо:</b> Якщо ви спробуєте конвертувати рядок, який містить літери, у число (наприклад,
+                    int("привіт")), Python видасть помилку тексту програми ValueError.
+                </p>
+                <p>
+                    А тепер пропоную розглянути приклади та перейти до практичної частини, яка дозволить максимально
+                    ефективно закріпити отримані знання.
+                </p>
+            </div>
+
+            <!-- Приклад -->
+            <div class="lesson-block">
+                <h3>Приклади</h3>
+                <p>
+                    1. Розглянемо, як Python працює з різними типами чисел одночасно, та як працює ручне відсікання
+                    дробової частини.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">apples = 5        # Тип: int
+weight_per_apple = 0.165  # Тип: float (вага в кг)
+
+# Неявне перетворення: int * float дає float
+total_weight = apples * weight_per_apple
+print("Загальна вага:", total_weight)  # Виведе: 0.825
+print(type(total_weight))              # class 'float'>
+
+# Явне перетворення у int просто відкидає дробову частину
+price_per_kg = 45.99
+rounded_price = int(price_per_kg)
+print("Ціна без копійок:", rounded_price)  # Виведе: 45 (а не 46!)
+</code></pre>
+                    </div>
+
+                </div><br>
+                <p>
+                    2. А в цьому прикладі перевіримо, чи користувач взагалі щось ввів. Будь-яке пусте значення
+                    автоматично перетворюється на False.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">user_input = input("Введіть ваш логін: ")
+
+# Якщо користувач просто натиснув Enter, рядок буде пустим ("")
+is_filled = bool(user_input)
+
+print("Користувач ввів дані?", is_filled)
+</code></pre><br>
+                        Зверніть увагу в цьому прикладі ми використали функцію input() для отримання даних від
+                        користувача, з якою більш детально ознайомимося на наступному занятті.
+                    </div>
+                </div><br>
+            </div>
+
+            <!-- Практична робота -->
+            <div class="lesson-block">
+                <h2>Практична робота</h2>
+                <p>
+                    <b>Мета: Навчитися правильно створювати змінні, визначати їхні типи, зчитувати дані різних типів з
+                        клавіатури та коректно виконувати явне і неявне перетворення типів.</b>
+                </p>
+                <p>
+                    <b>Завдання 1: "Пошук помилок.".</b> Подивіться на цей код. Знайдіть 3 помилки, які призведуть до
+                    збою програми, і поясніть, чому вони виникають:
+                </p>
+                <pre><code class="language-python">1_number = "10"
+second_number = 5
+sum = 1_number + second_number
+print(Sum)
+</code></pre><br>
+                <p>
+                    <b>Завдання 2: "Розрахунок вартості подорожі."</b> Напишіть програму, яка допомагає розрахувати
+                    бюджет на пальне для автівки. Програма має:
+                </p>
+
+                <p style="font-size: 12pt;">
+                    1. Запитати у користувача відстань у кілометрах (ціле число).
+                </p>
+                <p style="font-size: 12pt;">
+                    2. Запитати у користувача вартість пального за 1 літр (дійсне число).
+                </p>
+                <p style="font-size: 12pt;">
+                    3. Запитати середню витрату пального на 100 км (дробове число).
+                </p>
+                <p style="font-size: 12pt;">
+                    4. Обчислити загальну вартість поїздки за формулою: вартість = (відстань / 100) * витрата * ціна.
+                </p>
+                <p style="font-size: 12pt;">
+                    5. Вивести фінальний результат у форматі: "Загальна вартість пального для подорожі: [значення] грн."
+                </p>
+            </div>
+
+            <!-- Завдання -->
+            <div class="lesson-block">
+                <h3>Завдання</h3>
+                <p>
+                    <b>Початковий рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. Створіть у програмі три змінні з будь-якими назвами: у першу змінну запишіть ваше ім'я (текст), у другу - ваш вік (ціле число), а у третю - ваш зріст (дійсне число). Виведіть на екран значення усіх трьох змінних.
+                </p>
+                
+                <p>
+                    <b>Середній рівень</b>
+                </p>
+               <p style="font-size: 12pt;">
+                    1. Перепишіть у середовищі програмування код, виправивши помилки так, щоб програма успішно запустилася та вивела на екран число 50.
+                </p>
+                <pre><code class="language-python"># Цей код містить помилки!
+$my-value = "30"
+2nd_value = 20
+загальна_сума = $my-value + 2nd_value
+print(Загальна_Сума)
+</code></pre>
+                <p>
+                    <b>Достатній рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. Допишіть код програми так, щоб програма вивела на екран тип кожної з цих трьох змінних (використовуйте комбінацію команд print() та type()).
+                </p>
+                 <pre><code class="language-python">a = 500
+b = "Привіт"
+c = 36.6
+</code></pre>
+                <p>
+                    <b>Високий рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. У коді програми є помилка. Виправте цей код за допомогою функції str(), щоб програма не видавала помилку, а успішно вивела на екран фразу: «Мені вже 15 років».
+                </p>
+                <pre><code class="language-python">years = 15
+print("Мені вже " + years + " років")
+</code></pre><br>
+
+            </div>
+
+            <!-- Помилки -->
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="../sources.html">Джерела</a></li>
+                    <li><a href="../license.html">Ліцензія</a></li>
+                    <li><a href="../about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
