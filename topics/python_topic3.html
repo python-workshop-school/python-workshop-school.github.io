@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тема 3 Python | Рождественська школа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container" style="cursor:pointer" onclick="window.location.href ='../index.html'">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#333333" />
+                    <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                    <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                </svg>
+                <h1 class="logo-text">Рождественська <span class="accent">школа</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-menu" id="nav-list">
+                <a href="../index.html" class="menu-item">Головна</a>
+                <a href="../python.html" class="menu-item">Python</a>
+                <a href="../pygame.html" class="menu-item">Pygame</a>
+                <a href="../tkinter.html" class="menu-item">Tkinter</a>
+                <a href="../turtle.html" class="menu-item">Turtle</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
+                <h1>Тема 3</h1>
+                <h2>Введення даних - функція input().</h2>
+                <a href="../python.html#tasks" class="hero-btn">до цеху python</a>
+            </div>
+            <!--
+            <div class="hero-image">
+                <img src="../images/tkinter.png" alt="Tkinter UI Design">
+            </div>
+            -->
+        </div>
+    </section>
+
+    <section class="lesson" id="tasks">
+        <div class="container">
+            <!-- Теорія -->
+            <div class="lesson-block">
+                <h2>Теоретичний матеріал</h2>
+                <p><i>
+                        У цьому розділі ти дізнаєшся, як організувати інтерактивний діалог програми з користувачем: як
+                        зчитувати значення з клавіатури, присвоювати їх змінним та приводити отримані дані до потрібного
+                        типу, та навчися створювати прості діалогові програми.
+                    </i></p>
+                <p>
+                    <b>Для чого потрібна функція input()</b>
+                </p>
+                <p>
+                    До цього часу всі значення у програмах були записані самим програмістом.
+                </p>
+                <p>
+                    Наприклад:
+                </p>
+                <pre><code class="language-python">name = "John Silver"
+age = 25
+</code></pre>
+                <p>
+                    Але якщо програмою користуватиметься інша людина, то як забезпечити їй можливість вводити власні
+                    дані? Саме для цього використовується функція <b>input()</b>. Вона дозволяє зчитувати дані, які
+                    користувач вводить з клавіатури. При роботі програми дана функція зупиняє її виконання, і чекає доки
+                    користувач не введе необхідні дані та не натисне клавішу <b>Enter</b>. Після чого введене значення
+                    надається змінній у вигляді текстового рядка і робота програми продовжується.
+                </p>
+                <p>
+                    Дана функція має необов'язковий парамет - текстову підказку, яка вказується в дужках функції і являє
+                    собою текстовий рядок в одинарних чи подвійних лапках. Зазвичай таку підказку використовують, щоб не
+                    помилитися якого типу дані потрібно ввести.
+                </p>
+                <p>
+                    Наприклад:
+                </p>
+                <pre><code class="language-python">name = input("Введіть своє ім'я: ") 
+print(name)
+
+# >>> Введіть своє їм'я: Зіновій
+# >>> Зіновій
+</code></pre>
+                <p>
+                    <b>Як працює функція input()</b>
+                </p>
+                <ul>
+                    <li>Програма на екрані відображає повідомлення для введення даних.</li>
+                    <li>Користувач вводить дані у вигляді тексту.</li>
+                    <li>По закінченню введення натискає клавішу Enter.</li>
+                    <li>Функція input() повертає введене значення у вигляді рядка (тип str).</li>
+                    <li>Введене значення записується у змінну за допомогою оператора присвоєння (=).</li>
+                </ul>
+                <p style="font-size: 13pt; color: #ee4000;">
+                    <b>Зверніть увагу</b>, що функція input() завжди повертає рядок (тип str), навіть якщо користувач
+                    вводить
+                    число. Тому, якщо потрібно працювати з числами, необхідно виконати явне перетворення типу.
+                </p>
+                <p>
+                    <b>Що ж робити коли нам потрібно ввести не текстові, а дані інших типів?</b>
+                </p>
+                <p>
+                    Для вирішення цієї проблеми в Python існують функції перетворення типів: <b>int()</b>,
+                    <b>float()</b>, <b>str()</b>, <b>bool()</b>. Вони дозволяють перетворювати рядки у числа, числа у
+                    рядки та виконувати інші перетворення.
+                </p>
+                <p>
+                    Наприклад, щоб у змінній зберегти ціле число, потрібно використати функцію явного перетворення типу
+                    <b>int()</b>:
+                </p>
+                <pre><code class="language-python">age_str = input("Введіть ваш вік: ")  # Число 25 - це рядок "25"
+age = int(age_str)  # Тепер це ціле число 25
+</code></pre>
+                <p>
+                    Або ж записати всю конструкцію одним рядком:
+                </p>
+                <pre><code class="language-python">age = int(input("Введіть ваш вік: ")) # Тут у змінну age буде збережено ціле число, а не рядок.</code></pre>
+                <p>
+                    Якщо ж нам потрібно зберегти дійсне число, то використовується функція <b>float()</b>:
+                </p>
+                <pre><code class="language-python">weight_str = input("Введіть вашу вагу: ")  # Число 70.5 - це рядок "70.5"
+weight = float(weight_str)  # Тепер це дійсне число 70.5
+</code></pre>
+                <p>
+                    Або ж записати всю конструкцію одним рядком:
+                </p>
+                <pre><code class="language-python">weight = float(input("Введіть вашу вагу: ")) # Тут у змінну weight буде збережено дійсне число, а не рядок.
+</code></pre>
+                <p style="font-size: 13pt; color: #ee4000;">
+                    <b>Зверніть увагу</b>, таким самим чином можна перетворювати цілі числа в дійсні і навпаки, а також
+                    перетворювати числа в рядки використовуючи функцію str().
+                </p>
+                <p style="font-size: 13pt; color: #ee4000;">
+                    <b>Зверніть увагу</b>, що якщо користувач введе нечислове значення (наприклад, текст), то при спробі
+                    перетворення рядка у число, Python видасть помилку тексту програми <b>ValueError</b>. Тому завжди
+                    потрібно уважно слідкувати та перевіряти введені дані перед перетворенням.
+                </p><br>
+            </div>
+
+            <!-- Приклад -->
+            <div class="lesson-block">
+                <h2>Приклади</h2>
+                <p>
+                    1. Створимо просте привітання.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">name = input("Як тебе звати? ")
+print("Привіт,", name) # отримаємо результат:
+
+#>>> Як тебе звати? Солоха
+#>>> Привіт, Солоха
+</code></pre>
+                    </div>
+
+                </div><br>
+                <p>
+                    2. А в цьому прикладі додамо трішки математики, визначимо який буде ваш вік через сім років.
+                </p>
+                <div class="example-container">
+                    <div class="example-code">
+                        <h4 class="example-title">Код програми </h4>
+                        <pre><code class="language-python">age = int(input("Скільки вам років? "))
+print("Через сім років вам буде", age + 7, "років.")
+
+#>>> Скільки вам років? 15
+#>>> Через сім років вам буде 20 років.
+</code></pre><br>
+
+                    </div>
+                </div><br>
+            </div>
+
+            <!-- Практична робота -->
+            <div class="lesson-block">
+                <h2>Практична робота</h2>
+                <p>
+                    <b>Мета: Навчитися створювати прості інтерактивні програми.</b>
+                </p>
+                <p>
+                    <b>Завдання 1: "Звідки ви?"</b>. Напишіть програму, яка запитує ваше місце проживання, після чого
+                    виводить на екран монітору текстове повідомлення у вигляді:
+                </p>
+                <pre><code class="language-python">>>> Ти прожаваєш у місті Чернігів.
+</code></pre><br>
+                <p>
+                    <b>Завдання 2: "В якому році ви народилися?"</b>. Напишіть програму, яка визначає рік вашого
+                    народження, після чого виводить на екран повідомлення:
+                </p>
+                <pre><code class="language-python">>>> Ви народилися в 2011 році.
+</code></pre><br>
+
+                <p style="font-size: 12pt;">
+                    1. Створіть змінну age та збережіть у ній ціле число, введжене з клавіатури - повна кількість років,
+                    які вам виповнилися.
+                </p>
+                <p style="font-size: 12pt;">
+                    2. Створіть змінну year та збережіть у ній ціле число, введене з клавіатури - поточний рік.
+                </p>
+                <p style="font-size: 12pt;">
+                    3. Створіть змінну birth та збережіть у ній значення (birth = year - age) .
+                </p>
+                <p style="font-size: 12pt;">
+                    4. Виведіть на екран результат роботи програми.
+                </p><br>
+            </div>
+
+            <!-- Завдання -->
+            <div class="lesson-block">
+                <h2>Завдання</h2>
+                <p>
+                    <b>Початковий рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. Запитайте улюблений колір. Виведіть відповідь.<br>
+                    2. Запитайте назву школи. Виведіть повідомлення: " ... школа."<br>
+                    3. Запитайте номер класу у якому ви навчаєтесь та виведіть повідомлення: "Я навчаюсь у ... класі."
+                </p><br>
+
+                <p>
+                    <b>Середній рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. Запитайте ім'я та вік, та виведіть повідомлення у вигляді:
+
+                <pre><code class="language-python">Мене звати ...
+Мені ... років.
+</code></pre>
+                </p><br>
+                <p>
+                    <b>Достатній рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. Створіть програму-мініанкету в якій запитайте: ім'я, прізвище, вік, місто, улюблений предмет, та
+                    красиво офрміть інформацію для виведення на екран. Наприклад:
+                <pre><code class="language-python">--------------------------
+Анкета учня
+
+Імя: Анна
+Прізвище: Бориско
+Вік: 15 років
+Місто: Рождественське
+Улюблений предмет: Інформатика
+--------------------------
+                    </code></pre>
+                </p><br>
+                <p>
+                    <b>Високий рівень</b>
+                </p>
+                <p style="font-size: 12pt;">
+                    1. Створіть діалогову програму із п'яти власно придуманих логічних реплік (запитання - відповідь).
+                </p><br>
+            </div>
+
+            <!-- Помилки -->
+            <div class="lesson-block">
+                <h2>Типові помилки</h2>
+                <ul>
+                    <li>Використання функції <b>input</b> без дужок, наприклад:
+                        <pre><code class="language-python">age = input # - це помилка;
+age = input() # - правильно.</code></pre>
+                    </li>
+                    <li>Неправильне перетворення.
+                        <pre><code class="language-python">age = input() # - якщо ви введете "десять", то виникне помилка значення:
+>>> ValueError: invalid literal for int(): 'десять', яка вказує на те, що використовується невірний тип даних.</code></pre>
+                    </li>
+                    <li>Знаходження суми рядків замість суми чисел.
+                        <pre><code class="language-python">a = input("Введіть число а: ") # наприклад введемо 17
+b = input("Введіть число b: ") # наприклад введемо 25
+
+print(a + b) # отримаємо результат
+>>> 1725
+</code></pre>
+                    </li>
+                    Як бачите, збою програми не має, і вона успішно завершує роботу і навіть виводить результат, ось
+                    тільки він не вірний. І такі помилки найскладніше знаходити. Як має бути правильно:
+                    <pre><code class="language-python">a = int(input("Введіть число а: ")) # використовуємо функцію перетворення рядка в ціле число int()
+b = float(input("Введіть число b: ")) # а тут використовуємо функцію перетворення рядка в ціле число float()
+
+print(a + b) # отримаємо результат
+>>> 42.0
+</code></pre>
+                </ul><br>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Блок з логотипом -->
+            <div class="footer-column brand-info">
+                <ul>
+                    <li>
+                        <div class="logo">
+                            <svg width="33" height="33" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 10L90 85H75L50 35L25 85H10L50 10Z" fill="#ffffff" />
+                                <path d="M50 35L65 65H35L50 35Z" fill="#FF8C00" />
+                                <rect x="45" y="70" width="10" height="15" fill="#FF8C00" />
+                            </svg>
+                            <span class="logo-text">Рождественська <span class="orange-text">школа</span></span>
+                        </div>
+                    </li>
+                    <li>Навчаємося створювати майбутнє сьогодні.</li>
+                    <li class="author">Автор сайту: Гайдук В.М.</li>
+                </ul>
+            </div>
+
+            <!-- Блок Модулі -->
+            <div class="footer-column">
+                <h3>Завантажити</h3>
+                <ul>
+                    <li><a href="https://www.python.org/downloads/">Python</a></li>
+                    <li><a href="https://thonny.org/">Thonny</a></li>
+                    <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Навігація -->
+            <div class="footer-column">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="../sources.html">Джерела</a></li>
+                    <li><a href="../license.html">Ліцензія</a></li>
+                    <li><a href="../about.html">Про нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок Контакти -->
+            <div class="footer-column">
+                <h3>Контакти</h3>
+                <ul>
+                    <li> вул. Травнева, 2, с. Рождественське </li>
+                    <li>ua.0465624275@gmail.com</li>
+                    <li>+38 (046) 562-42-75</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Рождественська школа. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Підключаємо JS для мобільного меню (такий же як на головній) -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+
+            // Змінюємо іконку: якщо меню активне — ставимо хрестик, якщо ні — смужки
+            const icon = mobileMenu.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
