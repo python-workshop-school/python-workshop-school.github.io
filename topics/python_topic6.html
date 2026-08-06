@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>тема 5 Python | Рождественська школа</title>
+    <title>тема 6 Python | Рождественська школа</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../images/Logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -43,8 +43,8 @@
         <div class="hero-container">
             <div class="hero-text">
                 <!--<span class="sub-title" style="color: #FF8C00; font-weight: bold;">Практичний модуль</span> -->
-                <h1>Тема 5</h1>
-                <h2>Як Python приймає рішення?</h2>
+                <h1>Тема 6</h1>
+                <h2>На роздоріжжі. Оператори вибору варіанту match ... case.</h2>
                 <a href="../python.html#tasks" class="hero-btn">до цеху python</a>
             </div>
             <!--
@@ -60,11 +60,21 @@
             <!-- Теорія -->
             <div class="lesson-block">
                 <h2>Теоретичний матеріал</h2>
-                <p><i>
-                        У цьому розділі ти дізнаєшся, як комп'ютер приймає рішення і чи може він думати. Познайомишся з
-                        операторами порівняння. Навчишся використовувати логічні оператори та умовні конструкції if,
-                        else, elif, та створювати власні програми, які виконують різні дії в залежності від умови.
-                    </i></p>
+                <i><p>
+                    У попередній темі ми навчилися використовувати оператор розгалуження if, щоб програма могла приймати рішення залежно від виконання певної умови. Але іноді потрібно перевірити одне значення на відповідність кільком можливим варіантам.
+                </p>
+                <p>
+                    Наприклад:
+                </p>
+                <ul>
+                    <li>якщо користувач ввів 1 — виконати одну дію;</li>
+                    <li>якщо 2 — іншу;</li>
+                    <li>якщо 3 — ще одну;</li>
+                    <li>для будь-якого іншого значення — повідомити про помилку.</li>
+                </ul>
+                <p>
+                    Для таких ситуацій у Python можна використати конструкцію <b>match ... case</b>, про яку ти дізнаєшся опрацювавши матеріал цього розділу.                      
+                </p></i>
                 <p>
                     <b>Як Python приймає рішення?</b>
                 </p>
@@ -144,13 +154,15 @@
                             <td>True</td>
                         </tr>
                         <tr>
-                            <td class="property-name"> &lt;</td>
+                            <td class="property-name">
+                                << /td>
                             <td>Менше</td>
-                            <td>5 <span> &lt;</span> 3</td>
+                            <td>5 < 3</td>
                             <td>False</td>
                         </tr>
                         <tr>
-                            <td class="property-name">&lt;=</td>
+                            <td class="property-name">
+                                <=< /td>
                             <td>Менше або дорівнює</td>
                             <td>5 <= 5</td>
                             <td>True</td>
